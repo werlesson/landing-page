@@ -1,0 +1,26 @@
+{
+  "name": "werlesson-cv",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxtjs/i18n": "^10.3.0",
+    "@nuxtjs/sitemap": "^8.0.15",
+    "@vueuse/nuxt": "^14.3.0",
+    "nuxt": "^4.4.4",
+    "nuxt-schema-org": "^6.0.4",
+    "vue": "^3.5.33",
+    "vue-router": "^5.0.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.14",
+    "tailwindcss": "^3.4.19"
+  }
+}

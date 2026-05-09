@@ -1,0 +1,178 @@
+{
+  "brand": {
+    "mark": "W.",
+    "fullName": "Werlesson",
+    "logoSuffix": "erlesson",
+    "logoAria": "Werlesson — go to home page"
+  },
+  "lang": {
+    "switchToPt": "PT",
+    "switchToEn": "EN",
+    "switchAria": "Switch site language",
+    "langPtAria": "Show site in Portuguese",
+    "langEnAria": "Show site in English"
+  },
+  "nav": {
+    "about": "About",
+    "stack": "Stack",
+    "project": "Project",
+    "contact": "Contact",
+    "primaryAria": "Primary navigation",
+    "mobileAria": "Navigation — mobile menu",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "skipToContent": "Skip to main content"
+  },
+  "hero": {
+    "availability": "Open to remote roles",
+    "location": "— Brazil · worldwide remote",
+    "namePrefix": "Werles",
+    "nameGlow": "s",
+    "nameSuffix": "on",
+    "role1": "Fullstack engineer — Vue + Laravel",
+    "role2": "Vue 3, Nuxt, TypeScript",
+    "role3": "IoT, product, shipping to prod",
+    "description": "I'm a fullstack engineer centered on Vue 3 and Laravel. I take work from discovery through production — DDD-style boundaries, Postgres or MySQL, Redis, and Docker-first deploys on Coolify or a VPS. When it fits the problem, I bridge web and hardware (IoT, Raspberry Pi, privacy-aware integrations); Eu no Play is one example. I work like a technical co-founder: product judgment, solid engineering, and ownership past the launch line.",
+    "ctaProjects": "See highlighted work",
+    "ctaCv": "Download résumé",
+    "ctaProjectsAria": "Jump to the featured project section",
+    "ctaCvAria": "Download résumé as PDF",
+    "stats": {
+      "years": "Years building software",
+      "projects": "Projects shipped",
+      "commits": "Commits on GitHub"
+    },
+    "statTargets": {
+      "years": 8,
+      "projects": 24,
+      "commits": 2100
+    },
+    "floatTags": {
+      "vue": "Vue",
+      "tsMiddle": " TS ",
+      "stackHint": "// Laravel",
+      "npmRest": " npm run dev"
+    }
+  },
+  "about": {
+    "badge": "Fullstack developer",
+    "headlineBefore": "Hi, I'm",
+    "headlineAccent": "Werlesson",
+    "bio": "I like turning ideas into live product. I grew up on the frontend, doubled down on Vue, and expanded into resilient APIs and Laravel with an architecture-first mindset. Sometimes the right solution sits between a browser and a device in the field — I'm comfortable there too. I care about scope, quality, and deployment as one narrative. I'm looking for international remote teams where clarity and ownership matter.",
+    "stats": [
+      { "value": "8+", "label": "Years in development" },
+      { "value": "24+", "label": "Projects delivered" },
+      { "value": "1", "label": "SaaS in production" }
+    ],
+    "timelineTitleBefore": "My",
+    "timelineTitleAccent": "path so far",
+    "timeline": [
+      {
+        "year": "2019",
+        "title": "Early work with Vue 2",
+        "description": "Cut my teeth on the web with Vue 2 and a classic frontend stack — where I learned to care about clear UI, solid UX, and maintainable CSS.",
+        "tech": ["Vue 2", "JavaScript", "CSS"]
+      },
+      {
+        "year": "2022",
+        "title": "Leveling up on Vue 3 & Nuxt 3",
+        "description": "Composition API, TypeScript, and Nuxt 3 on real deliveries — a step change in how I structure apps, collaborate, and ship with confidence.",
+        "tech": ["Vue 3", "Nuxt 3", "TypeScript"]
+      },
+      {
+        "year": "2024",
+        "title": "Backend depth with Laravel",
+        "description": "Hardened APIs, business logic where it belongs, and end-to-end thinking — from interface to persistence, queues, and day-two operations.",
+        "tech": ["Laravel", "PHP", "PostgreSQL"]
+      },
+      {
+        "year": "2025",
+        "title": "Production SaaS & IoT",
+        "description": "From concept to live systems: billing, auth, scale — plus builds that pair software with hardware (Raspberry Pi, on-venue testing). Product focus with an eye on global remote work.",
+        "tech": ["SaaS", "Docker", "IoT"]
+      }
+    ]
+  },
+  "stack": {
+    "supertitle": "Technologies",
+    "title": "How I build",
+    "subtitle": "The toolkit behind my fullstack deliveries — Vue and Nuxt on the surface, Laravel and data stores underneath, and infra I can run and iterate on myself.",
+    "groups": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Data",
+      "infra": "Infrastructure"
+    }
+  },
+  "project": {
+    "sectionTitle": "Featured build",
+    "euNoPlay": {
+      "badge": "Field testing",
+      "titlePrefix": "Eu no ",
+      "titleAccent": "Play",
+      "descriptionBeforeRaspberry": "A rig for recording sports plays built around a ",
+      "highlightRaspberry": "Raspberry Pi",
+      "descriptionMid": " and a ",
+      "highlightHikvision": "Hikvision",
+      "descriptionBeforeSeconds": " camera. A wireless hardware button grabs the last ",
+      "highlightSeconds": "25 seconds",
+      "descriptionAfter": " of action and makes the clip ready to download immediately.",
+      "highlightWireless": "Wireless trigger",
+      "highlightArena": "Validated in a real venue",
+      "tags": [
+        "Raspberry Pi",
+        "Python",
+        "Hikvision",
+        "IoT",
+        "Vue 3"
+      ],
+      "cta": "Learn more",
+      "ctaAria": "Learn more about the Eu no Play project",
+      "mockCameraModel": "Hikvision DS-2CD",
+      "recIdle": "REC",
+      "recCapturing": "REC • ON",
+      "replaySaved": "Clip saved",
+      "bufferLabel": "Rolling buffer",
+      "bufferTick": "-{n}s",
+      "captureLabel": "CAPTURE",
+      "captureAria": "Capture the last seconds as a replay"
+    }
+  },
+  "contact": {
+    "title": "Let's talk",
+    "subtitle": "I'm open to international remote opportunities. If you need someone who connects product thinking with dependable engineering, send a note — I'll reply as soon as I can.",
+    "directTitle": "Or reach me directly",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message"
+    },
+    "submit": "Send message",
+    "success": "Message sent. I'll follow up shortly.",
+    "social": {
+      "github": {
+        "label": "GitHub",
+        "handle": "github.com/werlesson",
+        "aria": "Open Werlesson's GitHub profile"
+      },
+      "linkedin": {
+        "label": "LinkedIn",
+        "handle": "linkedin.com/in/werlesson",
+        "aria": "Open Werlesson's LinkedIn profile"
+      },
+      "email": {
+        "label": "Email",
+        "handle": "werlesson\\@email.com",
+        "aria": "Send email to Werlesson"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Vue, Nuxt & Laravel — from UI to production, product-first.",
+    "copyright": "© 2026 Werlesson. Built with care from Brazil.",
+    "colophon": "Site stack · Nuxt 4 · Vue 3 · TypeScript · Tailwind",
+    "githubAria": "Werlesson on GitHub",
+    "linkedinAria": "Werlesson on LinkedIn",
+    "socialNavAria": "Social links"
+  }
+}
