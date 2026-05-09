@@ -179,7 +179,9 @@
               "
             >
               <a
-                href="#"
+                href="https://www.eunoplay.com.br"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg bg-accent px-8 text-base font-semibold text-background transition-all duration-300 hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[#12121a]"
                 :aria-label="$t('project.euNoPlay.ctaAria')"
               >

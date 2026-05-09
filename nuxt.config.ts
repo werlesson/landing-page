@@ -40,6 +40,7 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     'nuxt-schema-org',
     '@vueuse/nuxt',
+    '@nuxt/eslint',
   ],
 
   i18n: {

@@ -107,6 +107,7 @@
         >
           <h3 class="font-display text-2xl font-bold md:text-3xl">
             <span class="text-foreground">{{ $t('about.timelineTitleBefore') }}</span>
+            {{ ' ' }}
             <span class="text-accent">{{
               $t('about.timelineTitleAccent')
             }}</span>

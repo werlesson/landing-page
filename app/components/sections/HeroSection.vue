@@ -145,7 +145,7 @@
             "
           >
             <a
-              href="/cv.pdf"
+              href="/CV_Werlesson_Vieira.pdf"
               download
               class="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-lg bg-accent px-8 py-4 font-semibold text-background transition-all duration-300 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               :aria-label="$t('hero.ctaCvAria')"
