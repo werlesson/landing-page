@@ -132,7 +132,8 @@ const pingStyle = computed(() => ({
 
 const { stop } = useIntersectionObserver(
   rootRef,
-  ([{ isIntersecting }]) => {
+  ([entry]) => {
+    const isIntersecting = entry?.isIntersecting
     if (isIntersecting) {
       visible.value = true
       stop()

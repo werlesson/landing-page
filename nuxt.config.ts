@@ -36,12 +36,33 @@ export default defineNuxtConfig({
   },
 
   modules: [
+    '@nuxt/content',
     '@nuxtjs/i18n',
     '@nuxtjs/sitemap',
     'nuxt-schema-org',
+    'nuxt-og-image',
     '@vueuse/nuxt',
     '@nuxt/eslint',
   ],
+
+  content: {
+    // Use Node's built-in SQLite (node:sqlite, available on Node 22.5+) so the
+    // content database needs no native `better-sqlite3` build step.
+    experimental: {
+      sqliteConnector: 'native',
+    },
+    build: {
+      markdown: {
+        toc: { depth: 3 },
+      },
+    },
+  },
+
+  ogImage: {
+    defaults: {
+      extension: 'png',
+    },
+  },
 
   i18n: {
     locales: [

@@ -279,7 +279,8 @@ const sectionVisible = ref(false)
 
 const { stop } = useIntersectionObserver(
   revealRef,
-  ([{ isIntersecting }]) => {
+  ([entry]) => {
+    const isIntersecting = entry?.isIntersecting
     if (isIntersecting) {
       sectionVisible.value = true
       stop()

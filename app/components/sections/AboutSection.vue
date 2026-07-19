@@ -173,7 +173,7 @@ const timeline = computed((): TimelineEntry[] => {
     return []
   }
   return Array.from({ length: len }, (_, i) => {
-    const techArr = list[i]?.tech
+    const techArr = list?.[i]?.tech
     const techLen = Array.isArray(techArr) ? techArr.length : 0
     const tech = Array.from({ length: techLen }, (_, j) =>
       t(`about.timeline.${i}.tech.${j}`),
@@ -204,7 +204,8 @@ const introVisible = ref(false)
 
 const { stop: stopIntroObserver } = useIntersectionObserver(
   introRef,
-  ([{ isIntersecting }]) => {
+  ([entry]) => {
+    const isIntersecting = entry?.isIntersecting
     if (isIntersecting) {
       introVisible.value = true
       stopIntroObserver()
@@ -220,7 +221,8 @@ let lineAnimStarted = false
 
 const { stop: stopLineObserver } = useIntersectionObserver(
   lineTrackRef,
-  ([{ isIntersecting }]) => {
+  ([entry]) => {
+    const isIntersecting = entry?.isIntersecting
     if (!isIntersecting || lineAnimStarted) {
       return
     }

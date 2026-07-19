@@ -457,7 +457,8 @@ const isVisible = ref(false)
 
 useIntersectionObserver(
   sectionRef,
-  ([{ isIntersecting }]) => {
+  ([entry]) => {
+    const isIntersecting = entry?.isIntersecting
     if (isIntersecting) isVisible.value = true
   },
   { threshold: 0.1 },

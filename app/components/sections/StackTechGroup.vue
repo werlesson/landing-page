@@ -48,7 +48,8 @@ const isVisible = ref(false)
 
 const { stop } = useIntersectionObserver(
   groupRef,
-  ([{ isIntersecting }]) => {
+  ([entry]) => {
+    const isIntersecting = entry?.isIntersecting
     if (isIntersecting) {
       setTimeout(() => {
         isVisible.value = true

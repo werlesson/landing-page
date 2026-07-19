@@ -104,7 +104,8 @@ const iconUrl = computed(
 
 const { stop } = useIntersectionObserver(
   cardRef,
-  ([{ isIntersecting }]) => {
+  ([entry]) => {
+    const isIntersecting = entry?.isIntersecting
     if (isIntersecting) {
       setTimeout(() => {
         isVisible.value = true

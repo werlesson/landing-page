@@ -132,7 +132,8 @@ const titleVisible = ref(false)
 
 const { stop } = useIntersectionObserver(
   titleRef,
-  ([{ isIntersecting }]) => {
+  ([entry]) => {
+    const isIntersecting = entry?.isIntersecting
     if (isIntersecting) {
       titleVisible.value = true
       stop()
