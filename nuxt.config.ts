@@ -58,6 +58,18 @@ export default defineNuxtConfig({
     },
   },
 
+  // Absolute URLs (https://werlesson.dev) come from `site.url`. The home and
+  // `/blog` routes are auto-discovered; published article routes are supplied by
+  // the dynamic source below, which emits one URL per article's own locale
+  // (RF-43).
+  sitemap: {
+    sources: ['/api/__sitemap__/urls'],
+  },
+
+  // nuxt-og-image: the landing page uses the `NuxtSeo` community template (see
+  // app/pages/index.vue) and blog articles use `BlogPost` (see
+  // app/pages/blog/[...slug].vue), all rendered as PNG on the canonical origin
+  // (RF-41).
   ogImage: {
     defaults: {
       extension: 'png',
