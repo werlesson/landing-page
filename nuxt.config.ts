@@ -23,9 +23,22 @@ export default defineNuxtConfig({
           href: 'https://fonts.gstatic.com',
           crossorigin: '',
         },
+        // Load Google Fonts without blocking first paint: the stylesheet is
+        // fetched as `media="print"` (non-render-blocking) and promoted to
+        // `all` once it arrives (RNF-01). `display=swap` in the URL keeps text
+        // visible in the fallback until the web fonts land.
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400;1,9..40,500&family=Syne:wght@700&display=swap',
+          media: 'print',
+          onload: "this.media='all'",
+        },
+      ],
+      noscript: [
+        {
+          // No-JS fallback: apply the stylesheet normally when `onload` can't run.
+          innerHTML:
+            '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400;1,9..40,500&family=Syne:wght@700&display=swap">',
         },
       ],
     },
