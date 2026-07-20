@@ -385,7 +385,8 @@
     "readMore": "Ler artigo",
     "viewAll": "Ver todos os posts",
     "empty": "Novos artigos estão a caminho.",
-    "publishedOn": "Publicado em"
+    "publishedOn": "Publicado em",
+    "back": "Voltar para todos os posts"
   },
   "project": {
     "sectionTitle": "Projeto em destaque",

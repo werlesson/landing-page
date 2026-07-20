@@ -385,7 +385,8 @@
     "readMore": "Read article",
     "viewAll": "View all posts",
     "empty": "New articles are on the way.",
-    "publishedOn": "Published on"
+    "publishedOn": "Published on",
+    "back": "Back to all posts"
   },
   "project": {
     "sectionTitle": "Featured build",
