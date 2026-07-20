@@ -13,18 +13,14 @@
     >
       <div
         class="absolute -inset-2 rounded-full bg-accent/30 blur-md transition-all duration-500"
-        :class="
-          isHovered || isLast ? 'scale-110 opacity-100' : 'scale-100 opacity-0'
-        "
+        :class="isHovered || isLast ? 'scale-110 opacity-100' : 'scale-100 opacity-0'"
       />
       <div
         class="absolute -inset-1 rounded-full border border-accent/50"
         :class="visible ? 'about-timeline-ping-once' : 'opacity-0'"
         :style="pingStyle"
       />
-      <div
-        class="relative h-5 w-5 rounded-full border-2 border-accent bg-background"
-      >
+      <div class="relative h-5 w-5 rounded-full border-2 border-accent bg-background">
         <div
           class="absolute inset-1 rounded-full bg-accent transition-all duration-500"
           :class="visible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'"
@@ -55,11 +51,7 @@
         <div class="flex items-center gap-3">
           <span
             class="font-display text-4xl font-bold text-accent transition-all duration-500 md:text-5xl"
-            :class="
-              isHovered
-                ? 'drop-shadow-[0_0_20px_rgba(57,255,20,0.5)]'
-                : ''
-            "
+            :class="isHovered ? 'drop-shadow-[0_0_20px_rgba(57,255,20,0.5)]' : ''"
           >
             {{ item.year }}
           </span>
@@ -72,18 +64,12 @@
 
         <h3
           class="mt-3 font-display text-xl font-bold transition-all duration-300 md:text-2xl"
-          :class="
-            isHovered
-              ? 'translate-x-1 text-foreground'
-              : 'text-foreground/90'
-          "
+          :class="isHovered ? 'translate-x-1 text-foreground' : 'text-foreground/90'"
         >
           {{ item.title }}
         </h3>
 
-        <p
-          class="mt-3 max-w-lg text-base leading-relaxed text-[#8a8a8a] md:text-lg"
-        >
+        <p class="mt-3 max-w-lg text-base leading-relaxed text-[#8a8a8a] md:text-lg">
           {{ item.description }}
         </p>
 
@@ -97,9 +83,7 @@
               isHovered ? 'border-accent/50 bg-accent/10' : '',
             ]"
             :style="{
-              transitionDelay: visible
-                ? `${index * 200 + 400 + techIndex * 100}ms`
-                : '0ms',
+              transitionDelay: visible ? `${index * 200 + 400 + techIndex * 100}ms` : '0ms',
             }"
           >
             {{ tech }}

@@ -16,14 +16,7 @@
           fill="#39ff14"
           d="M14 13.75h3.85l2.55 12.8L24 18.35l3.6 8.2 2.55-12.8h3.85L29.4 31.25h-3.15l-2.4-8.35-2.4 8.35h-3.15L14 13.75Z"
         />
-        <rect
-          x="30.7"
-          y="27.55"
-          width="3.4"
-          height="3.4"
-          rx="0.9"
-          fill="#39ff14"
-        />
+        <rect x="30.7" y="27.55" width="3.4" height="3.4" rx="0.9" fill="#39ff14" />
       </svg>
     </span>
     <span
@@ -48,9 +41,7 @@ const props = withDefaults(
   },
 )
 
-const gapClass = computed(() =>
-  props.variant === 'lockup' ? 'gap-2.5 sm:gap-3' : '',
-)
+const gapClass = computed(() => (props.variant === 'lockup' ? 'gap-2.5 sm:gap-3' : ''))
 
 const frameClass = computed(() => {
   switch (props.size) {

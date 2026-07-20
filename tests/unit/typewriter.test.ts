@@ -13,10 +13,7 @@ interface TypewriterState {
   roleIdx: number
 }
 
-function tickTypewriter(
-  state: TypewriterState,
-  roles: string[],
-): TypewriterState {
+function tickTypewriter(state: TypewriterState, roles: string[]): TypewriterState {
   const { charIndex, phase, roleIdx } = state
   const currentRole = roles[roleIdx % roles.length] ?? ''
 
@@ -123,7 +120,7 @@ describe('typewriter state machine', () => {
     expect(next.charIndex).toBe(0)
     expect(next.display).toBe('')
     expect(next.phase).toBe('deleting') // still deleting, not cycling yet
-    expect(next.roleIdx).toBe(0)        // role unchanged
+    expect(next.roleIdx).toBe(0) // role unchanged
   })
 
   it('wraps back to role 0 after the last role', () => {

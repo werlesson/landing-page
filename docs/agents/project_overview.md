@@ -5,23 +5,27 @@
 ## AS IS — Current state
 
 ### Purpose
+
 Server-rendered personal portfolio/CV site (single landing page, bilingual PT/EN) for Werlesson Vieira, built on Nuxt 4 SSR (`README.md`, `nuxt.config.ts` `ssr: true`).
 
 ### Business problem
+
 - No public professional landing → no discoverable, SEO-indexed presence for recruiters/clients. Site fixes this: Schema.org `Person`+`WebSite`, sitemap, OG/Twitter meta (`app/pages/index.vue` `useSchemaOrg`/`useSeoMeta`, `@nuxtjs/sitemap`, `nuxt-schema-org`).
 - Single-language copy → excludes non-Portuguese audience. Fixed by locale JSON with zero hardcoded UI text (`locales/en.json`, `locales/pt.json`, `@nuxtjs/i18n`).
 - Client-only rendering → slow first paint + weak crawler indexing. Fixed by SSR (`ssr: true`).
 
 ### Consumers and integrations
-| System | Role |
-| --- | --- |
-| Browser (end user / recruiter) | Renders SSR landing page at `werlesson.dev` (`site.url` in `nuxt.config.ts`) |
-| Search engine crawlers | Consume Schema.org JSON-LD + `sitemap.xml` + `robots.txt` (`public/`, `@nuxtjs/sitemap`) |
-| Google Fonts CDN | Serves Syne 700 / DM Sans via `<link>` preconnect+stylesheet (`nuxt.config.ts` `app.head.link`) |
-| eunoplay.com.br | Outbound link from Project section (`app/components/sections/ProjectSection.vue`) |
-| GitHub / LinkedIn / email | Outbound social links (`app/components/sections/ContactSection.vue` `socialLinks`) |
+
+| System                         | Role                                                                                            |
+| ------------------------------ | ----------------------------------------------------------------------------------------------- |
+| Browser (end user / recruiter) | Renders SSR landing page at `werlesson.dev` (`site.url` in `nuxt.config.ts`)                    |
+| Search engine crawlers         | Consume Schema.org JSON-LD + `sitemap.xml` + `robots.txt` (`public/`, `@nuxtjs/sitemap`)        |
+| Google Fonts CDN               | Serves Syne 700 / DM Sans via `<link>` preconnect+stylesheet (`nuxt.config.ts` `app.head.link`) |
+| eunoplay.com.br                | Outbound link from Project section (`app/components/sections/ProjectSection.vue`)               |
+| GitHub / LinkedIn / email      | Outbound social links (`app/components/sections/ContactSection.vue` `socialLinks`)              |
 
 ### Macro flow
+
 1. Request hits Nitro SSR server produced by `nuxt build`.
 2. `@nuxtjs/i18n` resolves locale from URL (`strategy: prefix_except_default`, default `pt`).
 3. `app/pages/index.vue` composes 5 section components: Hero, About, Stack, Project, Contact.
@@ -30,6 +34,7 @@ Server-rendered personal portfolio/CV site (single landing page, bilingual PT/EN
 6. Server returns fully-rendered HTML; client hydrates and runs section animations (typewriter, counters, rolling buffer).
 
 ### Out of scope
+
 - No backend/API — contact form is client-only (`ContactSection.vue` `onSubmit` sets `submitted=true`, no network call).
 - No database/persistence — all content lives in `locales/*.json` and `public/` static assets (digest `persistence.present: false`).
 

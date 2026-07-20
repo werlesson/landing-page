@@ -5,6 +5,7 @@ Gerado por /plan a partir de PLAN.md — view executável para `./ralph.sh .spec
 ## Phase 1: Foundation — deps, content schema, types
 
 Antes de implementar, leia:
+
 1. `.spec/features/brand-repositioning-redesign/SPEC.md` — requisitos RIGID que esta fase cobre
 2. `.spec/features/brand-repositioning-redesign/PLAN.md` — decomposição completa, dependências e riscos
 
@@ -30,6 +31,7 @@ Antes de implementar, leia:
 ## Phase 2: Locale catalog & parity
 
 Antes de implementar, leia:
+
 1. `.spec/features/brand-repositioning-redesign/SPEC.md` — requisitos RIGID que esta fase cobre
 2. `.spec/features/brand-repositioning-redesign/PLAN.md` — decomposição completa, dependências e riscos
 
@@ -49,6 +51,7 @@ Antes de implementar, leia:
 ## Phase 3: Reposition existing sections + nav
 
 Antes de implementar, leia:
+
 1. `.spec/features/brand-repositioning-redesign/SPEC.md` — requisitos RIGID que esta fase cobre
 2. `.spec/features/brand-repositioning-redesign/PLAN.md` — decomposição completa, dependências e riscos
 
@@ -86,6 +89,7 @@ Antes de implementar, leia:
 ## Phase 4: New static sections
 
 Antes de implementar, leia:
+
 1. `.spec/features/brand-repositioning-redesign/SPEC.md` — requisitos RIGID que esta fase cobre
 2. `.spec/features/brand-repositioning-redesign/PLAN.md` — decomposição completa, dependências e riscos
 
@@ -135,6 +139,7 @@ Antes de implementar, leia:
 ## Phase 5: Blog engine & RSS
 
 Antes de implementar, leia:
+
 1. `.spec/features/brand-repositioning-redesign/SPEC.md` — requisitos RIGID que esta fase cobre
 2. `.spec/features/brand-repositioning-redesign/PLAN.md` — decomposição completa, dependências e riscos
 3. `.spec/features/brand-repositioning-redesign/PLAN.md` §"Data & content decisions" e `content.config.ts` (schema T02) — coleção `blog`, frontmatter `locale`
@@ -167,6 +172,7 @@ Antes de implementar, leia:
 ## Phase 6: Composition & SEO surface
 
 Antes de implementar, leia:
+
 1. `.spec/features/brand-repositioning-redesign/SPEC.md` — requisitos RIGID que esta fase cobre
 2. `.spec/features/brand-repositioning-redesign/PLAN.md` — decomposição completa, dependências e riscos
 
@@ -192,6 +198,7 @@ Antes de implementar, leia:
 ## Phase 7: Tests & validation
 
 Antes de implementar, leia:
+
 1. `.spec/features/brand-repositioning-redesign/SPEC.md` — requisitos RIGID que esta fase cobre
 2. `.spec/features/brand-repositioning-redesign/PLAN.md` — decomposição completa, dependências e riscos
 

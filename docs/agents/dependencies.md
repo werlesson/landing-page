@@ -5,42 +5,47 @@
 ## AS IS — Current state
 
 ### External services
-| Service | Purpose |
-| --- | --- |
-| Google Fonts CDN | Serves Syne 700 / DM Sans (`nuxt.config.ts` `app.head.link`) |
-| Search engine crawlers | Consume `sitemap.xml` + Schema.org JSON-LD + `public/robots.txt` |
-| werlesson.dev host | Deploy target / canonical `site.url` (`nuxt.config.ts`) |
-| eunoplay.com.br | Outbound project link (`ProjectSection.vue`) |
+
+| Service                   | Purpose                                                            |
+| ------------------------- | ------------------------------------------------------------------ |
+| Google Fonts CDN          | Serves Syne 700 / DM Sans (`nuxt.config.ts` `app.head.link`)       |
+| Search engine crawlers    | Consume `sitemap.xml` + Schema.org JSON-LD + `public/robots.txt`   |
+| werlesson.dev host        | Deploy target / canonical `site.url` (`nuxt.config.ts`)            |
+| eunoplay.com.br           | Outbound project link (`ProjectSection.vue`)                       |
 | github.com / linkedin.com | Outbound social links (`ContactSection.vue`, `index.vue` `sameAs`) |
 
 No `.env` / `.env.example` present; digest `env_vars: []` — no runtime secrets or service credentials configured.
 
 ### Runtime dependencies
-| Package | Version | Role |
-| --- | --- | --- |
-| nuxt | ^4.4.4 | Meta-framework / SSR |
-| vue | ^3.5.33 | UI framework |
-| vue-router | ^5.0.6 | Routing (Nuxt file-based) |
-| @nuxtjs/i18n | ^10.3.0 | Bilingual PT/EN localization |
-| @nuxtjs/sitemap | ^8.0.15 | SEO sitemap generation |
-| nuxt-schema-org | ^6.0.4 | Schema.org `Person`/`WebSite` structured data |
-| @vueuse/nuxt | ^14.3.0 | VueUse composables (`useIntersectionObserver`) |
+
+| Package         | Version | Role                                           |
+| --------------- | ------- | ---------------------------------------------- |
+| nuxt            | ^4.4.4  | Meta-framework / SSR                           |
+| vue             | ^3.5.33 | UI framework                                   |
+| vue-router      | ^5.0.6  | Routing (Nuxt file-based)                      |
+| @nuxtjs/i18n    | ^10.3.0 | Bilingual PT/EN localization                   |
+| @nuxtjs/sitemap | ^8.0.15 | SEO sitemap generation                         |
+| nuxt-schema-org | ^6.0.4  | Schema.org `Person`/`WebSite` structured data  |
+| @vueuse/nuxt    | ^14.3.0 | VueUse composables (`useIntersectionObserver`) |
 
 ### Dev dependencies
-| Package | Version | Role |
-| --- | --- | --- |
-| @nuxt/eslint | ^1.15.2 | Nuxt ESLint flat-config generator |
-| eslint | ^10.3.0 | Linter |
-| prettier | ^3.8.3 | Formatter |
-| vitest | ^4.1.5 | Test runner (+ v8 coverage provider) |
-| tailwindcss | ^3.4.19 | Utility-first CSS |
-| postcss | ^8.5.14 | CSS processing (Tailwind pipeline) |
-| autoprefixer | ^10.5.0 | CSS vendor prefixing |
+
+| Package      | Version | Role                                 |
+| ------------ | ------- | ------------------------------------ |
+| @nuxt/eslint | ^1.15.2 | Nuxt ESLint flat-config generator    |
+| eslint       | ^10.3.0 | Linter                               |
+| prettier     | ^3.8.3  | Formatter                            |
+| vitest       | ^4.1.5  | Test runner (+ v8 coverage provider) |
+| tailwindcss  | ^3.4.19 | Utility-first CSS                    |
+| postcss      | ^8.5.14 | CSS processing (Tailwind pipeline)   |
+| autoprefixer | ^10.5.0 | CSS vendor prefixing                 |
 
 ### Internal libraries
+
 None — no private/first-party packages; single-package repo (`package.json` `name: werlesson-cv`, `private: true`), no workspaces.
 
 ### Shared infrastructure
+
 - No queues, brokers, caches, or observability tooling in the manifest (digest `async.present: false`, `persistence.present: false`).
 - Build/runtime infra: Nitro SSR server from `nuxt build`; README notes SSR/Vercel/static deployment options; Node.js 20+, yarn.
 

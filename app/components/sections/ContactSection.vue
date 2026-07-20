@@ -24,15 +24,9 @@
       <div ref="revealRef">
         <div
           class="mb-14 text-center transition-all duration-1000 ease-out md:mb-20"
-          :class="
-            sectionVisible
-              ? 'translate-y-0 opacity-100'
-              : 'translate-y-12 opacity-0'
-          "
+          :class="sectionVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'"
         >
-          <p
-            class="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-accent/80"
-          >
+          <p class="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-accent/80">
             {{ $t('contact.cta') }}
           </p>
           <h2
@@ -50,28 +44,19 @@
             class="mx-auto mt-6 h-1 w-24 rounded-full bg-gradient-to-r from-transparent via-accent to-transparent"
             aria-hidden="true"
           />
-          <p
-            class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-textMuted md:text-xl"
-          >
+          <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-textMuted md:text-xl">
             {{ $t('contact.subtitle') }}
           </p>
         </div>
 
         <div
           class="grid grid-cols-1 gap-12 transition-all delay-200 duration-1000 ease-out lg:grid-cols-2 lg:gap-16 xl:gap-20"
-          :class="
-            sectionVisible
-              ? 'translate-y-0 opacity-100'
-              : 'translate-y-12 opacity-0'
-          "
+          :class="sectionVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'"
         >
           <div class="order-1">
             <form class="space-y-6" @submit.prevent="onSubmit">
               <div>
-                <label
-                  for="contact-name"
-                  class="mb-2 block text-sm font-medium text-foreground"
-                >
+                <label for="contact-name" class="mb-2 block text-sm font-medium text-foreground">
                   {{ $t('contact.fields.name') }}
                 </label>
                 <input
@@ -84,10 +69,7 @@
                 />
               </div>
               <div>
-                <label
-                  for="contact-email"
-                  class="mb-2 block text-sm font-medium text-foreground"
-                >
+                <label for="contact-email" class="mb-2 block text-sm font-medium text-foreground">
                   {{ $t('contact.fields.email') }}
                 </label>
                 <input
@@ -100,10 +82,7 @@
                 />
               </div>
               <div>
-                <label
-                  for="contact-message"
-                  class="mb-2 block text-sm font-medium text-foreground"
-                >
+                <label for="contact-message" class="mb-2 block text-sm font-medium text-foreground">
                   {{ $t('contact.fields.message') }}
                 </label>
                 <textarea
@@ -135,9 +114,7 @@
           </div>
 
           <div class="order-2">
-            <h3
-              class="mb-8 font-display text-xl font-bold text-foreground md:text-2xl"
-            >
+            <h3 class="mb-8 font-display text-xl font-bold text-foreground md:text-2xl">
               {{ $t('contact.directTitle') }}
             </h3>
             <ul class="flex flex-col gap-4" role="list">

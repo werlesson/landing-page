@@ -1,6 +1,7 @@
 # SPEC: brand-repositioning-redesign
 
 ## Metadata
+
 - Source: developer description via /plan (`.spec/base/PROMPT.md`) + confirmed input (`.spec/features/brand-repositioning-redesign/.handoff/confirmed-input.md`)
 - Service: `werlesson-cv` (single-repo, Nuxt 4 SSR personal site)
 - Tier: complete
@@ -46,6 +47,7 @@ flowchart LR
 Legenda (PT-BR): estado atual verificado — `app/pages/index.vue` compõe apenas 5 seções e orquestra SEO/Schema.org, com toda a cópia vinda de `locales/*.json` via `$t`. O `jobTitle` do JSON-LD e o título/descrição de SEO ainda dizem "Fullstack Developer", e a navegação do layout expõe só `about/stack/project/contact`.
 
 ### AS-IS audit — Strengths (preservar)
+
 - Clean data-driven pipeline: copy, timeline, stat targets and tags all in `locales/*.json`; components render from them (`docs/agents/data_model.md`, verified). Low-risk to extend.
 - Solid, non-flashy interaction layer already aligned with the premium/minimal brief: typewriter role cycling, animated counters, scroll-triggered one-way reveal via `useIntersectionObserver` (threshold 0.1) (verified `docs/agents/domain_rules.md`).
 - Accessibility scaffolding already present in the layout: skip link, focus-visible rings, keyboard-driven mobile nav, aria labels (verified `app/layouts/default.vue`).
@@ -53,6 +55,7 @@ Legenda (PT-BR): estado atual verificado — `app/pages/index.vue` compõe apena
 - SEO foundation exists: `useSeoMeta`, `definePerson` JSON-LD, `@nuxtjs/sitemap`, static `robots.txt` (verified).
 
 ### AS-IS audit — Weaknesses (corrigir)
+
 - Positioning is **Fullstack Developer**, not Senior Software Engineer — contradicts the confirmed target (site title/description `index.vue:24-32`, `definePerson.jobTitle` `index.vue:51`).
 - Only 5 of the 11 target sections exist; no Impact, What I Do, Engineering Principles, Featured Projects (case studies), Experience, Currently Building or Blog.
 - "Featured work" is a single IoT demo (`ProjectSection` "Eu no Play"), not a set of product case studies.
@@ -61,21 +64,21 @@ Legenda (PT-BR): estado atual verificado — `app/pages/index.vue` compõe apena
 
 ### Per-section Keep / Improve / Replace / Remove
 
-| # | Target section | Current component | Decision | Justification |
-|---|----------------|-------------------|----------|---------------|
-| 1 | Hero | `HeroSection.vue` | Improve | Reuse structure/animations; rewrite copy to the confirmed title/subtitle/description/CTAs and add explicit LinkedIn/GitHub/Email links (RF-06..RF-11). |
-| 2 | About | `AboutSection.vue` + `AboutTimelineStep.vue` | Improve | Keep component + timeline; reframe bio to seniority/business-outcome language, drop clichés (RF-12, RF-13). |
-| 3 | Impact | — | Replace (new) | New content-driven metrics section (RF-14, RF-15). |
-| 4 | What I Do | — | Replace (new) | New 6-card capability section (RF-16, RF-17). |
-| 5 | Engineering Principles | — | Replace (new) | New minimal principles section (RF-18). |
-| 6 | Featured Projects | `ProjectSection.vue` | Replace | The single "Eu no Play" demo is repurposed into a case study or the Currently Building set; the section becomes a multi-project case-study renderer (RF-19..RF-24). |
-| 7 | Experience | — | Replace (new) | New professional timeline with business impact (RF-25, RF-26). |
-| 8 | Tech Stack | `StackSection.vue` + `StackTechGroup.vue` + `StackTechCard.vue` | Improve | Reuse the group/card components; extend categories to Frontend/Backend/Infrastructure/Database/Tools (RF-27, RF-28). |
-| 9 | Currently Building | — | Replace (new) | New section signalling continuous shipping (RF-29, RF-30). |
-| 10 | Blog | — | Replace (new) | New Nuxt Content engine + RSS (RF-31..RF-36). |
-| 11 | Contact | `ContactSection.vue` | Improve | Keep client-only form + social links; add "Interested in working together?" CTA and Download Resume button (RF-37..RF-39). |
-| — | Header nav | `app/layouts/default.vue` `navItems` | Improve | Extend/relabel nav to reflect the new section set (RF-05). |
-| — | Footer | `app/layouts/default.vue` | Keep | Already on-brand; no change required. |
+| #   | Target section         | Current component                                               | Decision      | Justification                                                                                                                                                       |
+| --- | ---------------------- | --------------------------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | Hero                   | `HeroSection.vue`                                               | Improve       | Reuse structure/animations; rewrite copy to the confirmed title/subtitle/description/CTAs and add explicit LinkedIn/GitHub/Email links (RF-06..RF-11).              |
+| 2   | About                  | `AboutSection.vue` + `AboutTimelineStep.vue`                    | Improve       | Keep component + timeline; reframe bio to seniority/business-outcome language, drop clichés (RF-12, RF-13).                                                         |
+| 3   | Impact                 | —                                                               | Replace (new) | New content-driven metrics section (RF-14, RF-15).                                                                                                                  |
+| 4   | What I Do              | —                                                               | Replace (new) | New 6-card capability section (RF-16, RF-17).                                                                                                                       |
+| 5   | Engineering Principles | —                                                               | Replace (new) | New minimal principles section (RF-18).                                                                                                                             |
+| 6   | Featured Projects      | `ProjectSection.vue`                                            | Replace       | The single "Eu no Play" demo is repurposed into a case study or the Currently Building set; the section becomes a multi-project case-study renderer (RF-19..RF-24). |
+| 7   | Experience             | —                                                               | Replace (new) | New professional timeline with business impact (RF-25, RF-26).                                                                                                      |
+| 8   | Tech Stack             | `StackSection.vue` + `StackTechGroup.vue` + `StackTechCard.vue` | Improve       | Reuse the group/card components; extend categories to Frontend/Backend/Infrastructure/Database/Tools (RF-27, RF-28).                                                |
+| 9   | Currently Building     | —                                                               | Replace (new) | New section signalling continuous shipping (RF-29, RF-30).                                                                                                          |
+| 10  | Blog                   | —                                                               | Replace (new) | New Nuxt Content engine + RSS (RF-31..RF-36).                                                                                                                       |
+| 11  | Contact                | `ContactSection.vue`                                            | Improve       | Keep client-only form + social links; add "Interested in working together?" CTA and Download Resume button (RF-37..RF-39).                                          |
+| —   | Header nav             | `app/layouts/default.vue` `navItems`                            | Improve       | Extend/relabel nav to reflect the new section set (RF-05).                                                                                                          |
+| —   | Footer                 | `app/layouts/default.vue`                                       | Keep          | Already on-brand; no change required.                                                                                                                               |
 
 ## TO BE — Estado proposto
 
@@ -109,6 +112,7 @@ flowchart LR
 Legenda (PT-BR): estado proposto (mesmo tipo de diagrama, flowchart LR, para comparação direta). Nós `NEW_*` novos realizam: `ImpactSection` → RF-14/RF-15; `WhatIDoSection` → RF-16/RF-17; `PrinciplesSection` → RF-18; `FeaturedProjectsSection` → RF-19..RF-24; `ExperienceSection` → RF-25/RF-26; `CurrentlyBuildingSection` → RF-29/RF-30; `BlogSection` + `@nuxt/content` + `content/blog/*.md` + RSS → RF-31..RF-36; SEO alterado (jobTitle Senior Software Engineer, OG, sitemap com blog) → RF-40..RF-45. Nós alterados `Hero/About/Stack/Contact/index.vue/Locales` reusam componentes existentes conforme AC5 (Keep/Improve).
 
 ## Scope
+
 - **In**:
   - Reposition as "Senior Software Engineer" across hero copy, meta and JSON-LD.
   - Render all 11 sections in the confirmed order, each with a justified Keep/Improve/Replace/Remove decision.
@@ -308,69 +312,69 @@ Legenda (PT-BR): estado proposto (mesmo tipo de diagrama, flowchart LR, para com
 
 ## Acceptance Criteria Summary
 
-| ID | Criterion | Testable? |
-|----|-----------|-----------|
-| RF-01 | 11 sections rendered in the confirmed order | Yes |
-| RF-02 | Visual identity/tokens preserved, additive only | Yes |
-| RF-03 | No hardcoded UI text; all via `$t` | Yes (eslint + test) |
-| RF-04 | pt/en locale parity holds | Yes (`i18nKeys.test.ts`) |
-| RF-05 | Nav anchors match section set, localized | Yes |
-| RF-06 | Hero title = "Senior Software Engineer" | Yes |
-| RF-07 | Hero subtitle matches confirmed string | Yes |
-| RF-08 | Hero description matches confirmed string | Yes |
-| RF-09 | Primary CTA scrolls to Featured Projects | Yes |
-| RF-10 | Secondary CTA downloads existing CV PDF | Yes |
-| RF-11 | LinkedIn/GitHub/Email links present + aria | Yes |
-| RF-12 | About = concise seniority intro, reuse component | Yes |
-| RF-13 | No cliché phrasing in About | Yes |
-| RF-14 | Impact renders one item per metric; 6+ yrs / 20+ projects canonical across Hero/About/Impact | Yes |
-| RF-15 | Impact values locale/content-driven | Yes |
-| RF-16 | Six What I Do cards | Yes |
-| RF-17 | Each card has localized description | Yes |
-| RF-18 | Principles list rendered from locale array | Yes |
-| RF-19 | Single catalog, `status` partition; shipped projects as case studies | Yes |
-| RF-20 | Eight case-study blocks per project | Yes |
-| RF-21 | View Project button per case study | Yes |
-| RF-22 | Source Code button only when repo URL exists | Yes |
-| RF-23 | Typed case-study schema defined | Yes |
-| RF-24 | Case-study prose TBD, render-safe | Yes |
-| RF-25 | Experience entry has six fields | Yes |
-| RF-26 | Business-impact field present, not task list | Yes |
-| RF-27 | Stack organized into five categories | Yes |
-| RF-28 | Existing Stack components reused | Yes |
-| RF-29 | Currently Building = `status: building` (Shrimp Farm SaaS, Future Products) | Yes |
-| RF-30 | Ongoing-shipping presentation | Yes |
-| RF-31 | Blog powered by `@nuxt/content` | Yes |
-| RF-32 | Blog index reverse-chronological | Yes |
-| RF-33 | Article renders on its own route | Yes |
-| RF-34 | RSS feed valid at `/rss.xml` (Nitro handler) | Yes |
-| RF-35 | Article frontmatter schema defined | Yes |
-| RF-36 | Article bodies TBD, engine works | Yes |
-| RF-37 | Contact CTA "Interested in working together?" | Yes |
-| RF-38 | LinkedIn/GitHub/Email/Resume actions | Yes |
-| RF-39 | Contact form stays client-only | Yes |
-| RF-40 | Meta reflects Senior Software Engineer | Yes |
-| RF-41 | Open Graph + Twitter card present | Yes |
-| RF-42 | JSON-LD jobTitle updated + BlogPosting | Yes |
-| RF-43 | Sitemap includes home + `/blog` + articles (canonical origin, active locale) | Yes |
-| RF-44 | robots.txt references sitemap | Yes |
-| RF-45 | RSS auto-discovery link in head | Yes |
-| RF-46 | New locale namespaces in both files | Yes |
-| RF-47 | Single CV asset referenced everywhere | Yes |
-| UI-01 | Fully responsive at 360/768/1280 | Yes |
-| UI-02 | Dark mode by default, no flash | Yes |
-| UI-03 | Subtle scroll-reveal, reduced-motion honored | Yes |
-| UI-04 | Smooth anchor scrolling | Yes |
-| UI-05 | A11y scaffolding preserved on new elements | Yes |
-| UI-06 | No enumerated design anti-patterns | Yes (review) |
-| UI-07 | No "Frontend/Full Stack Developer" wording | Yes |
-| RNF-01 | Lighthouse > 95 (four categories) | Yes |
-| RNF-02 | Below-the-fold images lazy-loaded | Yes |
-| RNF-03 | Blog routes code-split | Yes |
-| RNF-04 | Images optimized/responsive | Yes |
-| RNF-05 | Locale parity test enforced | Yes |
-| RNF-06 | WCAG 2.1 AA contrast on new sections | Yes |
-| RNF-07 | SSR remains enabled | Yes |
+| ID     | Criterion                                                                                    | Testable?                |
+| ------ | -------------------------------------------------------------------------------------------- | ------------------------ |
+| RF-01  | 11 sections rendered in the confirmed order                                                  | Yes                      |
+| RF-02  | Visual identity/tokens preserved, additive only                                              | Yes                      |
+| RF-03  | No hardcoded UI text; all via `$t`                                                           | Yes (eslint + test)      |
+| RF-04  | pt/en locale parity holds                                                                    | Yes (`i18nKeys.test.ts`) |
+| RF-05  | Nav anchors match section set, localized                                                     | Yes                      |
+| RF-06  | Hero title = "Senior Software Engineer"                                                      | Yes                      |
+| RF-07  | Hero subtitle matches confirmed string                                                       | Yes                      |
+| RF-08  | Hero description matches confirmed string                                                    | Yes                      |
+| RF-09  | Primary CTA scrolls to Featured Projects                                                     | Yes                      |
+| RF-10  | Secondary CTA downloads existing CV PDF                                                      | Yes                      |
+| RF-11  | LinkedIn/GitHub/Email links present + aria                                                   | Yes                      |
+| RF-12  | About = concise seniority intro, reuse component                                             | Yes                      |
+| RF-13  | No cliché phrasing in About                                                                  | Yes                      |
+| RF-14  | Impact renders one item per metric; 6+ yrs / 20+ projects canonical across Hero/About/Impact | Yes                      |
+| RF-15  | Impact values locale/content-driven                                                          | Yes                      |
+| RF-16  | Six What I Do cards                                                                          | Yes                      |
+| RF-17  | Each card has localized description                                                          | Yes                      |
+| RF-18  | Principles list rendered from locale array                                                   | Yes                      |
+| RF-19  | Single catalog, `status` partition; shipped projects as case studies                         | Yes                      |
+| RF-20  | Eight case-study blocks per project                                                          | Yes                      |
+| RF-21  | View Project button per case study                                                           | Yes                      |
+| RF-22  | Source Code button only when repo URL exists                                                 | Yes                      |
+| RF-23  | Typed case-study schema defined                                                              | Yes                      |
+| RF-24  | Case-study prose TBD, render-safe                                                            | Yes                      |
+| RF-25  | Experience entry has six fields                                                              | Yes                      |
+| RF-26  | Business-impact field present, not task list                                                 | Yes                      |
+| RF-27  | Stack organized into five categories                                                         | Yes                      |
+| RF-28  | Existing Stack components reused                                                             | Yes                      |
+| RF-29  | Currently Building = `status: building` (Shrimp Farm SaaS, Future Products)                  | Yes                      |
+| RF-30  | Ongoing-shipping presentation                                                                | Yes                      |
+| RF-31  | Blog powered by `@nuxt/content`                                                              | Yes                      |
+| RF-32  | Blog index reverse-chronological                                                             | Yes                      |
+| RF-33  | Article renders on its own route                                                             | Yes                      |
+| RF-34  | RSS feed valid at `/rss.xml` (Nitro handler)                                                 | Yes                      |
+| RF-35  | Article frontmatter schema defined                                                           | Yes                      |
+| RF-36  | Article bodies TBD, engine works                                                             | Yes                      |
+| RF-37  | Contact CTA "Interested in working together?"                                                | Yes                      |
+| RF-38  | LinkedIn/GitHub/Email/Resume actions                                                         | Yes                      |
+| RF-39  | Contact form stays client-only                                                               | Yes                      |
+| RF-40  | Meta reflects Senior Software Engineer                                                       | Yes                      |
+| RF-41  | Open Graph + Twitter card present                                                            | Yes                      |
+| RF-42  | JSON-LD jobTitle updated + BlogPosting                                                       | Yes                      |
+| RF-43  | Sitemap includes home + `/blog` + articles (canonical origin, active locale)                 | Yes                      |
+| RF-44  | robots.txt references sitemap                                                                | Yes                      |
+| RF-45  | RSS auto-discovery link in head                                                              | Yes                      |
+| RF-46  | New locale namespaces in both files                                                          | Yes                      |
+| RF-47  | Single CV asset referenced everywhere                                                        | Yes                      |
+| UI-01  | Fully responsive at 360/768/1280                                                             | Yes                      |
+| UI-02  | Dark mode by default, no flash                                                               | Yes                      |
+| UI-03  | Subtle scroll-reveal, reduced-motion honored                                                 | Yes                      |
+| UI-04  | Smooth anchor scrolling                                                                      | Yes                      |
+| UI-05  | A11y scaffolding preserved on new elements                                                   | Yes                      |
+| UI-06  | No enumerated design anti-patterns                                                           | Yes (review)             |
+| UI-07  | No "Frontend/Full Stack Developer" wording                                                   | Yes                      |
+| RNF-01 | Lighthouse > 95 (four categories)                                                            | Yes                      |
+| RNF-02 | Below-the-fold images lazy-loaded                                                            | Yes                      |
+| RNF-03 | Blog routes code-split                                                                       | Yes                      |
+| RNF-04 | Images optimized/responsive                                                                  | Yes                      |
+| RNF-05 | Locale parity test enforced                                                                  | Yes                      |
+| RNF-06 | WCAG 2.1 AA contrast on new sections                                                         | Yes                      |
+| RNF-07 | SSR remains enabled                                                                          | Yes                      |
 
 ## Open markers ([NEEDS CLARIFICATION])
 

@@ -1,10 +1,17 @@
 import { describe, it, expect } from 'vitest'
 import { buildRssFeed, escapeXml } from '../../server/utils/rss'
+import {
+  validateArticleFrontmatter,
+  isValidArticle,
+  REQUIRED_ARTICLE_FIELDS,
+} from '../../server/utils/blog'
 
 /**
- * RSS feed serialization gate (RF-34). Covers the pure XML builder behind the
- * /rss.xml Nitro route: valid channel/item shape, absolute links on the
- * canonical origin, pubDate emission and XML escaping.
+ * Blog schema + RSS handler gate (RF-34, RF-35). Covers the pure serialization
+ * builder behind the /rss.xml Nitro route (valid channel/item shape, absolute
+ * links on the canonical origin, pubDate emission, XML escaping) and the pure
+ * frontmatter validator that excludes malformed articles from the index,
+ * sitemap and feed.
  */
 const SITE_URL = 'https://werlesson.dev'
 
@@ -96,5 +103,82 @@ describe('buildRssFeed', () => {
     const feed = buildRssFeed({ ...sampleChannel, items: [] })
     expect((feed.match(/<item>/g) ?? []).length).toBe(0)
     expect(feed).toContain('<channel>')
+  })
+})
+
+/**
+ * Article frontmatter validation (RF-35). Mirrors the required-field contract
+ * of the `blog` collection schema (content.config.ts). An article missing any
+ * required field — including `locale` — is invalid and excluded.
+ */
+const validFrontmatter = {
+  title: 'Building Scalable SaaS Products',
+  description: 'How I approach architecture, delivery and iteration.',
+  summary: 'A short look at the engineering decisions behind scalable SaaS.',
+  date: '2026-06-15',
+  slug: 'building-scalable-saas',
+  tags: ['SaaS', 'Architecture'],
+  locale: 'en',
+  draft: false,
+}
+
+describe('validateArticleFrontmatter', () => {
+  it('accepts a complete, well-formed article', () => {
+    const result = validateArticleFrontmatter(validFrontmatter)
+    expect(result.valid).toBe(true)
+    expect(result.errors).toEqual([])
+  })
+
+  it('accepts a Date instance for the publication date', () => {
+    expect(isValidArticle({ ...validFrontmatter, date: new Date('2026-06-15') })).toBe(true)
+  })
+
+  it('rejects an article missing the required locale field', () => {
+    const { locale, ...withoutLocale } = validFrontmatter
+    void locale
+    const result = validateArticleFrontmatter(withoutLocale)
+    expect(result.valid).toBe(false)
+    expect(result.errors).toContain('locale')
+  })
+
+  it('rejects an unsupported locale value', () => {
+    const result = validateArticleFrontmatter({ ...validFrontmatter, locale: 'es' })
+    expect(result.valid).toBe(false)
+    expect(result.errors).toContain('locale')
+  })
+
+  it('rejects each individually missing required field', () => {
+    for (const field of REQUIRED_ARTICLE_FIELDS) {
+      const partial = Object.fromEntries(
+        Object.entries(validFrontmatter).filter(([key]) => key !== field),
+      )
+      const result = validateArticleFrontmatter(partial)
+      expect(result.valid, `missing ${field} should be invalid`).toBe(false)
+      expect(result.errors).toContain(field)
+    }
+  })
+
+  it('rejects an unparseable publication date', () => {
+    const result = validateArticleFrontmatter({ ...validFrontmatter, date: 'not-a-date' })
+    expect(result.valid).toBe(false)
+    expect(result.errors).toContain('date')
+  })
+
+  it('does not throw on null / non-object input', () => {
+    expect(() => validateArticleFrontmatter(null)).not.toThrow()
+    expect(validateArticleFrontmatter(null).valid).toBe(false)
+    expect(isValidArticle(undefined)).toBe(false)
+    expect(isValidArticle('nope')).toBe(false)
+  })
+
+  it('treats optional fields (summary, tags, draft) as non-required', () => {
+    const minimal = {
+      title: validFrontmatter.title,
+      description: validFrontmatter.description,
+      date: validFrontmatter.date,
+      slug: validFrontmatter.slug,
+      locale: validFrontmatter.locale,
+    }
+    expect(isValidArticle(minimal)).toBe(true)
   })
 })

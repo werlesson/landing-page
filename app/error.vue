@@ -2,7 +2,10 @@
   <div
     class="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden bg-background px-6 text-center"
   >
-    <div class="hero-grid-texture pointer-events-none absolute inset-0 opacity-30" aria-hidden="true" />
+    <div
+      class="hero-grid-texture pointer-events-none absolute inset-0 opacity-30"
+      aria-hidden="true"
+    />
     <div
       class="pointer-events-none absolute top-0 right-0 h-[500px] w-[500px] rounded-full bg-accent/5 blur-[120px]"
       aria-hidden="true"
@@ -19,11 +22,7 @@
 
       <div class="space-y-3">
         <h1 class="font-display text-2xl font-bold text-foreground sm:text-3xl">
-          {{
-            error?.statusCode === 404
-              ? 'Página não encontrada'
-              : 'Algo deu errado'
-          }}
+          {{ error?.statusCode === 404 ? 'Página não encontrada' : 'Algo deu errado' }}
         </h1>
         <p class="max-w-sm text-base leading-relaxed text-textMuted">
           {{

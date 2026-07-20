@@ -35,6 +35,13 @@ export default defineNuxtConfig({
     url: 'https://werlesson.dev',
   },
 
+  // Pre-compress client bundles (gzip + brotli) so a self-hosted Node server
+  // serves them compressed; a CDN/edge host (Vercel) compresses regardless.
+  // Directly addresses the largest landing-page transfer cost (RNF-01/RNF-04).
+  nitro: {
+    compressPublicAssets: { gzip: true, brotli: true },
+  },
+
   modules: [
     '@nuxt/content',
     '@nuxtjs/i18n',

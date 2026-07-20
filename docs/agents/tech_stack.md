@@ -5,60 +5,65 @@
 ## AS IS — Current state
 
 ### Runtime and language
+
 - **Language**: TypeScript 5 + Vue 3 SFCs (README badge; `tsconfig.json` references `.nuxt` generated configs; `.vue` `<script setup lang="ts">`)
 - **Framework**: Nuxt ^4.4.4 (SSR, `nuxt.config.ts` `ssr: true`)
 
-| Item | Value | Evidence |
-| --- | --- | --- |
-| Runtime | Node.js 20+ | `README.md` Prerequisites |
-| Package manager | yarn | `yarn.lock`, README |
-| UI framework | vue ^3.5.33 | `package.json` |
-| Routing | vue-router ^5.0.6 (Nuxt file-based) | `package.json`, `app/pages/index.vue` |
-| Styling | tailwindcss ^3.4.19 (no component library) | `package.json`, `tailwind.config.ts`, README |
-| CSS pipeline | postcss ^8.5.14 + autoprefixer ^10.5.0 | `nuxt.config.ts` `postcss.plugins` |
-| Fonts | Syne 700 / DM Sans via Google Fonts | `nuxt.config.ts` `app.head.link` |
+| Item            | Value                                      | Evidence                                     |
+| --------------- | ------------------------------------------ | -------------------------------------------- |
+| Runtime         | Node.js 20+                                | `README.md` Prerequisites                    |
+| Package manager | yarn                                       | `yarn.lock`, README                          |
+| UI framework    | vue ^3.5.33                                | `package.json`                               |
+| Routing         | vue-router ^5.0.6 (Nuxt file-based)        | `package.json`, `app/pages/index.vue`        |
+| Styling         | tailwindcss ^3.4.19 (no component library) | `package.json`, `tailwind.config.ts`, README |
+| CSS pipeline    | postcss ^8.5.14 + autoprefixer ^10.5.0     | `nuxt.config.ts` `postcss.plugins`           |
+| Fonts           | Syne 700 / DM Sans via Google Fonts        | `nuxt.config.ts` `app.head.link`             |
 
 ### Key modules
-| Module | Version | Role |
-| --- | --- | --- |
-| @nuxtjs/i18n | ^10.3.0 | Bilingual PT (default) / EN, `langDir: ../locales` |
-| @nuxtjs/sitemap | ^8.0.15 | `sitemap.xml` from `site.url` |
-| nuxt-schema-org | ^6.0.4 | Schema.org `Person`/`WebSite` JSON-LD |
-| @vueuse/nuxt | ^14.3.0 | VueUse composables (`useIntersectionObserver`) |
-| @nuxt/eslint | ^1.15.2 | Flat-config generator |
+
+| Module          | Version | Role                                               |
+| --------------- | ------- | -------------------------------------------------- |
+| @nuxtjs/i18n    | ^10.3.0 | Bilingual PT (default) / EN, `langDir: ../locales` |
+| @nuxtjs/sitemap | ^8.0.15 | `sitemap.xml` from `site.url`                      |
+| nuxt-schema-org | ^6.0.4  | Schema.org `Person`/`WebSite` JSON-LD              |
+| @vueuse/nuxt    | ^14.3.0 | VueUse composables (`useIntersectionObserver`)     |
+| @nuxt/eslint    | ^1.15.2 | Flat-config generator                              |
 
 ### Tests
-| Aspect | Value |
-| --- | --- |
-| Runner | Vitest ^4.1.5 (`vitest.config.ts`) |
-| Assertion lib | Vitest built-in `expect` (no separate lib) |
-| Mock lib | none observed |
+
+| Aspect        | Value                                                                       |
+| ------------- | --------------------------------------------------------------------------- |
+| Runner        | Vitest ^4.1.5 (`vitest.config.ts`)                                          |
+| Assertion lib | Vitest built-in `expect` (no separate lib)                                  |
+| Mock lib      | none observed                                                               |
 | Coverage tool | `@vitest/coverage` v8 provider (`vitest.config.ts` `coverage.provider: v8`) |
-| Environment | `node` |
-| Include glob | `tests/**/*.test.ts` |
-| Aliases | `~` and `@` → `app/` (`vitest.config.ts`) |
-| Suites | `bufferPercent.test.ts`, `typewriter.test.ts`, `i18nKeys.test.ts` |
+| Environment   | `node`                                                                      |
+| Include glob  | `tests/**/*.test.ts`                                                        |
+| Aliases       | `~` and `@` → `app/` (`vitest.config.ts`)                                   |
+| Suites        | `bufferPercent.test.ts`, `typewriter.test.ts`, `i18nKeys.test.ts`           |
 
 ### Scripts
-| Command | Script |
-| --- | --- |
-| dev | `nuxt dev` |
-| build | `nuxt build` |
-| generate | `nuxt generate` |
-| preview | `nuxt preview` |
-| postinstall | `nuxt prepare` |
-| test | `vitest run` |
+
+| Command       | Script                  |
+| ------------- | ----------------------- |
+| dev           | `nuxt dev`              |
+| build         | `nuxt build`            |
+| generate      | `nuxt generate`         |
+| preview       | `nuxt preview`          |
+| postinstall   | `nuxt prepare`          |
+| test          | `vitest run`            |
 | test:coverage | `vitest run --coverage` |
-| lint | `eslint .` |
-| lint:fix | `eslint . --fix` |
-| format | `prettier --write .` |
-| typecheck | `nuxt typecheck` |
+| lint          | `eslint .`              |
+| lint:fix      | `eslint . --fix`        |
+| format        | `prettier --write .`    |
+| typecheck     | `nuxt typecheck`        |
 
 ### External integrations
-| System | Client wiring |
-| --- | --- |
-| Google Fonts CDN | `nuxt.config.ts` `app.head.link` preconnect + stylesheet |
-| Search crawlers | `@nuxtjs/sitemap` + `nuxt-schema-org` + `public/robots.txt` |
+
+| System           | Client wiring                                               |
+| ---------------- | ----------------------------------------------------------- |
+| Google Fonts CDN | `nuxt.config.ts` `app.head.link` preconnect + stylesheet    |
+| Search crawlers  | `@nuxtjs/sitemap` + `nuxt-schema-org` + `public/robots.txt` |
 
 ## Related documents
 
