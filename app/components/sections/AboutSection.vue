@@ -18,7 +18,7 @@
       <div class="absolute inset-0 opacity-[0.02]" :style="gridBackgroundStyle" />
     </div>
 
-    <div class="relative z-10 mx-auto max-w-4xl">
+    <div class="relative z-10 mx-auto max-w-6xl">
       <div
         ref="introRef"
         class="mb-20 transition-all duration-1000 md:mb-28"

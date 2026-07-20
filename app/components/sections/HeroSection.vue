@@ -40,7 +40,7 @@
     </svg>
 
     <div
-      class="relative z-10 container mx-auto flex min-h-dvh items-center px-6 sm:px-8 md:px-12 lg:px-20 xl:px-24 pt-14 pb-1 sm:pt-16"
+      class="relative z-10 mx-auto flex min-h-dvh w-full max-w-7xl items-center px-6 sm:px-8 md:px-12 lg:px-20 xl:px-24 pt-14 pb-1 sm:pt-16"
     >
       <div
         class="grid w-full grid-cols-1 items-center gap-8 py-6 sm:gap-10 sm:py-8 lg:grid-cols-12 lg:gap-x-12 lg:gap-y-5 lg:py-4"

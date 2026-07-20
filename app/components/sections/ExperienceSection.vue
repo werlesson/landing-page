@@ -9,7 +9,7 @@
       aria-hidden="true"
     />
 
-    <div class="relative z-10 mx-auto max-w-4xl">
+    <div class="relative z-10 mx-auto max-w-6xl">
       <div
         class="mb-16 max-w-2xl transition-all duration-1000 ease-out"
         :class="isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'"

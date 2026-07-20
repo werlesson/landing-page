@@ -76,13 +76,19 @@ export function partitionCaseStudies(raw: unknown): {
  * (`featuredProjects.projects`). Recomputes on locale change.
  */
 export function usePortfolioCatalog() {
-  const { locale, getLocaleMessage } = useI18n()
+  // Read from the reactive `messages` ref (not `getLocaleMessage()`): in dev,
+  // `@nuxtjs/i18n` lazy-loads locale files *after* first render, and a computed
+  // that only depends on `locale.value` never recomputes when the messages
+  // finally arrive — so the project cards stayed empty in `nuxt dev` while the
+  // section header (`$t`, reactive to load) rendered. `messages` tracks the
+  // load, so the catalog recomputes once the locale is available.
+  const { locale, messages } = useI18n()
 
   const catalog = computed(() => {
-    const tree = getLocaleMessage(locale.value) as {
-      featuredProjects?: { projects?: unknown }
-    }
-    return normalizeCaseStudies(tree.featuredProjects?.projects)
+    const tree = messages.value[locale.value] as
+      | { featuredProjects?: { projects?: unknown } }
+      | undefined
+    return normalizeCaseStudies(tree?.featuredProjects?.projects)
   })
 
   const shipped = computed(() => catalog.value.filter((p) => p.status === 'shipped'))
