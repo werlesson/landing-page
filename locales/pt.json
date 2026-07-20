@@ -219,52 +219,44 @@
     },
     "projects": [
       {
-        "id": "camaris",
+        "id": "eu-no-play",
         "status": "shipped",
-        "title": "Camaris",
-        "image": "",
-        "liveUrl": "#",
+        "title": "Eu no Play",
+        "image": "/projects/eu-no-play.png",
+        "liveUrl": "https://www.eunoplay.com.br/",
         "repoUrl": "",
-        "tags": ["Vue 3", "Nuxt", "Laravel"],
-        "description": "",
-        "problem": "",
-        "solution": "",
-        "architecture": "",
-        "techStack": ["Vue 3", "Nuxt", "Laravel", "PostgreSQL"],
-        "challenges": "",
-        "results": ""
+        "tags": ["SaaS", "Vue", "Hardware", "Vídeo"],
+        "description": "Plataforma SaaS B2B para arenas esportivas: captura automática de lances, entrega white-label ao jogador e inventário de patrocínio em cada vídeo — construída do zero e em produção com clientes reais.",
+        "problem": "Donos de arena querem experiência memorável para o jogador e nova receita com patrocínio, mas gravar lances ainda depende de operador dedicado, edição manual e entrega lenta — por isso a maioria das quadras nunca productiza vídeo.",
+        "solution": "Kit com botão físico e câmera dedicada grava os últimos 25 segundos sob demanda, processa o clipe com a marca da arena e parceiros, e entrega no app white-label do jogador em menos de um minuto — sem mudar a operação do dia a dia da quadra.",
+        "architecture": "Captura na borda (Raspberry Pi + câmeras IP) dispara um pipeline de processamento que aplica branding da arena/patrocinadores e entrega os clipes via app white-label multi-tenant. APIs backend orquestram tenants, mídia e entrega; o site comercial e o produto rodam em stack moderna baseada em Vue.",
+        "techStack": [
+          "Vue 3",
+          "Laravel",
+          "REST APIs",
+          "Raspberry Pi",
+          "Câmeras IP",
+          "Docker",
+          "PostgreSQL"
+        ],
+        "challenges": "Unir confiabilidade de hardware com SLAs de software: latência baixa na quadra, branding consistente entre tenants e instalação sem reforma — mantendo o produto operável por equipes não técnicas da arena.",
+        "results": "Em produção com clientes reais. Jogadores recebem clipes com marca em menos de um minuto; arenas ganham superfície de patrocínio em cada vídeo e uma experiência que apoia retenção sem operador de câmera em tempo integral."
       },
       {
-        "id": "match-zone",
+        "id": "bolao-copa",
         "status": "shipped",
-        "title": "Match Zone",
-        "image": "",
-        "liveUrl": "#",
+        "title": "Bolão na Copa",
+        "image": "/projects/bolao-copa.png",
+        "liveUrl": "https://bolaodacopa.werlesson.dev/",
         "repoUrl": "",
-        "tags": ["Vue 3", "Laravel", "PostgreSQL"],
-        "description": "",
-        "problem": "",
-        "solution": "",
-        "architecture": "",
-        "techStack": ["Vue 3", "Laravel", "PostgreSQL", "Redis"],
-        "challenges": "",
-        "results": ""
-      },
-      {
-        "id": "shapelog",
-        "status": "shipped",
-        "title": "ShapeLog",
-        "image": "",
-        "liveUrl": "#",
-        "repoUrl": "https://github.com/werlesson",
-        "tags": ["Nuxt", "TypeScript"],
-        "description": "",
-        "problem": "",
-        "solution": "",
-        "architecture": "",
-        "techStack": ["Nuxt", "TypeScript", "Pinia"],
-        "challenges": "",
-        "results": ""
+        "tags": ["Nuxt", "Auth", "Futebol"],
+        "description": "App web para bolões de previsões de futebol — entre no bolão, marque os jogos e suba no ranking com login Google sem fricção.",
+        "problem": "Bolões casuais ainda vivem em planilhas e threads de WhatsApp: sem ranking compartilhado, onboarding doloroso e sem produto durável para a temporada de torneio.",
+        "solution": "Um produto web focado em que amigos entram no bolão, enviam palpites e acompanham a classificação — com auth Google para começar em segundos, sem formulários de conta.",
+        "architecture": "Cliente web SPA/SSR com autenticação social, dados de partidas, envio de palpites e telas de ranking. Auth e estado do bolão ficam atrás de uma superfície de backend enxuta, adequada ao tráfego sazonal de torneios.",
+        "techStack": ["Nuxt", "Vue 3", "TypeScript", "Google Auth", "Tailwind CSS"],
+        "challenges": "Manter onboarding quase sem fricção enquanto modela bolões, partidas e pontuação ao longo do calendário — e entregar uma UI premium sem overengineering para um produto sazonal.",
+        "results": "Produto no ar em bolaodacopa.werlesson.dev: login Google, fluxo de palpites e ranking prontos para torneio, sem caos de planilha."
       },
       {
         "id": "csv-view",
@@ -291,54 +283,6 @@
           "TanStack Virtual",
           "Vitest"
         ]
-      },
-      {
-        "id": "chalet-saas",
-        "status": "shipped",
-        "title": "Chalet SaaS",
-        "image": "",
-        "liveUrl": "#",
-        "repoUrl": "",
-        "tags": ["Nuxt", "Laravel", "Docker"],
-        "description": "",
-        "problem": "",
-        "solution": "",
-        "architecture": "",
-        "techStack": ["Nuxt", "Laravel", "Docker", "PostgreSQL"],
-        "challenges": "",
-        "results": ""
-      },
-      {
-        "id": "shrimp-farm-saas",
-        "status": "building",
-        "title": "Shrimp Farm Management SaaS",
-        "image": "",
-        "liveUrl": "#",
-        "repoUrl": "",
-        "tags": ["Laravel", "Vue 3", "IoT"],
-        "description": "",
-        "problem": "",
-        "solution": "",
-        "architecture": "",
-        "techStack": ["Laravel", "Vue 3", "IoT", "PostgreSQL"],
-        "challenges": "",
-        "results": ""
-      },
-      {
-        "id": "future-products",
-        "status": "building",
-        "title": "Future Products",
-        "image": "",
-        "liveUrl": "#",
-        "repoUrl": "",
-        "tags": ["SaaS"],
-        "description": "",
-        "problem": "",
-        "solution": "",
-        "architecture": "",
-        "techStack": ["SaaS"],
-        "challenges": "",
-        "results": ""
       }
     ]
   },
@@ -353,20 +297,51 @@
     },
     "entries": [
       {
-        "company": "",
-        "role": "",
-        "period": "",
-        "responsibilities": [],
-        "technologies": [],
-        "businessImpact": ""
+        "company": "Grupo DNR",
+        "role": "Full Stack Developer",
+        "period": "maio de 2022 – Presente",
+        "responsibilities": [
+          "Desenvolver interfaces Vue 3 com Pinia, componentes reutilizáveis e integração com APIs REST",
+          "Implementar endpoints backend em Laravel — autenticação, validação, políticas de acesso e recursos de API",
+          "Modelar e otimizar queries em MySQL e PostgreSQL",
+          "Implementar filas assíncronas (Laravel Queue) para processamento de tarefas pesadas",
+          "Integrar serviços e APIs externas; participar de ciclos ágeis — refinamento, sprints e revisão de código"
+        ],
+        "technologies": ["Vue 3", "Pinia", "Laravel", "PHP", "MySQL", "PostgreSQL", "REST APIs"],
+        "businessImpact": "Evoluí de frontend para ownership full stack em sistemas internos e produtos SaaS B2B — acelerando entregas de ponta a ponta no portfólio do grupo."
       },
       {
-        "company": "",
-        "role": "",
-        "period": "",
-        "responsibilities": [],
-        "technologies": [],
-        "businessImpact": ""
+        "company": "C3C Software",
+        "role": "Desenvolvedor Front-end",
+        "period": "junho de 2021 – abril de 2022",
+        "responsibilities": [
+          "Desenvolver softwares Salesforce sob demanda para clientes enterprise",
+          "Apoiar capacitação e consultoria junto à entrega de produto"
+        ],
+        "technologies": ["Salesforce", "JavaScript", "Front-end"],
+        "businessImpact": "Entreguei soluções front-end que ajudaram clientes a transformar customizações Salesforce em resultados operacionais mensuráveis."
+      },
+      {
+        "company": "LuxOne",
+        "role": "Desenvolvedor Front-end",
+        "period": "outubro de 2020 – maio de 2021",
+        "responsibilities": [
+          "Construir soluções front-end para produtos de gestão de processos empresariais",
+          "Entregar UI que mantém fluxos complexos simples e eficazes para operadores"
+        ],
+        "technologies": ["JavaScript", "Front-end", "UI"],
+        "businessImpact": "Ajudei a productizar ferramentas de gestão de processos que aumentaram a eficácia operacional sem adicionar complexidade de interface."
+      },
+      {
+        "company": "SINTI",
+        "role": "Desenvolvedor de software",
+        "period": "janeiro de 2019 – outubro de 2020",
+        "responsibilities": [
+          "Desenvolver sistema voltado à saúde conectando médico e paciente",
+          "Entregar funcionalidades que simplificam comunicação e acompanhamento clínico"
+        ],
+        "technologies": ["Desenvolvimento de software", "Web", "Saúde"],
+        "businessImpact": "Entreguei sistemas que facilitaram a relação médico–paciente em um produto do setor da saúde."
       }
     ]
   },

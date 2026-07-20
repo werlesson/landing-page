@@ -41,14 +41,12 @@ describe('project catalog partition (RF-19, RF-29, RF-30)', () => {
     expect(new Set(ids).size).toBe(ids.length)
   })
 
-  it('renders the five shipped case studies', () => {
-    expect(shipped.map((p) => p.id).sort()).toEqual(
-      ['camaris', 'chalet-saas', 'csv-view', 'match-zone', 'shapelog'].sort(),
-    )
+  it('renders the three shipped case studies', () => {
+    expect(shipped.map((p) => p.id).sort()).toEqual(['bolao-copa', 'csv-view', 'eu-no-play'].sort())
   })
 
-  it('renders the building set (Shrimp Farm SaaS + Future Products)', () => {
-    expect(building.map((p) => p.id).sort()).toEqual(['future-products', 'shrimp-farm-saas'].sort())
+  it('renders an empty building set for now', () => {
+    expect(building.map((p) => p.id)).toEqual([])
   })
 
   it('every project carries a shipped|building status', () => {
@@ -63,19 +61,34 @@ describe('case-study normalizer is empty-safe (RF-24)', () => {
     expect(() => normalizeCaseStudies(catalogRaw)).not.toThrow()
   })
 
-  it('maps empty placeholder prose blocks to undefined so renderers can omit them', () => {
-    const camaris = normalizeCaseStudies(catalogRaw).find((p) => p.id === 'camaris')
-    expect(camaris).toBeDefined()
-    // Placeholder prose is empty (M-02) → normalized to undefined, not "".
-    expect(camaris?.problem).toBeUndefined()
-    expect(camaris?.solution).toBeUndefined()
-    expect(camaris?.results).toBeUndefined()
+  it('keeps filled case-study prose for shipped projects', () => {
+    const csvView = normalizeCaseStudies(catalogRaw).find((p) => p.id === 'csv-view')
+    expect(csvView).toBeDefined()
+    expect(csvView?.problem).toBeTruthy()
+    expect(csvView?.solution).toBeTruthy()
+    expect(csvView?.results).toBeTruthy()
+  })
+
+  it('maps empty prose blocks to undefined so renderers can omit them', () => {
+    const normalized = normalizeCaseStudies([
+      {
+        id: 'shell',
+        status: 'shipped',
+        title: 'Shell',
+        problem: '',
+        solution: '',
+        results: '',
+      },
+    ])
+    expect(normalized[0]?.problem).toBeUndefined()
+    expect(normalized[0]?.solution).toBeUndefined()
+    expect(normalized[0]?.results).toBeUndefined()
   })
 
   it('keeps a repoUrl only when present (RF-22)', () => {
     const catalog = normalizeCaseStudies(catalogRaw)
-    const withRepo = catalog.find((p) => p.id === 'shapelog')
-    const withoutRepo = catalog.find((p) => p.id === 'camaris')
+    const withRepo = catalog.find((p) => p.id === 'csv-view')
+    const withoutRepo = catalog.find((p) => p.id === 'eu-no-play')
     expect(withRepo?.repoUrl).toBeTruthy()
     expect(withoutRepo?.repoUrl).toBeUndefined()
   })
@@ -85,6 +98,16 @@ describe('case-study normalizer is empty-safe (RF-24)', () => {
     expect(normalizeCaseStudies(undefined)).toEqual([])
     expect(normalizeCaseStudies('nope')).toEqual([])
     expect(normalizeCaseStudies([{}, null, 'x', { id: '' }])).toEqual([])
+  })
+
+  it('accepts vue-i18n object-shaped arrays (numeric keys)', () => {
+    const asObject = {
+      0: { id: 'a', status: 'shipped', title: 'A', tags: { 0: 'Vue' } },
+      1: { id: 'b', status: 'building', title: 'B' },
+    }
+    const catalog = normalizeCaseStudies(asObject)
+    expect(catalog.map((p) => p.id)).toEqual(['a', 'b'])
+    expect(catalog[0]?.tags).toEqual(['Vue'])
   })
 
   it('de-duplicates ids across statuses, keeping the first occurrence', () => {

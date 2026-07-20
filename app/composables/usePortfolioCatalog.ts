@@ -10,8 +10,19 @@ function asString(value: unknown): string {
   return typeof value === 'string' ? value : ''
 }
 
+/** vue-i18n sometimes exposes JSON arrays as objects with numeric keys. */
+function asList(raw: unknown): unknown[] {
+  if (Array.isArray(raw)) {
+    return raw
+  }
+  if (raw && typeof raw === 'object') {
+    return Object.values(raw as Record<string, unknown>)
+  }
+  return []
+}
+
 function asStringArray(value: unknown): string[] {
-  return Array.isArray(value) ? value.filter((v): v is string => typeof v === 'string') : []
+  return asList(value).filter((v): v is string => typeof v === 'string')
 }
 
 /**
@@ -21,12 +32,13 @@ function asStringArray(value: unknown): string[] {
  * become `undefined` so renderers can omit them.
  */
 export function normalizeCaseStudies(raw: unknown): CaseStudy[] {
-  if (!Array.isArray(raw)) {
+  const list = asList(raw)
+  if (!list.length) {
     return []
   }
   const seen = new Set<string>()
   const result: CaseStudy[] = []
-  for (const entry of raw) {
+  for (const entry of list) {
     if (!entry || typeof entry !== 'object') {
       continue
     }
@@ -71,24 +83,64 @@ export function partitionCaseStudies(raw: unknown): {
   }
 }
 
+function resolveMessage(t: (key: string) => string, key: string): string {
+  const value = t(key)
+  // Missing keys resolve back to the path itself in vue-i18n.
+  return value === key ? '' : value
+}
+
+function resolveMessageList(t: (key: string) => string, baseKey: string, max = 24): string[] {
+  const out: string[] = []
+  for (let i = 0; i < max; i++) {
+    const value = resolveMessage(t, `${baseKey}.${i}`)
+    if (!value) {
+      break
+    }
+    out.push(value)
+  }
+  return out
+}
+
 /**
  * Reactive catalog partitions sourced from the active-locale message tree
  * (`featuredProjects.projects`). Recomputes on locale change.
+ *
+ * Nested objects inside i18n arrays are not readable as plain props via
+ * `getLocaleMessage` — the same pattern as WhatIDo/Impact: probe length, then
+ * resolve each field with `t('featuredProjects.projects.${i}.…')`.
  */
 export function usePortfolioCatalog() {
-  // Read from the reactive `messages` ref (not `getLocaleMessage()`): in dev,
-  // `@nuxtjs/i18n` lazy-loads locale files *after* first render, and a computed
-  // that only depends on `locale.value` never recomputes when the messages
-  // finally arrive — so the project cards stayed empty in `nuxt dev` while the
-  // section header (`$t`, reactive to load) rendered. `messages` tracks the
-  // load, so the catalog recomputes once the locale is available.
-  const { locale, messages } = useI18n()
+  const { locale, messages, getLocaleMessage, t } = useI18n()
 
   const catalog = computed(() => {
-    const tree = messages.value[locale.value] as
-      | { featuredProjects?: { projects?: unknown } }
-      | undefined
-    return normalizeCaseStudies(tree?.featuredProjects?.projects)
+    void messages.value[locale.value]
+    const tree = getLocaleMessage(locale.value) as {
+      featuredProjects?: { projects?: unknown }
+    }
+    const list = asList(tree.featuredProjects?.projects)
+    const len = list.length
+
+    const raw = Array.from({ length: len }, (_, i) => {
+      const base = `featuredProjects.projects.${i}`
+      return {
+        id: resolveMessage(t, `${base}.id`),
+        status: resolveMessage(t, `${base}.status`),
+        title: resolveMessage(t, `${base}.title`),
+        image: resolveMessage(t, `${base}.image`),
+        liveUrl: resolveMessage(t, `${base}.liveUrl`),
+        repoUrl: resolveMessage(t, `${base}.repoUrl`),
+        tags: resolveMessageList(t, `${base}.tags`),
+        description: resolveMessage(t, `${base}.description`),
+        problem: resolveMessage(t, `${base}.problem`),
+        solution: resolveMessage(t, `${base}.solution`),
+        architecture: resolveMessage(t, `${base}.architecture`),
+        techStack: resolveMessageList(t, `${base}.techStack`),
+        challenges: resolveMessage(t, `${base}.challenges`),
+        results: resolveMessage(t, `${base}.results`),
+      }
+    })
+
+    return normalizeCaseStudies(raw)
   })
 
   const shipped = computed(() => catalog.value.filter((p) => p.status === 'shipped'))
