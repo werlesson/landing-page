@@ -1,51 +1,51 @@
 <template>
   <section
     id="impact"
-    ref="rootRef"
-    class="relative w-full overflow-hidden bg-background px-6 py-24 md:px-12 md:py-28 lg:px-24"
+    ref="sectionRef"
+    class="relative w-full overflow-hidden bg-background px-6 py-24 md:px-12 lg:px-24"
   >
     <div
-      class="pointer-events-none absolute top-[20%] -left-32 h-72 w-72 rounded-full bg-accent/5 blur-3xl"
+      class="pointer-events-none absolute top-[20%] -right-32 h-72 w-72 rounded-full bg-accent/5 blur-3xl md:-right-40"
+      aria-hidden="true"
+    />
+    <div
+      class="pointer-events-none absolute bottom-[10%] -left-32 h-80 w-80 rounded-full bg-accent/[0.04] blur-3xl sm:-left-40"
       aria-hidden="true"
     />
 
     <div class="relative z-10 mx-auto max-w-6xl">
       <div
-        class="mb-16 text-center transition-all duration-1000 ease-out"
-        :class="visible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'"
+        class="mb-16 max-w-2xl transition-all duration-1000 ease-out"
+        :class="isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'"
       >
-        <p class="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-accent/80">
-          {{ $t('impact.supertitle') }}
-        </p>
-        <h2
-          class="font-display text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl"
-        >
+        <div class="mb-6 flex items-center gap-3">
+          <div class="h-px w-12 bg-gradient-to-r from-accent to-transparent" aria-hidden="true" />
+          <span class="text-sm font-medium uppercase tracking-widest text-accent">
+            {{ $t('impact.supertitle') }}
+          </span>
+        </div>
+        <h2 class="font-display text-4xl font-bold text-foreground md:text-5xl lg:text-6xl">
           {{ $t('impact.title') }}
         </h2>
-        <div
-          class="mx-auto mt-6 h-1 w-24 rounded-full bg-gradient-to-r from-transparent via-accent to-transparent"
-          aria-hidden="true"
-        />
-        <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-textMuted md:text-xl">
+        <p class="mt-6 text-lg leading-relaxed text-textMuted md:text-xl">
           {{ $t('impact.subtitle') }}
         </p>
       </div>
 
       <div
-        class="grid grid-cols-2 gap-6 transition-all delay-200 duration-1000 ease-out md:gap-8 lg:grid-cols-4"
-        :class="visible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'"
+        class="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border/60 bg-border/30 sm:grid-cols-2 lg:grid-cols-4"
       >
         <div
           v-for="(metric, index) in metrics"
           :key="`${metric.label}-${index}`"
-          class="group rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-8 text-center transition-all duration-300 hover:border-accent/50 hover:bg-accent/[0.04]"
+          class="flex flex-col justify-center bg-background p-8 transition-all duration-700 ease-out"
+          :class="isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'"
+          :style="{ transitionDelay: `${index * 100}ms` }"
         >
-          <div
-            class="font-display text-3xl font-bold tracking-tight text-accent transition-all duration-300 group-hover:drop-shadow-[0_0_15px_rgba(57,255,20,0.4)] sm:text-4xl"
-          >
+          <div class="font-display text-4xl font-bold text-accent md:text-5xl">
             {{ metric.value }}
           </div>
-          <div class="mt-3 text-sm leading-relaxed text-textMuted">
+          <div class="mt-3 text-sm leading-snug text-textMuted">
             {{ metric.label }}
           </div>
         </div>
@@ -57,24 +57,28 @@
 <script setup lang="ts">
 import type { ImpactMetric } from '~/types/portfolio'
 
-const { locale, getLocaleMessage } = useI18n()
+const { locale, getLocaleMessage, t } = useI18n()
 
-const metrics = computed<ImpactMetric[]>(() => {
+const metrics = computed((): ImpactMetric[] => {
   const tree = getLocaleMessage(locale.value) as {
-    impact?: { metrics?: ImpactMetric[] }
+    impact?: { metrics?: unknown[] }
   }
   const list = tree.impact?.metrics
-  return Array.isArray(list) ? list : []
+  const len = Array.isArray(list) ? list.length : 0
+  return Array.from({ length: len }, (_, i) => ({
+    value: t(`impact.metrics.${i}.value`),
+    label: t(`impact.metrics.${i}.label`),
+  }))
 })
 
-const rootRef = ref<HTMLElement | null>(null)
-const visible = ref(false)
+const sectionRef = ref<HTMLElement | null>(null)
+const isVisible = ref(false)
 
 const { stop } = useIntersectionObserver(
-  rootRef,
+  sectionRef,
   ([entry]) => {
     if (entry?.isIntersecting) {
-      visible.value = true
+      isVisible.value = true
       stop()
     }
   },

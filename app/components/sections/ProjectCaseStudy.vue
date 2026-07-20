@@ -1,108 +1,99 @@
 <template>
   <article
-    class="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-all duration-300 hover:border-accent/40"
+    ref="cardRef"
+    class="overflow-hidden rounded-2xl border border-border/60 bg-white/[0.02] transition-all duration-1000 ease-out"
+    :class="isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'"
   >
-    <div class="grid grid-cols-1 lg:grid-cols-5">
-      <div v-if="project.image" class="relative overflow-hidden bg-black/40 lg:col-span-2">
-        <img
-          :src="project.image"
-          :alt="project.title"
-          loading="lazy"
-          decoding="async"
-          class="h-full w-full object-cover"
-        />
+    <!-- Block 1: Image (empty-safe — omitted when no path) -->
+    <div
+      v-if="study.image"
+      class="relative aspect-video w-full overflow-hidden border-b border-border/60 bg-background"
+    >
+      <img
+        :src="study.image"
+        :alt="study.title"
+        loading="lazy"
+        decoding="async"
+        class="h-full w-full object-cover"
+      />
+    </div>
+
+    <div class="p-7 md:p-10">
+      <div class="flex flex-wrap items-center gap-3">
+        <h3 class="font-display text-2xl font-bold text-foreground md:text-3xl">
+          {{ study.title }}
+        </h3>
+        <span
+          class="rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-accent"
+        >
+          {{ $t('featuredProjects.statusLabels.shipped') }}
+        </span>
       </div>
 
-      <div class="p-6 md:p-8 lg:p-10" :class="project.image ? 'lg:col-span-3' : 'lg:col-span-5'">
-        <div class="flex flex-wrap items-center gap-3">
-          <span
-            class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-accent"
-          >
-            {{ statusLabel }}
-          </span>
-          <div class="flex flex-wrap gap-2">
-            <span
-              v-for="(tag, tagIndex) in project.tags"
-              :key="`${project.id}-tag-${tagIndex}`"
-              class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-textMuted"
-            >
-              {{ tag }}
-            </span>
-          </div>
-        </div>
-
-        <h3 class="mt-4 font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
-          {{ project.title }}
-        </h3>
-
-        <p
-          v-if="project.description"
-          class="mt-3 max-w-2xl text-base leading-relaxed text-textMuted"
+      <!-- Block 6: Tech Stack tags -->
+      <div v-if="study.tags.length" class="mt-5 flex flex-wrap gap-2">
+        <span
+          v-for="(tag, i) in study.tags"
+          :key="`${study.id}-tag-${i}`"
+          class="rounded-full border border-border/60 bg-background px-3 py-1 text-xs font-medium text-textMuted"
         >
-          {{ project.description }}
-        </p>
+          {{ tag }}
+        </span>
+      </div>
 
-        <dl class="mt-6 grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2">
-          <div v-for="block in textBlocks" :key="block.key">
-            <dt class="text-xs font-semibold uppercase tracking-wider text-accent/80">
-              {{ block.label }}
-            </dt>
-            <dd class="mt-1.5 text-sm leading-relaxed text-textMuted">
-              {{ block.value }}
-            </dd>
-          </div>
+      <!-- Block 2: Description (lead) -->
+      <p v-if="study.description" class="mt-6 text-base leading-relaxed text-textMuted md:text-lg">
+        {{ study.description }}
+      </p>
 
-          <div v-if="project.techStack && project.techStack.length" class="sm:col-span-2">
-            <dt class="text-xs font-semibold uppercase tracking-wider text-accent/80">
-              {{ $t('featuredProjects.blocks.techStack') }}
-            </dt>
-            <dd class="mt-2 flex flex-wrap gap-2">
-              <span
-                v-for="(tech, techIndex) in project.techStack"
-                :key="`${project.id}-tech-${techIndex}`"
-                class="rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-xs font-medium text-accent"
-              >
-                {{ tech }}
-              </span>
-            </dd>
-          </div>
-        </dl>
-
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a
-            :href="project.liveUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-background transition-all duration-300 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            :aria-label="`${$t('featuredProjects.viewProjectAria')} — ${project.title}`"
-          >
-            {{ $t('featuredProjects.viewProject') }}
-            <svg
-              class="h-4 w-4"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M7 7h10v10" />
-              <path d="M7 17 17 7" />
-            </svg>
-          </a>
-          <a
-            v-if="project.repoUrl"
-            :href="project.repoUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 rounded-lg border border-accent/30 px-5 py-2.5 text-sm font-semibold text-foreground transition-all duration-300 hover:border-accent hover:bg-accent/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            :aria-label="`${$t('featuredProjects.sourceCodeAria')} — ${project.title}`"
-          >
-            {{ $t('featuredProjects.sourceCode') }}
-          </a>
+      <!-- Blocks 3-5, 7-8: labeled prose blocks, empty ones omitted -->
+      <dl v-if="proseBlocks.length" class="mt-8 grid gap-6 sm:grid-cols-2">
+        <div v-for="block in proseBlocks" :key="`${study.id}-${block.key}`">
+          <dt class="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+            {{ $t(`featuredProjects.blocks.${block.key}`) }}
+          </dt>
+          <dd class="mt-2 text-sm leading-relaxed text-textMuted">
+            {{ block.value }}
+          </dd>
         </div>
+      </dl>
+
+      <!-- Tech Stack narrative block (distinct from tags) -->
+      <div v-if="study.techStack && study.techStack.length" class="mt-8">
+        <div class="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+          {{ $t('featuredProjects.blocks.techStack') }}
+        </div>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span
+            v-for="(tech, i) in study.techStack"
+            :key="`${study.id}-tech-${i}`"
+            class="rounded-md border border-border/60 bg-background px-2.5 py-1 text-xs text-textMuted"
+          >
+            {{ tech }}
+          </span>
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a
+          :href="study.liveUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex h-11 items-center justify-center rounded-lg bg-accent px-6 text-sm font-semibold text-background transition-all duration-300 hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          :aria-label="$t('featuredProjects.viewProjectAria')"
+        >
+          {{ $t('featuredProjects.viewProject') }}
+        </a>
+        <a
+          v-if="study.repoUrl"
+          :href="study.repoUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex h-11 items-center justify-center rounded-lg border border-border bg-transparent px-6 text-sm font-semibold text-foreground transition-all duration-300 hover:border-accent/50 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          :aria-label="$t('featuredProjects.sourceCodeAria')"
+        >
+          {{ $t('featuredProjects.sourceCode') }}
+        </a>
       </div>
     </div>
   </article>
@@ -112,21 +103,38 @@
 import type { CaseStudy } from '~/types/portfolio'
 
 const props = defineProps<{
-  project: CaseStudy
+  study: CaseStudy
 }>()
 
-const { t } = useI18n()
-
-const statusLabel = computed(() => t(`featuredProjects.statusLabels.${props.project.status}`))
-
-const textBlocks = computed(() => {
-  const keys = ['problem', 'solution', 'architecture', 'challenges', 'results'] as const
-  return keys
-    .map((key) => ({
-      key,
-      label: t(`featuredProjects.blocks.${key}`),
-      value: props.project[key] ?? '',
-    }))
-    .filter((block) => typeof block.value === 'string' && block.value.length > 0)
+// Blocks 3, 4, 5, 7, 8 (Problem, Solution, Architecture, Challenges, Results).
+// Only non-empty blocks render (RF-24 empty-safe); Image (1), Description (2)
+// and Tech Stack (6) are handled separately in the template.
+const proseBlocks = computed(() => {
+  const s = props.study
+  return (
+    [
+      { key: 'problem', value: s.problem },
+      { key: 'solution', value: s.solution },
+      { key: 'architecture', value: s.architecture },
+      { key: 'challenges', value: s.challenges },
+      { key: 'results', value: s.results },
+    ] as const
+  )
+    .filter((b): b is { key: (typeof b)['key']; value: string } => Boolean(b.value))
+    .map((b) => ({ key: b.key, value: b.value }))
 })
+
+const cardRef = ref<HTMLElement | null>(null)
+const isVisible = ref(false)
+
+const { stop } = useIntersectionObserver(
+  cardRef,
+  ([entry]) => {
+    if (entry?.isIntersecting) {
+      isVisible.value = true
+      stop()
+    }
+  },
+  { threshold: 0.1 },
+)
 </script>
