@@ -2,8 +2,14 @@
   <div>
     <HeroSection />
     <AboutSection />
+    <ImpactSection />
+    <WhatIDoSection />
+    <PrinciplesSection />
+    <FeaturedProjectsSection />
+    <ExperienceSection />
     <StackSection />
-    <ProjectSection />
+    <CurrentlyBuildingSection />
+    <BlogSection />
     <ContactSection />
   </div>
 </template>
@@ -11,10 +17,16 @@
 <script setup lang="ts">
 import { computed, toValue } from 'vue'
 import AboutSection from '~/components/sections/AboutSection.vue'
+import BlogSection from '~/components/sections/BlogSection.vue'
 import ContactSection from '~/components/sections/ContactSection.vue'
+import CurrentlyBuildingSection from '~/components/sections/CurrentlyBuildingSection.vue'
+import ExperienceSection from '~/components/sections/ExperienceSection.vue'
+import FeaturedProjectsSection from '~/components/sections/FeaturedProjectsSection.vue'
 import HeroSection from '~/components/sections/HeroSection.vue'
-import ProjectSection from '~/components/sections/ProjectSection.vue'
+import ImpactSection from '~/components/sections/ImpactSection.vue'
+import PrinciplesSection from '~/components/sections/PrinciplesSection.vue'
 import StackSection from '~/components/sections/StackSection.vue'
+import WhatIDoSection from '~/components/sections/WhatIDoSection.vue'
 
 const { locale } = useI18n()
 const siteConfig = useSiteConfig()

@@ -33,7 +33,7 @@ export interface CaseStudy {
   problem?: string
   solution?: string
   architecture?: string
-  techStack?: string
+  techStack?: string[]
   challenges?: string
   results?: string
 }
@@ -66,5 +66,6 @@ export interface Capability {
 
 /** An engineering principle item (RF-18). */
 export interface Principle {
-  label: string
+  title: string
+  description: string
 }
