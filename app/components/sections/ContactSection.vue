@@ -30,6 +30,11 @@
               : 'translate-y-12 opacity-0'
           "
         >
+          <p
+            class="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-accent/80"
+          >
+            {{ $t('contact.cta') }}
+          </p>
           <h2
             class="relative inline-block font-display text-5xl font-bold tracking-tight text-foreground md:text-6xl lg:text-7xl"
           >
@@ -143,6 +148,7 @@
                   :aria-label="$t(item.ariaKey)"
                   :target="item.external ? '_blank' : undefined"
                   :rel="item.external ? 'noopener noreferrer' : undefined"
+                  :download="item.download ? '' : undefined"
                 >
                   <span
                     class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-foreground transition-all duration-300 group-hover:border-accent group-hover:text-accent"
@@ -174,7 +180,7 @@
                       />
                     </svg>
                     <svg
-                      v-else
+                      v-else-if="item.id === 'email'"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
@@ -188,6 +194,22 @@
                         d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"
                       />
                     </svg>
+                    <svg
+                      v-else
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="h-5 w-5"
+                      aria-hidden="true"
+                    >
+                      <path d="M12 15V3" />
+                      <path d="m17 10-5 5-5-5" />
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    </svg>
                   </span>
                   <span class="min-w-0 flex-1 text-left">
                     <span
@@ -196,6 +218,7 @@
                       {{ $t(item.labelKey) }}
                     </span>
                     <span
+                      v-if="item.handleKey"
                       class="mt-0.5 block truncate font-mono text-sm text-textMuted transition-colors duration-300 group-hover:text-accent"
                     >
                       {{ $t(item.handleKey) }}
@@ -224,23 +247,16 @@ const gridBackgroundStyle = {
 }
 
 type SocialLink = {
-  id: 'github' | 'linkedin' | 'email'
+  id: 'github' | 'linkedin' | 'email' | 'resume'
   href: string
   external: boolean
+  download?: boolean
   labelKey: string
-  handleKey: string
+  handleKey?: string
   ariaKey: string
 }
 
 const socialLinks: SocialLink[] = [
-  {
-    id: 'github',
-    href: 'https://github.com/werlesson',
-    external: true,
-    labelKey: 'contact.social.github.label',
-    handleKey: 'contact.social.github.handle',
-    ariaKey: 'contact.social.github.aria',
-  },
   {
     id: 'linkedin',
     href: 'https://www.linkedin.com/in/werlesson',
@@ -250,12 +266,28 @@ const socialLinks: SocialLink[] = [
     ariaKey: 'contact.social.linkedin.aria',
   },
   {
+    id: 'github',
+    href: 'https://github.com/werlesson',
+    external: true,
+    labelKey: 'contact.social.github.label',
+    handleKey: 'contact.social.github.handle',
+    ariaKey: 'contact.social.github.aria',
+  },
+  {
     id: 'email',
-    href: 'mailto:werlesson@email.com',
+    href: 'mailto:werlessono@gmail.com',
     external: false,
     labelKey: 'contact.social.email.label',
     handleKey: 'contact.social.email.handle',
     ariaKey: 'contact.social.email.aria',
+  },
+  {
+    id: 'resume',
+    href: '/CV_Werlesson_Vieira.pdf',
+    external: false,
+    download: true,
+    labelKey: 'contact.resume.label',
+    ariaKey: 'contact.resume.aria',
   },
 ]
 

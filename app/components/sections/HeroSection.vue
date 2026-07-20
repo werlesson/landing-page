@@ -91,6 +91,11 @@
                 <span>{{ $t('hero.nameSuffix') }}</span>
               </span>
             </h1>
+            <p
+              class="mt-3 font-display text-xl font-semibold text-accent sm:text-2xl lg:text-3xl"
+            >
+              {{ $t('hero.title') }}
+            </p>
           </div>
 
           <div
@@ -130,6 +135,16 @@
           <p
             :class="
               isVisible
+                ? 'hero-fade-in-up hero-stagger-4 max-w-lg text-base font-medium leading-relaxed text-foreground sm:text-lg'
+                : 'max-w-lg opacity-0'
+            "
+          >
+            {{ $t('hero.subtitle') }}
+          </p>
+
+          <p
+            :class="
+              isVisible
                 ? 'hero-fade-in-up hero-stagger-4 max-w-lg text-base leading-relaxed text-textMuted sm:text-lg'
                 : 'max-w-lg opacity-0'
             "
@@ -144,11 +159,10 @@
                 : 'flex flex-col gap-3 pt-3 opacity-0 sm:flex-row sm:items-stretch'
             "
           >
-            <a
-              href="/CV_Werlesson_Vieira.pdf"
-              download
+            <NuxtLink
+              :to="{ path: localePath({ path: '/' }), hash: '#projects' }"
               class="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-lg bg-accent px-8 py-4 font-semibold text-background transition-all duration-300 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-              :aria-label="$t('hero.ctaCvAria')"
+              :aria-label="$t('hero.ctaProjectsAria')"
               @mouseenter="isHoveringCta = true"
               @mouseleave="isHoveringCta = false"
             >
@@ -156,8 +170,9 @@
                 class="absolute inset-0 bg-gradient-to-r from-accent via-[#50ff30] to-accent bg-[length:200%_100%] animate-shimmer opacity-90"
               />
               <span class="relative flex items-center gap-3">
+                {{ $t('hero.ctaProjects') }}
                 <svg
-                  class="h-5 w-5"
+                  class="h-5 w-5 transition-transform group-hover:translate-x-1"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
@@ -167,21 +182,19 @@
                   stroke-linejoin="round"
                   aria-hidden="true"
                 >
-                  <path d="M12 15V3" />
-                  <path d="m17 10-5 5-5-5" />
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
                 </svg>
-                {{ $t('hero.ctaCv') }}
               </span>
-            </a>
-            <NuxtLink
-              :to="{ path: localePath({ path: '/' }), hash: '#project' }"
+            </NuxtLink>
+            <a
+              href="/CV_Werlesson_Vieira.pdf"
+              download
               class="group inline-flex items-center justify-center gap-3 rounded-lg border border-accent/30 px-8 py-4 font-semibold text-foreground backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-accent hover:bg-accent/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-              :aria-label="$t('hero.ctaProjectsAria')"
+              :aria-label="$t('hero.ctaCvAria')"
             >
-              {{ $t('hero.ctaProjects') }}
               <svg
-                class="h-5 w-5 transition-transform group-hover:translate-x-1"
+                class="h-5 w-5"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
@@ -191,10 +204,72 @@
                 stroke-linejoin="round"
                 aria-hidden="true"
               >
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
+                <path d="M12 15V3" />
+                <path d="m17 10-5 5-5-5" />
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
               </svg>
-            </NuxtLink>
+              {{ $t('hero.ctaCv') }}
+            </a>
+          </div>
+
+          <div
+            :class="
+              isVisible
+                ? 'hero-fade-in-up hero-stagger-5 flex flex-wrap items-center gap-3 pt-1'
+                : 'flex flex-wrap items-center gap-3 pt-1 opacity-0'
+            "
+          >
+            <a
+              v-for="link in socialLinks"
+              :key="link.id"
+              :href="link.href"
+              :target="link.external ? '_blank' : undefined"
+              :rel="link.external ? 'noopener noreferrer' : undefined"
+              :aria-label="$t(link.ariaKey)"
+              class="group inline-flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-foreground/70 transition-all duration-300 hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <svg
+                v-if="link.id === 'linkedin'"
+                class="h-5 w-5"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+              <svg
+                v-else-if="link.id === 'github'"
+                class="h-5 w-5"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.463 2 11.97c0 4.404 2.865 8.14 6.839 9.458.5.092.682-.216.682-.481 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.107 22 16.373 22 11.969 22 6.463 17.522 2 12 2z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <svg
+                v-else
+                class="h-5 w-5"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"
+                />
+                <path
+                  d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"
+                />
+              </svg>
+            </a>
           </div>
 
           <div
@@ -490,6 +565,34 @@ const commitsFormatted = computed(() =>
 const statSuffixPlus = '+'
 const statSuffixEmpty = ''
 
+type HeroSocialLink = {
+  id: 'linkedin' | 'github' | 'email'
+  href: string
+  external: boolean
+  ariaKey: string
+}
+
+const socialLinks: HeroSocialLink[] = [
+  {
+    id: 'linkedin',
+    href: 'https://www.linkedin.com/in/werlesson',
+    external: true,
+    ariaKey: 'hero.social.linkedin.aria',
+  },
+  {
+    id: 'github',
+    href: 'https://github.com/werlesson',
+    external: true,
+    ariaKey: 'hero.social.github.aria',
+  },
+  {
+    id: 'email',
+    href: 'mailto:werlessono@gmail.com',
+    external: false,
+    ariaKey: 'hero.social.email.aria',
+  },
+]
+
 const statTargets = computed(() => {
   const raw = tm('hero.statTargets') as unknown
   if (!raw || typeof raw !== 'object') {
@@ -576,11 +679,13 @@ let typeTimeoutId: ReturnType<typeof setTimeout> | undefined
 const roleIdx = ref(0)
 const activeFull = ref('')
 
-const roles = computed(() =>
-  [t('hero.role1'), t('hero.role2'), t('hero.role3')].filter(
-    (s) => typeof s === 'string' && s.length > 0,
-  ),
-)
+const roles = computed(() => {
+  const raw = tm('hero.capabilities') as unknown
+  const len = Array.isArray(raw) ? raw.length : 0
+  return Array.from({ length: len }, (_, i) =>
+    t(`hero.capabilities.${i}`),
+  ).filter((s) => typeof s === 'string' && s.length > 0)
+})
 
 function syncActiveFull() {
   const list = roles.value

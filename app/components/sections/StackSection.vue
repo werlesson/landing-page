@@ -62,7 +62,7 @@
       </div>
 
       <div
-        class="grid grid-cols-2 gap-8 md:gap-12 lg:grid-cols-4 lg:gap-16"
+        class="grid grid-cols-2 gap-8 md:grid-cols-3 md:gap-10 lg:grid-cols-5 lg:gap-10"
       >
         <SectionsStackTechGroup
           v-for="(group, index) in stackGroups"
@@ -114,6 +114,14 @@ const stackGroups: { titleKey: string; items: { name: string; icon: string }[] }
         { name: 'Coolify', icon: 'coolify' },
         { name: 'VPS', icon: 'linux' },
         { name: 'Raspberry Pi', icon: 'raspberrypi' },
+      ],
+    },
+    {
+      titleKey: 'stack.groups.tools',
+      items: [
+        { name: 'ESLint', icon: 'eslint' },
+        { name: 'Prettier', icon: 'prettier' },
+        { name: 'Vitest', icon: 'vitest' },
         { name: 'Git', icon: 'git' },
       ],
     },

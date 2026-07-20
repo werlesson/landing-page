@@ -40,7 +40,7 @@
         </NuxtLink>
 
         <nav
-          class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex"
+          class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-5 lg:flex xl:gap-7"
           :aria-label="$t('nav.primaryAria')"
         >
           <NuxtLink
@@ -100,7 +100,7 @@
           <button
             ref="menuToggleRef"
             type="button"
-            class="flex h-10 w-10 items-center justify-center rounded-lg text-textPrimary transition-colors hover:bg-white/5 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 md:hidden"
+            class="flex h-10 w-10 items-center justify-center rounded-lg text-textPrimary transition-colors hover:bg-white/5 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 lg:hidden"
             :class="scrolled ? 'focus-visible:ring-offset-black/60' : 'focus-visible:ring-offset-background'"
             :aria-expanded="mobileOpen"
             :aria-controls="mobileNavId"
@@ -156,7 +156,7 @@
           v-show="mobileOpen"
           :id="mobileNavId"
           ref="mobileNavPanelRef"
-          class="border-t border-white/10 bg-black/80 backdrop-blur-md md:hidden"
+          class="border-t border-white/10 bg-black/80 backdrop-blur-md lg:hidden"
           :aria-hidden="!mobileOpen"
         >
           <nav
@@ -289,8 +289,14 @@ const homePath = computed(() => localePath({ path: '/' }))
 
 const navItems = [
   { hash: 'about', labelKey: 'nav.about' },
+  { hash: 'impact', labelKey: 'nav.impact' },
+  { hash: 'whatIDo', labelKey: 'nav.whatIDo' },
+  { hash: 'principles', labelKey: 'nav.principles' },
+  { hash: 'projects', labelKey: 'nav.projects' },
+  { hash: 'experience', labelKey: 'nav.experience' },
   { hash: 'stack', labelKey: 'nav.stack' },
-  { hash: 'project', labelKey: 'nav.project' },
+  { hash: 'building', labelKey: 'nav.building' },
+  { hash: 'blog', labelKey: 'nav.blog' },
   { hash: 'contact', labelKey: 'nav.contact' },
 ] as const
 

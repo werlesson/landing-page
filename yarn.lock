@@ -3247,6 +3247,67 @@
     "@tailwindcss/oxide" "4.3.0"
     tailwindcss "4.3.0"
 
+"@takumi-rs/core-darwin-arm64@2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@takumi-rs/core-darwin-arm64/-/core-darwin-arm64-2.3.2.tgz#a08529d8c94bf98e0da5a5997160a2b5f4a8879a"
+  integrity sha512-ZCZLo78EysL0pm1q3FbkVT0jfoCFL40INQTlYpTPelzD/Lzg8zkT4De7uUFN19xlmoj35QpepOhn7vYag38dKQ==
+
+"@takumi-rs/core-darwin-x64@2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@takumi-rs/core-darwin-x64/-/core-darwin-x64-2.3.2.tgz#733f5aa1570fb3ab4f70495e897089becfe9f9a4"
+  integrity sha512-jNpi2byzLDx1jEeK/dVkfo+bOZ8IEXHqRe/U/Lkj/u6Hvq2w9sSaYqxOwArrbg2tYLtUHn8weB5ZR15tL+zCqQ==
+
+"@takumi-rs/core-linux-arm64-gnu@2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@takumi-rs/core-linux-arm64-gnu/-/core-linux-arm64-gnu-2.3.2.tgz#a96545f8b85ea074a852cb2b21cef761a44eb652"
+  integrity sha512-e40MOk7UVqRIOoxaCTNDR4MIdhsTeB7EhTowdFrVoWfgS1QEB88XFy8bSNvWVSN3vIXASPBrmhGPs8huAF82GA==
+
+"@takumi-rs/core-linux-arm64-musl@2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@takumi-rs/core-linux-arm64-musl/-/core-linux-arm64-musl-2.3.2.tgz#e70895e8fb93c4ba7e1454c96c32c76604b55dd6"
+  integrity sha512-VSVKf2L96CBvnK6GNvuODENcT1QTgi1/vl7LXG0T+Dl9veFHVOX4Gb7Cq0FpXvPYIKwTjkoq9Pu+KnS2u27ibQ==
+
+"@takumi-rs/core-linux-x64-gnu@2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@takumi-rs/core-linux-x64-gnu/-/core-linux-x64-gnu-2.3.2.tgz#2d9102c0fe816e238ec69ffb119be04abee6c4ce"
+  integrity sha512-zppPFcwrBFZPddI0qFVsltZZYA95jYF/C0DbKbmDn0JDl9vjfmrCjuZR4luxIS33/ku9j2OCSDqnypu050DFKA==
+
+"@takumi-rs/core-linux-x64-musl@2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@takumi-rs/core-linux-x64-musl/-/core-linux-x64-musl-2.3.2.tgz#fedc8e4d7763c59651296e236e51aa15ee6633fd"
+  integrity sha512-ymiWKBNnIVOje37NwOPYyc+iHSWZXQjSg4PeB6MXeDZEu613u/5ROXCQVfMznT8ibvZMK9/04fbR3aaLTYPtFA==
+
+"@takumi-rs/core-win32-arm64-msvc@2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@takumi-rs/core-win32-arm64-msvc/-/core-win32-arm64-msvc-2.3.2.tgz#faa4cc5e22e06ad0548204d42220ca68d3ed447f"
+  integrity sha512-7IK20Ul8yrD1ZvU8Nh040jhAXXd8SvV1BboasNeM8iOmOkpk6lL8kZhyiNsvV3BOqP0B/b/7FzBMkZL3bGvbpg==
+
+"@takumi-rs/core-win32-x64-msvc@2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@takumi-rs/core-win32-x64-msvc/-/core-win32-x64-msvc-2.3.2.tgz#ab0f999439d6c9f6d4520cf5b0a78d83f32b3155"
+  integrity sha512-wExy8gGtrmb5eIl2tHRNFvKM6jGD3be/NEthrbqfja5f/RRM09YEMDPxgyc+XJu+cAppcpJw2ParggW18w6SKQ==
+
+"@takumi-rs/core@^2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@takumi-rs/core/-/core-2.3.2.tgz#1555b119ca84235febeb86b233a295b812b5ca73"
+  integrity sha512-B0iTmioEAG5qfsBRFTA2beJQao+jL15drt7L7+bjGZlcN2RkVa79ZwRVNMkf4QsPc19SVsbC9sy/XdwcT42lfg==
+  dependencies:
+    "@takumi-rs/helpers" "2.3.2"
+  optionalDependencies:
+    "@takumi-rs/core-darwin-arm64" "2.3.2"
+    "@takumi-rs/core-darwin-x64" "2.3.2"
+    "@takumi-rs/core-linux-arm64-gnu" "2.3.2"
+    "@takumi-rs/core-linux-arm64-musl" "2.3.2"
+    "@takumi-rs/core-linux-x64-gnu" "2.3.2"
+    "@takumi-rs/core-linux-x64-musl" "2.3.2"
+    "@takumi-rs/core-win32-arm64-msvc" "2.3.2"
+    "@takumi-rs/core-win32-x64-msvc" "2.3.2"
+
+"@takumi-rs/helpers@2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@takumi-rs/helpers/-/helpers-2.3.2.tgz#4708b4a12e904867376481bdd0fa3d115281304b"
+  integrity sha512-EbwP0itsZTZRTbRhPLPotVkkqT++Ga+vNCx2aOnyTknF0nNLF3HmPGwr+2UR74nQxIs2wlIzTMsYVWlzFEWvww==
+
 "@tanstack/table-core@8.21.3":
   version "8.21.3"
   resolved "https://registry.yarnpkg.com/@tanstack/table-core/-/table-core-8.21.3.tgz#2977727d8fc8dfa079112d9f4d4c019110f1732c"
@@ -10079,6 +10140,7 @@ streamx@^2.12.5, streamx@^2.15.0, streamx@^2.25.0:
     text-decoder "^1.1.0"
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -10128,6 +10190,7 @@ stringify-entities@^4.0.0, stringify-entities@^4.0.4:
     character-entities-legacy "^3.0.0"
 
 "strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  name strip-ansi-cjs
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
