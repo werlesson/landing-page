@@ -14,8 +14,14 @@
   },
   "nav": {
     "about": "About",
+    "impact": "Impact",
+    "whatIDo": "What I Do",
+    "principles": "Principles",
+    "projects": "Projects",
+    "experience": "Experience",
     "stack": "Stack",
-    "project": "Project",
+    "building": "Building",
+    "blog": "Blog",
     "contact": "Contact",
     "primaryAria": "Primary navigation",
     "mobileAria": "Navigation — mobile menu",
@@ -29,22 +35,43 @@
     "namePrefix": "Werles",
     "nameGlow": "s",
     "nameSuffix": "on",
-    "role1": "Fullstack engineer — Vue + Laravel",
-    "role2": "Vue 3, Nuxt, TypeScript",
-    "role3": "IoT, product, shipping to prod",
-    "description": "I'm a fullstack engineer centered on Vue 3 and Laravel. I take work from discovery through production — DDD-style boundaries, Postgres or MySQL, Redis, and Docker-first deploys on Coolify or a VPS. When it fits the problem, I bridge web and hardware (IoT, Raspberry Pi, privacy-aware integrations); Eu no Play is one example. I work like a technical co-founder: product judgment, solid engineering, and ownership past the launch line.",
-    "ctaProjects": "See highlighted work",
+    "title": "Senior Software Engineer",
+    "subtitle": "Building scalable SaaS products with Vue, Nuxt and Laravel.",
+    "description": "I design, build and launch digital products — from architecture to production.",
+    "capabilities": [
+      "SaaS",
+      "Product Engineering",
+      "Frontend Architecture",
+      "Laravel",
+      "Performance",
+      "System Design"
+    ],
+    "ctaProjects": "View Projects",
     "ctaCv": "Download résumé",
-    "ctaProjectsAria": "Jump to the featured project section",
+    "ctaProjectsAria": "Jump to the featured projects section",
     "ctaCvAria": "Download résumé as PDF",
+    "social": {
+      "linkedin": {
+        "label": "LinkedIn",
+        "aria": "Open Werlesson's LinkedIn profile"
+      },
+      "github": {
+        "label": "GitHub",
+        "aria": "Open Werlesson's GitHub profile"
+      },
+      "email": {
+        "label": "Email",
+        "aria": "Email Werlesson"
+      }
+    },
     "stats": {
       "years": "Years building software",
       "projects": "Projects shipped",
       "commits": "Commits on GitHub"
     },
     "statTargets": {
-      "years": 8,
-      "projects": 24,
+      "years": 6,
+      "projects": 20,
       "commits": 2100
     },
     "floatTags": {
@@ -55,13 +82,13 @@
     }
   },
   "about": {
-    "badge": "Fullstack developer",
+    "badge": "Senior Software Engineer",
     "headlineBefore": "Hi, I'm",
     "headlineAccent": "Werlesson",
-    "bio": "I like turning ideas into live product. I grew up on the frontend, doubled down on Vue, and expanded into resilient APIs and Laravel with an architecture-first mindset. Sometimes the right solution sits between a browser and a device in the field — I'm comfortable there too. I care about scope, quality, and deployment as one narrative. I'm looking for international remote teams where clarity and ownership matter.",
+    "bio": "I've spent 6+ years turning business problems into software that ships and scales. I lead architecture decisions end to end — from Vue and Nuxt interfaces to Laravel APIs, data modeling and Docker-based deploys — and I optimize for outcomes, not output. I've delivered 20+ projects and taken SaaS products from first commit to production, owning quality, performance and delivery as one responsibility.",
     "stats": [
-      { "value": "8+", "label": "Years in development" },
-      { "value": "24+", "label": "Projects delivered" },
+      { "value": "6+", "label": "Years of experience" },
+      { "value": "20+", "label": "Projects delivered" },
       { "value": "1", "label": "SaaS in production" }
     ],
     "timelineTitleBefore": "My",
@@ -93,6 +120,246 @@
       }
     ]
   },
+  "impact": {
+    "supertitle": "Impact",
+    "title": "Measurable outcomes",
+    "subtitle": "The numbers behind the work — experience, delivery and the systems I've shipped.",
+    "metrics": [
+      { "value": "6+", "label": "Years of experience" },
+      { "value": "20+", "label": "Projects delivered" },
+      { "value": "5", "label": "SaaS products shipped" },
+      { "value": "End to end", "label": "From architecture to production" }
+    ]
+  },
+  "whatIDo": {
+    "supertitle": "What I Do",
+    "title": "Capabilities",
+    "subtitle": "Where I create the most value across the product lifecycle.",
+    "cards": [
+      {
+        "title": "SaaS Development",
+        "description": "Design and ship multi-tenant SaaS products, from billing and auth to scale."
+      },
+      {
+        "title": "Frontend Architecture",
+        "description": "Structure Vue and Nuxt applications that stay fast and maintainable as they grow."
+      },
+      {
+        "title": "Laravel APIs",
+        "description": "Build resilient, well-modeled backends with clear domain boundaries."
+      },
+      {
+        "title": "Performance & SEO",
+        "description": "Tune Core Web Vitals, SSR and metadata so products load fast and rank."
+      },
+      {
+        "title": "System Design",
+        "description": "Model data, services and infrastructure for reliability and growth."
+      },
+      {
+        "title": "Technical Leadership",
+        "description": "Drive architecture decisions and align engineering with business goals."
+      }
+    ]
+  },
+  "principles": {
+    "supertitle": "Principles",
+    "title": "How I engineer",
+    "subtitle": "The convictions that guide the decisions I make.",
+    "items": [
+      {
+        "title": "Architecture First",
+        "description": "Decisions are cheaper before the code exists."
+      },
+      {
+        "title": "Performance Matters",
+        "description": "Speed is a feature users feel on every page."
+      },
+      {
+        "title": "Developer Experience",
+        "description": "Good DX compounds into faster, safer delivery."
+      },
+      {
+        "title": "SEO by Default",
+        "description": "Discoverability is built in, not bolted on."
+      },
+      {
+        "title": "Scalable Systems",
+        "description": "Design for the load you'll have, not just the one you have."
+      },
+      {
+        "title": "Clean Code",
+        "description": "Readable code is the cheapest code to change."
+      },
+      {
+        "title": "Business-Driven Decisions",
+        "description": "Every technical choice serves an outcome."
+      }
+    ]
+  },
+  "featuredProjects": {
+    "supertitle": "Featured Projects",
+    "title": "Case studies",
+    "subtitle": "Products taken from first commit to production.",
+    "viewProject": "View Project",
+    "sourceCode": "Source Code",
+    "viewProjectAria": "Open the live project",
+    "sourceCodeAria": "Open the source code repository",
+    "statusLabels": {
+      "shipped": "Shipped",
+      "building": "Building"
+    },
+    "blocks": {
+      "problem": "Problem",
+      "solution": "Solution",
+      "architecture": "Architecture",
+      "techStack": "Tech Stack",
+      "challenges": "Challenges",
+      "results": "Results"
+    },
+    "projects": [
+      {
+        "id": "camaris",
+        "status": "shipped",
+        "title": "Camaris",
+        "image": "",
+        "liveUrl": "#",
+        "repoUrl": "",
+        "tags": ["Vue 3", "Nuxt", "Laravel"],
+        "description": "",
+        "problem": "",
+        "solution": "",
+        "architecture": "",
+        "techStack": ["Vue 3", "Nuxt", "Laravel", "PostgreSQL"],
+        "challenges": "",
+        "results": ""
+      },
+      {
+        "id": "match-zone",
+        "status": "shipped",
+        "title": "Match Zone",
+        "image": "",
+        "liveUrl": "#",
+        "repoUrl": "",
+        "tags": ["Vue 3", "Laravel", "PostgreSQL"],
+        "description": "",
+        "problem": "",
+        "solution": "",
+        "architecture": "",
+        "techStack": ["Vue 3", "Laravel", "PostgreSQL", "Redis"],
+        "challenges": "",
+        "results": ""
+      },
+      {
+        "id": "shapelog",
+        "status": "shipped",
+        "title": "ShapeLog",
+        "image": "",
+        "liveUrl": "#",
+        "repoUrl": "https://github.com/werlesson",
+        "tags": ["Nuxt", "TypeScript"],
+        "description": "",
+        "problem": "",
+        "solution": "",
+        "architecture": "",
+        "techStack": ["Nuxt", "TypeScript", "Pinia"],
+        "challenges": "",
+        "results": ""
+      },
+      {
+        "id": "csv-view",
+        "status": "shipped",
+        "title": "CSV View",
+        "image": "",
+        "liveUrl": "#",
+        "repoUrl": "https://github.com/werlesson",
+        "tags": ["Vue 3", "TypeScript"],
+        "description": "",
+        "problem": "",
+        "solution": "",
+        "architecture": "",
+        "techStack": ["Vue 3", "TypeScript", "Vite"],
+        "challenges": "",
+        "results": ""
+      },
+      {
+        "id": "chalet-saas",
+        "status": "shipped",
+        "title": "Chalet SaaS",
+        "image": "",
+        "liveUrl": "#",
+        "repoUrl": "",
+        "tags": ["Nuxt", "Laravel", "Docker"],
+        "description": "",
+        "problem": "",
+        "solution": "",
+        "architecture": "",
+        "techStack": ["Nuxt", "Laravel", "Docker", "PostgreSQL"],
+        "challenges": "",
+        "results": ""
+      },
+      {
+        "id": "shrimp-farm-saas",
+        "status": "building",
+        "title": "Shrimp Farm Management SaaS",
+        "image": "",
+        "liveUrl": "#",
+        "repoUrl": "",
+        "tags": ["Laravel", "Vue 3", "IoT"],
+        "description": "",
+        "problem": "",
+        "solution": "",
+        "architecture": "",
+        "techStack": ["Laravel", "Vue 3", "IoT", "PostgreSQL"],
+        "challenges": "",
+        "results": ""
+      },
+      {
+        "id": "future-products",
+        "status": "building",
+        "title": "Future Products",
+        "image": "",
+        "liveUrl": "#",
+        "repoUrl": "",
+        "tags": ["SaaS"],
+        "description": "",
+        "problem": "",
+        "solution": "",
+        "architecture": "",
+        "techStack": ["SaaS"],
+        "challenges": "",
+        "results": ""
+      }
+    ]
+  },
+  "experience": {
+    "supertitle": "Experience",
+    "title": "Professional timeline",
+    "subtitle": "Roles where I turned engineering into business impact.",
+    "labels": {
+      "responsibilities": "Responsibilities",
+      "technologies": "Technologies",
+      "impact": "Business impact"
+    },
+    "entries": [
+      {
+        "company": "",
+        "role": "",
+        "period": "",
+        "responsibilities": [],
+        "technologies": [],
+        "businessImpact": ""
+      },
+      {
+        "company": "",
+        "role": "",
+        "period": "",
+        "responsibilities": [],
+        "technologies": [],
+        "businessImpact": ""
+      }
+    ]
+  },
   "stack": {
     "supertitle": "Technologies",
     "title": "How I build",
@@ -100,9 +367,25 @@
     "groups": {
       "frontend": "Frontend",
       "backend": "Backend",
-      "database": "Data",
-      "infra": "Infrastructure"
+      "database": "Database",
+      "infra": "Infrastructure",
+      "tools": "Tools"
     }
+  },
+  "currentlyBuilding": {
+    "supertitle": "Currently Building",
+    "title": "In progress",
+    "subtitle": "Products actively in development — shipping continuously.",
+    "statusNote": "In progress"
+  },
+  "blog": {
+    "supertitle": "Blog",
+    "title": "Writing",
+    "subtitle": "Notes on engineering, architecture and building products.",
+    "readMore": "Read article",
+    "viewAll": "View all posts",
+    "empty": "New articles are on the way.",
+    "publishedOn": "Published on"
   },
   "project": {
     "sectionTitle": "Featured build",
@@ -119,13 +402,7 @@
       "descriptionAfter": " of action and makes the clip ready to download immediately.",
       "highlightWireless": "Wireless trigger",
       "highlightArena": "Validated in a real venue",
-      "tags": [
-        "Raspberry Pi",
-        "Python",
-        "Hikvision",
-        "IoT",
-        "Vue 3"
-      ],
+      "tags": ["Raspberry Pi", "Python", "Hikvision", "IoT", "Vue 3"],
       "cta": "Learn more",
       "ctaAria": "Learn more about the Eu no Play project",
       "mockCameraModel": "Hikvision DS-2CD",
@@ -140,6 +417,7 @@
   },
   "contact": {
     "title": "Let's talk",
+    "cta": "Interested in working together?",
     "subtitle": "I'm open to international remote opportunities. If you need someone who connects product thinking with dependable engineering, send a note — I'll reply as soon as I can.",
     "directTitle": "Or reach me directly",
     "fields": {
@@ -149,6 +427,10 @@
     },
     "submit": "Send message",
     "success": "Message sent. I'll follow up shortly.",
+    "resume": {
+      "label": "Download résumé",
+      "aria": "Download résumé as PDF"
+    },
     "social": {
       "github": {
         "label": "GitHub",
@@ -162,7 +444,7 @@
       },
       "email": {
         "label": "Email",
-        "handle": "werlesson\\@email.com",
+        "handle": "werlessono\\@gmail.com",
         "aria": "Send email to Werlesson"
       }
     }
