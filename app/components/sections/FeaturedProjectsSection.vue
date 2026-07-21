@@ -32,8 +32,8 @@
         </p>
       </div>
 
-      <div class="space-y-10">
-        <SectionsProjectCaseStudy v-for="study in shipped" :key="study.id" :study="study" />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <SectionsProjectCard v-for="study in shipped" :key="study.id" :study="study" />
       </div>
     </div>
   </section>
