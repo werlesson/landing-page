@@ -363,6 +363,20 @@
     "subtitle": "Products actively in development — shipping continuously.",
     "statusNote": "In progress"
   },
+  "projectDetail": {
+    "back": "Back to projects",
+    "galleryHeading": "Gallery",
+    "viewDetails": "View case study",
+    "viewDetailsAria": "Open the {title} case study",
+    "blocks": {
+      "description": "Overview",
+      "problem": "Problem",
+      "solution": "Solution",
+      "architecture": "Architecture",
+      "challenges": "Challenges",
+      "results": "Results"
+    }
+  },
   "blog": {
     "supertitle": "Blog",
     "title": "Writing",

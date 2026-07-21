@@ -363,6 +363,20 @@
     "subtitle": "Produtos em desenvolvimento ativo — entregando continuamente.",
     "statusNote": "Em andamento"
   },
+  "projectDetail": {
+    "back": "Voltar para projetos",
+    "galleryHeading": "Galeria",
+    "viewDetails": "Ver estudo de caso",
+    "viewDetailsAria": "Abrir o estudo de caso de {title}",
+    "blocks": {
+      "description": "Visão geral",
+      "problem": "Problema",
+      "solution": "Solução",
+      "architecture": "Arquitetura",
+      "challenges": "Desafios",
+      "results": "Resultados"
+    }
+  },
   "blog": {
     "supertitle": "Blog",
     "title": "Escrita",
