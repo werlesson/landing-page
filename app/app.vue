@@ -17,7 +17,7 @@ useHead(useLocaleHead({ lang: true, dir: true, seo: false }))
 useSeoMeta({
   title: 'Werlesson Vieira — Senior Software Engineer (Vue 3 · Nuxt · Laravel)',
   description:
-    'Portfolio and CV of Werlesson Vieira — Senior Software Engineer building scalable SaaS products with Vue, Nuxt and Laravel. Available for international remote roles.',
+    'Portfolio and CV of Werlesson Vieira — Senior Software Engineer building scalable SaaS products with Vue, Nuxt and Laravel — from architecture to production.',
   ogTitle: 'Werlesson Vieira — Senior Software Engineer',
   ogDescription:
     'Senior Software Engineer building scalable SaaS products with Vue, Nuxt and Laravel — from architecture to production.',
@@ -26,8 +26,7 @@ useSeoMeta({
   ogType: 'website',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Werlesson Vieira — Senior Software Engineer',
-  twitterDescription:
-    'Vue, Nuxt & Laravel · Senior Software Engineer · open to international remote.',
+  twitterDescription: 'Vue, Nuxt & Laravel · Senior Software Engineer.',
   twitterImage: 'https://werlesson.dev/og-image.png',
 })
 
@@ -37,7 +36,7 @@ useSchemaOrg([
     url: 'https://werlesson.dev',
     jobTitle: 'Senior Software Engineer',
     description:
-      'Senior Software Engineer building scalable SaaS products with Vue, Nuxt and Laravel — from architecture to production. Available for international remote roles.',
+      'Senior Software Engineer building scalable SaaS products with Vue, Nuxt and Laravel — from architecture to production.',
     sameAs: ['https://github.com/werlesson', 'https://www.linkedin.com/in/werlesson'],
     knowsAbout: [
       'Software Architecture',

@@ -19,6 +19,7 @@
     "principles": "Princípios",
     "projects": "Projetos",
     "experience": "Experiência",
+    "career": "Carreira",
     "stack": "Stack",
     "building": "Construindo",
     "blog": "Blog",
@@ -31,7 +32,7 @@
   },
   "hero": {
     "availability": "Disponível para remoto",
-    "location": "— Brasil · remoto internacional",
+    "location": "— Brasil · remoto internacional (UTC-3)",
     "namePrefix": "Werles",
     "nameGlow": "s",
     "nameSuffix": "on",
@@ -48,8 +49,10 @@
     ],
     "ctaProjects": "Ver projetos",
     "ctaCv": "Baixar CV",
+    "ctaLinkedIn": "LinkedIn",
     "ctaProjectsAria": "Ir para a seção de projetos em destaque",
     "ctaCvAria": "Baixar currículo em PDF",
+    "ctaLinkedInAria": "Abrir perfil de Werlesson no LinkedIn",
     "social": {
       "linkedin": {
         "label": "LinkedIn",
@@ -67,12 +70,12 @@
     "stats": {
       "years": "Anos em desenvolvimento",
       "projects": "Projetos entregues",
-      "commits": "Commits no GitHub"
+      "saas": "SaaS em produção"
     },
     "statTargets": {
       "years": 6,
       "projects": 20,
-      "commits": 2100
+      "saas": 1
     },
     "floatTags": {
       "vue": "Vue",
@@ -82,41 +85,29 @@
     }
   },
   "about": {
-    "badge": "Engenheiro de Software Sênior",
+    "badge": "Sobre",
     "headlineBefore": "Olá, eu sou o",
     "headlineAccent": "Werlesson",
-    "bio": "Passei 6+ anos transformando problemas de negócio em software que entra no ar e escala. Conduzo decisões de arquitetura de ponta a ponta — de interfaces em Vue e Nuxt a APIs em Laravel, modelagem de dados e deploys em Docker — e otimizo por resultado, não por volume de código. Já entreguei 20+ projetos e levei produtos SaaS do primeiro commit à produção, assumindo qualidade, performance e entrega como uma única responsabilidade.",
-    "stats": [
-      {
-        "value": "6+",
-        "label": "Anos de experiência"
-      },
-      {
-        "value": "20+",
-        "label": "Projetos entregues"
-      },
-      {
-        "value": "1",
-        "label": "SaaS em produção"
-      }
-    ],
+    "bio": "Transformo problemas de negócio em software que entra no ar e escala. Conduzo decisões de arquitetura de ponta a ponta — de interfaces em Vue e Nuxt a APIs em Laravel, modelagem de dados e deploys em Docker — e otimizo por resultado, não por volume de código. Levo produtos SaaS do primeiro commit à produção, assumindo qualidade, performance e entrega como uma única responsabilidade.",
+    "capabilitiesLabel": "Onde atuo",
+    "principlesLabel": "Como penso engenharia",
     "timelineTitleBefore": "Minha",
     "timelineTitleAccent": "trajetória",
     "timeline": [
       {
-        "year": "2019",
+        "year": "2018",
         "title": "Primeiros passos com Vue 2",
         "description": "Entrada no desenvolvimento web com Vue 2 e o ecossistema frontend — onde aprendi a valorizar interface clara, acessível e bem acabada.",
         "tech": ["Vue 2", "JavaScript", "CSS"]
       },
       {
-        "year": "2022",
+        "year": "2020",
         "title": "Vue 3, Nuxt 3 e TypeScript",
         "description": "Composition API, TypeScript e Nuxt 3 em projetos reais — salto em arquitetura, DX e na qualidade do que ia para produção.",
         "tech": ["Vue 3", "Nuxt 3", "TypeScript"]
       },
       {
-        "year": "2024",
+        "year": "2022",
         "title": "Backend com Laravel",
         "description": "APIs consistentes, regras de negócio no servidor e visão de ponta a ponta — do pixel à persistência, filas e operações.",
         "tech": ["Laravel", "PHP", "PostgreSQL"]
@@ -124,7 +115,7 @@
       {
         "year": "2025",
         "title": "SaaS em produção e IoT",
-        "description": "Da ideia ao ar: pagamentos, autenticação, escala — e projetos que misturam software com hardware (Raspberry Pi, testes em arena). Foco em produto e oportunidades remotas.",
+        "description": "Da ideia ao ar: pagamentos, autenticação, escala — e projetos que misturam software com hardware (Raspberry Pi, testes em arena). Foco em produto e engenharia de ponta a ponta.",
         "tech": ["SaaS", "Docker", "IoT"]
       }
     ]
@@ -143,8 +134,8 @@
         "label": "Projetos entregues"
       },
       {
-        "value": "5",
-        "label": "Produtos SaaS lançados"
+        "value": "1",
+        "label": "SaaS em produção"
       },
       {
         "value": "Ponta a ponta",
@@ -289,6 +280,13 @@
       }
     ]
   },
+  "career": {
+    "supertitle": "Carreira",
+    "title": "Trajetória profissional",
+    "subtitle": "Onde transformei engenharia em impacto de negócio.",
+    "techEvolutionTitle": "Evolução técnica",
+    "techEvolutionSubtitle": "Marcos de crescimento ao longo dos anos — da interface ao produto em produção."
+  },
   "experience": {
     "supertitle": "Experiência",
     "title": "Trajetória profissional",
@@ -301,17 +299,17 @@
     "entries": [
       {
         "company": "Grupo DNR",
-        "role": "Full Stack Developer",
+        "role": "Engenheiro de Software Sênior",
         "period": "maio de 2022 – Presente",
         "responsibilities": [
+          "Conduzir decisões de arquitetura e referência técnica em produtos SaaS B2B e sistemas internos",
           "Desenvolver interfaces Vue 3 com Pinia, componentes reutilizáveis e integração com APIs REST",
           "Implementar endpoints backend em Laravel — autenticação, validação, políticas de acesso e recursos de API",
-          "Modelar e otimizar queries em MySQL e PostgreSQL",
-          "Implementar filas assíncronas (Laravel Queue) para processamento de tarefas pesadas",
-          "Integrar serviços e APIs externas; participar de ciclos ágeis — refinamento, sprints e revisão de código"
+          "Modelar e otimizar queries em MySQL e PostgreSQL; implementar filas assíncronas (Laravel Queue)",
+          "Integrar serviços externos; liderar code review, refinamento e entregas em ciclos ágeis"
         ],
         "technologies": ["Vue 3", "Pinia", "Laravel", "PHP", "MySQL", "PostgreSQL", "REST APIs"],
-        "businessImpact": "Evoluí de frontend para ownership full stack em sistemas internos e produtos SaaS B2B — acelerando entregas de ponta a ponta no portfólio do grupo."
+        "businessImpact": "Assumi ownership full stack e referência técnica em produtos SaaS B2B — acelerando entregas de ponta a ponta no portfólio do grupo."
       },
       {
         "company": "C3C Software",
@@ -420,8 +418,10 @@
   },
   "contact": {
     "title": "Contato",
-    "cta": "Interessado em trabalhar juntos?",
-    "subtitle": "Estou aberto a oportunidades remotas internacionais. Se você busca alguém que entenda produto e entregue com consistência, escreva — respondo assim que der.",
+    "cta": "Vamos conversar?",
+    "subtitle": "Para trocar ideias sobre engenharia de produto, projetos ou oportunidades remotas — escreva quando fizer sentido.",
+    "englishLevel": "Inglês: fluente para comunicação técnica diária",
+    "location": "Brasil · remoto internacional (UTC-3)",
     "directTitle": "Ou fale direto",
     "fields": {
       "name": "Nome",

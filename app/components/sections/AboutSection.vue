@@ -21,7 +21,7 @@
     <div class="relative z-10 mx-auto max-w-6xl">
       <div
         ref="introRef"
-        class="mb-20 transition-all duration-1000 md:mb-28"
+        class="transition-all duration-1000"
         :class="introVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'"
       >
         <div class="mb-6 flex items-center gap-3">
@@ -45,74 +45,55 @@
         >
           {{ $t('about.bio') }}
         </p>
-
-        <div
-          class="mt-10 flex flex-wrap gap-8 transition-all delay-500 duration-1000"
-          :class="introVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'"
-        >
-          <div v-for="(stat, si) in stats" :key="`${stat.label}-${si}`" class="group">
-            <div
-              class="font-display text-3xl font-bold text-accent transition-all duration-300 group-hover:drop-shadow-[0_0_15px_rgba(57,255,20,0.4)]"
-            >
-              {{ stat.value }}
-            </div>
-            <div class="text-sm text-[#8a8a8a]">
-              {{ stat.label }}
-            </div>
-          </div>
-        </div>
       </div>
 
-      <div>
-        <div
-          class="mb-14 flex items-center gap-4 transition-all delay-700 duration-1000"
-          :class="introVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'"
-        >
-          <h3 class="font-display text-2xl font-bold md:text-3xl">
-            <span class="text-foreground">{{ $t('about.timelineTitleBefore') }}</span>
-            {{ ' ' }}
-            <span class="text-accent">{{ $t('about.timelineTitleAccent') }}</span>
-          </h3>
+      <div
+        ref="detailsRef"
+        class="mt-12 border-t border-white/[0.06] pt-10 transition-all delay-200 duration-1000"
+        :class="detailsVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'"
+      >
+        <p class="text-sm font-medium uppercase tracking-widest text-accent/80">
+          {{ $t('about.capabilitiesLabel') }}
+        </p>
+        <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2" role="list">
           <div
-            class="h-px flex-1 bg-gradient-to-r from-accent/30 to-transparent"
-            aria-hidden="true"
-          />
-        </div>
-
-        <div ref="lineTrackRef" class="relative">
-          <div
-            class="absolute left-[9px] top-2 h-[calc(100%-4rem)] w-0.5 overflow-hidden rounded-full bg-border/50 md:left-[9px]"
-            aria-hidden="true"
+            v-for="(card, index) in capabilities"
+            :key="`${card.title}-${index}`"
+            role="listitem"
+            class="rounded-lg border border-border/60 bg-white/[0.02] p-4 transition-colors duration-300 hover:border-accent/30 hover:bg-accent/[0.02]"
+            :style="{ transitionDelay: `${index * 60}ms` }"
           >
-            <div
-              class="w-full rounded-full bg-gradient-to-b from-accent via-accent to-accent/30 shadow-[0_0_10px_rgba(57,255,20,0.5)] transition-[height] duration-100 ease-out"
-              :style="{ height: `${lineFillPct}%` }"
-            />
-          </div>
-
-          <div class="relative" role="list">
-            <SectionsAboutTimelineStep
-              v-for="(item, index) in timeline"
-              :key="`${item.year}-${index}`"
-              role="listitem"
-              :item="item"
-              :index="index"
-              :is-last="index === timeline.length - 1"
-            />
+            <h3 class="font-display text-base font-semibold text-foreground">
+              {{ card.title }}
+            </h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-textMuted">
+              {{ card.description }}
+            </p>
           </div>
         </div>
+
+        <p class="mt-10 text-sm font-medium uppercase tracking-widest text-accent/80">
+          {{ $t('about.principlesLabel') }}
+        </p>
+        <ul class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3" role="list">
+          <li
+            v-for="(item, index) in principles"
+            :key="`${item.title}-${index}`"
+            role="listitem"
+            class="rounded-lg border border-border/40 bg-white/[0.01] px-4 py-3 text-sm leading-relaxed text-textMuted"
+          >
+            <span class="font-medium text-foreground">{{ item.title }}</span>
+            <span class="text-textMuted/50" aria-hidden="true"> · </span>
+            {{ item.description }}
+          </li>
+        </ul>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-type TimelineEntry = {
-  year: string
-  title: string
-  description: string
-  tech: string[]
-}
+import type { Capability, Principle } from '~/types/portfolio'
 
 const gridBackgroundStyle = {
   backgroundImage: `
@@ -122,50 +103,40 @@ const gridBackgroundStyle = {
   backgroundSize: '60px 60px',
 }
 
+// Curated subset of whatIDo.cards — avoids repeating Hero typewriter / Stack coverage.
+const CAPABILITY_INDICES = [0, 1, 2, 4] as const
+const ABOUT_PRINCIPLE_COUNT = 6
+
 const { locale, getLocaleMessage, t } = useI18n()
 
-const timeline = computed((): TimelineEntry[] => {
-  const tree = getLocaleMessage(locale.value) as {
-    about?: { timeline?: { tech?: unknown[] }[] }
-  }
-  const list = tree.about?.timeline
-  const len = Array.isArray(list) ? list.length : 0
-  if (len === 0) {
-    return []
-  }
-  return Array.from({ length: len }, (_, i) => {
-    const techArr = list?.[i]?.tech
-    const techLen = Array.isArray(techArr) ? techArr.length : 0
-    const tech = Array.from({ length: techLen }, (_, j) => t(`about.timeline.${i}.tech.${j}`))
-    return {
-      year: t(`about.timeline.${i}.year`),
-      title: t(`about.timeline.${i}.title`),
-      description: t(`about.timeline.${i}.description`),
-      tech,
-    }
-  })
-})
+const capabilities = computed((): Capability[] =>
+  CAPABILITY_INDICES.map((i) => ({
+    title: t(`whatIDo.cards.${i}.title`),
+    description: t(`whatIDo.cards.${i}.description`),
+  })),
+)
 
-const stats = computed(() => {
+const principles = computed((): Principle[] => {
   const tree = getLocaleMessage(locale.value) as {
-    about?: { stats?: unknown[] }
+    principles?: { items?: unknown[] }
   }
-  const list = tree.about?.stats
-  const len = Array.isArray(list) ? list.length : 0
+  const list = tree.principles?.items
+  const len = Array.isArray(list) ? Math.min(list.length, ABOUT_PRINCIPLE_COUNT) : 0
   return Array.from({ length: len }, (_, i) => ({
-    value: t(`about.stats.${i}.value`),
-    label: t(`about.stats.${i}.label`),
+    title: t(`principles.items.${i}.title`),
+    description: t(`principles.items.${i}.description`),
   }))
 })
 
 const introRef = ref<HTMLElement | null>(null)
+const detailsRef = ref<HTMLElement | null>(null)
 const introVisible = ref(false)
+const detailsVisible = ref(false)
 
 const { stop: stopIntroObserver } = useIntersectionObserver(
   introRef,
   ([entry]) => {
-    const isIntersecting = entry?.isIntersecting
-    if (isIntersecting) {
+    if (entry?.isIntersecting) {
       introVisible.value = true
       stopIntroObserver()
     }
@@ -173,49 +144,14 @@ const { stop: stopIntroObserver } = useIntersectionObserver(
   { threshold: 0.1 },
 )
 
-const lineTrackRef = ref<HTMLElement | null>(null)
-const lineFillPct = ref(0)
-let lineIntervalId: ReturnType<typeof setInterval> | null = null
-let lineAnimStarted = false
-
-// Honor prefers-reduced-motion (UI-03): resolve the line fill instantly.
-const reducedMotion = usePreferredReducedMotion()
-
-const { stop: stopLineObserver } = useIntersectionObserver(
-  lineTrackRef,
+const { stop: stopDetailsObserver } = useIntersectionObserver(
+  detailsRef,
   ([entry]) => {
-    const isIntersecting = entry?.isIntersecting
-    if (!isIntersecting || lineAnimStarted) {
-      return
+    if (entry?.isIntersecting) {
+      detailsVisible.value = true
+      stopDetailsObserver()
     }
-    lineAnimStarted = true
-    if (reducedMotion.value === 'reduce') {
-      lineFillPct.value = 100
-      stopLineObserver()
-      return
-    }
-    lineIntervalId = setInterval(() => {
-      lineFillPct.value = Math.min(100, lineFillPct.value + 2)
-      if (lineFillPct.value >= 100 && lineIntervalId) {
-        clearInterval(lineIntervalId)
-        lineIntervalId = null
-      }
-    }, 20)
-    setTimeout(() => {
-      if (lineIntervalId) {
-        clearInterval(lineIntervalId)
-        lineIntervalId = null
-      }
-      lineFillPct.value = 100
-    }, 2000)
-    stopLineObserver()
   },
   { threshold: 0.1 },
 )
-
-onBeforeUnmount(() => {
-  if (lineIntervalId) {
-    clearInterval(lineIntervalId)
-  }
-})
 </script>

@@ -9,7 +9,7 @@ import pt from '../../locales/pt.json'
  *
  * These assertions read the source of truth as text (staying in the `node`
  * Vitest environment — no Vue transform / DOM) rather than rendering the SFCs:
- *  - the eleven-section order composed by `app/pages/index.vue` (RF-01),
+ *  - the seven-section order composed by `app/pages/index.vue` (RF-01),
  *  - that every `navItems` hash in `app/layouts/default.vue` resolves to a
  *    rendered section `id` (RF-05),
  *  - that the on-page Blog teaser caps at ≤4 items and links to `/blog` (RF-01),
@@ -21,17 +21,13 @@ const read = (rel: string): string => readFileSync(resolve(root, rel), 'utf8')
 
 const SECTIONS_DIR = 'app/components/sections'
 
-// The confirmed eleven-section order (RF-01).
+// The confirmed seven-section order (RF-01).
 const EXPECTED_ORDER = [
   'HeroSection',
   'AboutSection',
-  'ImpactSection',
-  'WhatIDoSection',
-  'PrinciplesSection',
   'FeaturedProjectsSection',
-  'ExperienceSection',
+  'CareerSection',
   'StackSection',
-  'CurrentlyBuildingSection',
   'BlogSection',
   'ContactSection',
 ] as const
@@ -54,12 +50,12 @@ function sectionId(component: string): string | null {
 const renderedIds = new Set(renderedOrder.map((c) => sectionId(c)).filter(Boolean) as string[])
 
 describe('section composition order (RF-01)', () => {
-  it('renders exactly the eleven sections in the confirmed order', () => {
+  it('renders exactly the seven sections in the confirmed order', () => {
     expect(renderedOrder).toEqual([...EXPECTED_ORDER])
   })
 
-  it('renders exactly eleven sections — no more, no fewer', () => {
-    expect(renderedOrder).toHaveLength(11)
+  it('renders exactly seven sections — no more, no fewer', () => {
+    expect(renderedOrder).toHaveLength(7)
   })
 })
 

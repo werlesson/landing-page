@@ -32,58 +32,6 @@
   }
 }
 
-/* Hero (paridade com v0 — exemplo_secao/hero.zip) */
-@keyframes hero-fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes hero-fade-right {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.hero-fade-in-up {
-  opacity: 0;
-  animation: hero-fade-up 0.8s ease-out forwards;
-}
-
-.hero-fade-in-right {
-  opacity: 0;
-  animation: hero-fade-right 0.8s ease-out forwards;
-}
-
-.hero-stagger-1 {
-  animation-delay: 0.1s;
-}
-.hero-stagger-2 {
-  animation-delay: 0.2s;
-}
-.hero-stagger-3 {
-  animation-delay: 0.3s;
-}
-.hero-stagger-4 {
-  animation-delay: 0.4s;
-}
-.hero-stagger-5 {
-  animation-delay: 0.5s;
-}
-.hero-stagger-6 {
-  animation-delay: 0.6s;
-}
-
 /* About timeline: single ping pulse on dot (paridade com exemplo/about.zip) */
 @keyframes about-ping-once {
   0% {

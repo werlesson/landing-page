@@ -274,7 +274,7 @@ const homePath = computed(() => localePath({ path: '/' }))
 const navItems = [
   { hash: 'about', labelKey: 'nav.about' },
   { hash: 'projects', labelKey: 'nav.projects' },
-  { hash: 'experience', labelKey: 'nav.experience' },
+  { hash: 'career', labelKey: 'nav.career' },
   { hash: 'blog', labelKey: 'nav.blog' },
   { hash: 'contact', labelKey: 'nav.contact' },
 ] as const

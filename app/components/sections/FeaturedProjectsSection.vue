@@ -33,7 +33,12 @@
       </div>
 
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <SectionsProjectCard v-for="study in shipped" :key="study.id" :study="study" />
+        <SectionsProjectCard
+          v-for="(study, i) in shipped"
+          :key="study.id"
+          :study="study"
+          :index="i"
+        />
       </div>
     </div>
   </section>
