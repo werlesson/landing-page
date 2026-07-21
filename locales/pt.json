@@ -87,9 +87,18 @@
     "headlineAccent": "Werlesson",
     "bio": "Passei 6+ anos transformando problemas de negócio em software que entra no ar e escala. Conduzo decisões de arquitetura de ponta a ponta — de interfaces em Vue e Nuxt a APIs em Laravel, modelagem de dados e deploys em Docker — e otimizo por resultado, não por volume de código. Já entreguei 20+ projetos e levei produtos SaaS do primeiro commit à produção, assumindo qualidade, performance e entrega como uma única responsabilidade.",
     "stats": [
-      { "value": "6+", "label": "Anos de experiência" },
-      { "value": "20+", "label": "Projetos entregues" },
-      { "value": "1", "label": "SaaS em produção" }
+      {
+        "value": "6+",
+        "label": "Anos de experiência"
+      },
+      {
+        "value": "20+",
+        "label": "Projetos entregues"
+      },
+      {
+        "value": "1",
+        "label": "SaaS em produção"
+      }
     ],
     "timelineTitleBefore": "Minha",
     "timelineTitleAccent": "trajetória",
@@ -125,10 +134,22 @@
     "title": "Resultados mensuráveis",
     "subtitle": "Os números por trás do trabalho — experiência, entrega e os sistemas que coloquei no ar.",
     "metrics": [
-      { "value": "6+", "label": "Anos de experiência" },
-      { "value": "20+", "label": "Projetos entregues" },
-      { "value": "5", "label": "Produtos SaaS lançados" },
-      { "value": "Ponta a ponta", "label": "Da arquitetura à produção" }
+      {
+        "value": "6+",
+        "label": "Anos de experiência"
+      },
+      {
+        "value": "20+",
+        "label": "Projetos entregues"
+      },
+      {
+        "value": "5",
+        "label": "Produtos SaaS lançados"
+      },
+      {
+        "value": "Ponta a ponta",
+        "label": "Da arquitetura à produção"
+      }
     ]
   },
   "whatIDo": {
@@ -226,10 +247,6 @@
         "liveUrl": "https://www.eunoplay.com.br/",
         "repoUrl": "",
         "tags": ["SaaS", "Vue", "Hardware", "Vídeo"],
-        "description": "Plataforma SaaS B2B para arenas esportivas: captura automática de lances, entrega white-label ao jogador e inventário de patrocínio em cada vídeo — construída do zero e em produção com clientes reais.",
-        "problem": "Donos de arena querem experiência memorável para o jogador e nova receita com patrocínio, mas gravar lances ainda depende de operador dedicado, edição manual e entrega lenta — por isso a maioria das quadras nunca productiza vídeo.",
-        "solution": "Kit com botão físico e câmera dedicada grava os últimos 25 segundos sob demanda, processa o clipe com a marca da arena e parceiros, e entrega no app white-label do jogador em menos de um minuto — sem mudar a operação do dia a dia da quadra.",
-        "architecture": "Captura na borda (Raspberry Pi + câmeras IP) dispara um pipeline de processamento que aplica branding da arena/patrocinadores e entrega os clipes via app white-label multi-tenant. APIs backend orquestram tenants, mídia e entrega; o site comercial e o produto rodam em stack moderna baseada em Vue.",
         "techStack": [
           "Vue 3",
           "Laravel",
@@ -238,9 +255,7 @@
           "Câmeras IP",
           "Docker",
           "PostgreSQL"
-        ],
-        "challenges": "Unir confiabilidade de hardware com SLAs de software: latência baixa na quadra, branding consistente entre tenants e instalação sem reforma — mantendo o produto operável por equipes não técnicas da arena.",
-        "results": "Em produção com clientes reais. Jogadores recebem clipes com marca em menos de um minuto; arenas ganham superfície de patrocínio em cada vídeo e uma experiência que apoia retenção sem operador de câmera em tempo integral."
+        ]
       },
       {
         "id": "bolao-copa",
@@ -250,13 +265,7 @@
         "liveUrl": "https://bolaodacopa.werlesson.dev/",
         "repoUrl": "",
         "tags": ["Nuxt", "Auth", "Futebol"],
-        "description": "App web para bolões de previsões de futebol — entre no bolão, marque os jogos e suba no ranking com login Google sem fricção.",
-        "problem": "Bolões casuais ainda vivem em planilhas e threads de WhatsApp: sem ranking compartilhado, onboarding doloroso e sem produto durável para a temporada de torneio.",
-        "solution": "Um produto web focado em que amigos entram no bolão, enviam palpites e acompanham a classificação — com auth Google para começar em segundos, sem formulários de conta.",
-        "architecture": "Cliente web SPA/SSR com autenticação social, dados de partidas, envio de palpites e telas de ranking. Auth e estado do bolão ficam atrás de uma superfície de backend enxuta, adequada ao tráfego sazonal de torneios.",
-        "techStack": ["Nuxt", "Vue 3", "TypeScript", "Google Auth", "Tailwind CSS"],
-        "challenges": "Manter onboarding quase sem fricção enquanto modela bolões, partidas e pontuação ao longo do calendário — e entregar uma UI premium sem overengineering para um produto sazonal.",
-        "results": "Produto no ar em bolaodacopa.werlesson.dev: login Google, fluxo de palpites e ranking prontos para torneio, sem caos de planilha."
+        "techStack": ["Nuxt", "Vue 3", "TypeScript", "Google Auth", "Tailwind CSS"]
       },
       {
         "id": "csv-view",
@@ -266,12 +275,6 @@
         "liveUrl": "https://www.csvview.werlesson.dev/",
         "repoUrl": "https://github.com/werlesson/csvview",
         "tags": ["Nuxt 4", "TypeScript", "Web Workers"],
-        "description": "Explorador de CSV 100% client-side: abre, filtra, analisa e edita arquivos enormes direto no navegador — sem upload, sem servidor e sem instalar nada. Seus dados nunca saem da máquina.",
-        "problem": "Explorar e manipular CSVs grandes costuma exigir instalar software ou subir dados sigilosos para um servidor de terceiros — um risco de privacidade — e mesmo assim a interface trava ao processar milhões de linhas.",
-        "solution": "Uma arquitetura inteiramente no navegador: parsing em streaming via Web Worker em chunks de 1 MB, renderização virtualizada da tabela para rolar milhões de linhas sem travar, e persistência de sessão em IndexedDB para reabrir o arquivo exatamente de onde parou.",
-        "architecture": "A lógica de domínio (parsing, estatísticas, filtros, diff e export) vive isolada em app/services, sem dependência do Vue e 100% testável em isolamento. As camadas se separam em pages (rotas), components (UI), composables (estado reativo) e services (funções puras). O IndexedDB guarda o conteúdo do arquivo e o estado da sessão — busca, filtros, ordenação e layout das colunas.",
-        "challenges": "Manter a UI fluida com arquivos de milhões de linhas: o parser em streaming evita bloquear a thread principal, o scroll virtualizado mantém a tabela responsiva e um único stack cronológico de undo/redo unifica edição de células e reordenação de colunas.",
-        "results": "Suporta 2M+ de linhas com 0 KB enviados à rede — zero-backend, privacidade por padrão. Entrega detecção automática de delimitador e BOM, estatísticas por coluna, filtros combináveis por tipo, edição inline com undo/redo, comparação (diff) entre arquivos e export para CSV, JSON, Markdown, SQL e XLSX.",
         "techStack": [
           "Nuxt 4",
           "Vue 3",
@@ -362,6 +365,20 @@
     "title": "Em andamento",
     "subtitle": "Produtos em desenvolvimento ativo — entregando continuamente.",
     "statusNote": "Em andamento"
+  },
+  "projectDetail": {
+    "back": "Voltar para projetos",
+    "galleryHeading": "Galeria",
+    "viewDetails": "Ver estudo de caso",
+    "viewDetailsAria": "Abrir o estudo de caso de {title}",
+    "blocks": {
+      "description": "Visão geral",
+      "problem": "Problema",
+      "solution": "Solução",
+      "architecture": "Arquitetura",
+      "challenges": "Desafios",
+      "results": "Resultados"
+    }
   },
   "blog": {
     "supertitle": "Blog",

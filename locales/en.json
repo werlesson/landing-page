@@ -87,9 +87,18 @@
     "headlineAccent": "Werlesson",
     "bio": "I've spent 6+ years turning business problems into software that ships and scales. I lead architecture decisions end to end — from Vue and Nuxt interfaces to Laravel APIs, data modeling and Docker-based deploys — and I optimize for outcomes, not output. I've delivered 20+ projects and taken SaaS products from first commit to production, owning quality, performance and delivery as one responsibility.",
     "stats": [
-      { "value": "6+", "label": "Years of experience" },
-      { "value": "20+", "label": "Projects delivered" },
-      { "value": "1", "label": "SaaS in production" }
+      {
+        "value": "6+",
+        "label": "Years of experience"
+      },
+      {
+        "value": "20+",
+        "label": "Projects delivered"
+      },
+      {
+        "value": "1",
+        "label": "SaaS in production"
+      }
     ],
     "timelineTitleBefore": "My",
     "timelineTitleAccent": "path so far",
@@ -125,10 +134,22 @@
     "title": "Measurable outcomes",
     "subtitle": "The numbers behind the work — experience, delivery and the systems I've shipped.",
     "metrics": [
-      { "value": "6+", "label": "Years of experience" },
-      { "value": "20+", "label": "Projects delivered" },
-      { "value": "5", "label": "SaaS products shipped" },
-      { "value": "End to end", "label": "From architecture to production" }
+      {
+        "value": "6+",
+        "label": "Years of experience"
+      },
+      {
+        "value": "20+",
+        "label": "Projects delivered"
+      },
+      {
+        "value": "5",
+        "label": "SaaS products shipped"
+      },
+      {
+        "value": "End to end",
+        "label": "From architecture to production"
+      }
     ]
   },
   "whatIDo": {
@@ -226,10 +247,6 @@
         "liveUrl": "https://www.eunoplay.com.br/",
         "repoUrl": "",
         "tags": ["SaaS", "Vue", "Hardware", "Video"],
-        "description": "A B2B SaaS platform for sports arenas: automatic highlight capture, white-label player delivery, and sponsorship inventory baked into every clip — built from scratch and live with real customers.",
-        "problem": "Arena owners want sticky player experiences and new sponsorship revenue, but highlight capture usually depends on a dedicated operator, manual editing, and slow delivery — so most venues never productize video at all.",
-        "solution": "A physical button plus dedicated camera kit records the last 25 seconds on demand, processes the clip with the arena's brand and partners, and pushes it to a white-label app on the player's phone in under a minute — without changing day-to-day court operations.",
-        "architecture": "Edge capture (Raspberry Pi + IP cameras) triggers a processing pipeline that applies arena/sponsor branding, then delivers clips through a multi-tenant white-label app. Backend APIs orchestrate tenants, media processing and delivery; the commercial site and product UX sit on a modern Vue-based stack.",
         "techStack": [
           "Vue 3",
           "Laravel",
@@ -238,9 +255,7 @@
           "IP cameras",
           "Docker",
           "PostgreSQL"
-        ],
-        "challenges": "Coupling hardware reliability with software SLAs: low-latency capture on the court, consistent branding across tenants, and an install path that works without renovating the venue — while keeping the product operable by non-technical arena staff.",
-        "results": "In production with real arena customers. Players get branded clips in under a minute; venues gain a sponsorship surface on every video and a differentiated experience that supports retention without adding a full-time camera operator."
+        ]
       },
       {
         "id": "bolao-copa",
@@ -250,13 +265,7 @@
         "liveUrl": "https://bolaodacopa.werlesson.dev/",
         "repoUrl": "",
         "tags": ["Nuxt", "Auth", "Football"],
-        "description": "A web app for football prediction pools — join a bolão, score fixtures, and climb the ranking with frictionless Google sign-in.",
-        "problem": "Casual prediction pools still run on spreadsheets and WhatsApp threads: no shared ranking, painful onboarding, and no durable product experience for tournament seasons.",
-        "solution": "A focused web product where friends join a pool, submit match predictions, and follow standings — with Google auth so participation starts in seconds instead of account forms.",
-        "architecture": "SPA/SSR web client with social authentication, match/fixture data, prediction submission and ranking views. Auth and pool state live behind a small backend surface suited to seasonal tournament traffic.",
-        "techStack": ["Nuxt", "Vue 3", "TypeScript", "Google Auth", "Tailwind CSS"],
-        "challenges": "Keeping onboarding near-zero friction while modeling pools, fixtures and scoring correctly across a tournament calendar — and shipping a UI that feels premium without overbuilding for a seasonal product.",
-        "results": "A live product at bolaodacopa.werlesson.dev: Google sign-in, prediction flow and ranking UX ready for tournament use without spreadsheet chaos."
+        "techStack": ["Nuxt", "Vue 3", "TypeScript", "Google Auth", "Tailwind CSS"]
       },
       {
         "id": "csv-view",
@@ -266,12 +275,6 @@
         "liveUrl": "https://www.csvview.werlesson.dev/",
         "repoUrl": "https://github.com/werlesson/csvview",
         "tags": ["Nuxt 4", "TypeScript", "Web Workers"],
-        "description": "A 100% client-side CSV explorer: open, filter, analyze and edit huge files right in the browser — no upload, no server, nothing to install. Your data never leaves your machine.",
-        "problem": "Exploring and manipulating large CSVs usually means installing software or uploading sensitive data to a third-party server — a privacy risk — and even then the UI freezes while processing millions of rows.",
-        "solution": "A fully in-browser architecture: streaming parsing via a Web Worker in 1 MB chunks, virtualized table rendering to scroll millions of rows without jank, and session persistence in IndexedDB to reopen a file exactly where you left off.",
-        "architecture": "The domain logic (parsing, statistics, filters, diff and export) lives isolated in app/services, with no Vue dependency and 100% testable in isolation. Layers are split into pages (routes), components (UI), composables (reactive state) and services (pure functions). IndexedDB stores the file content and session state — search, filters, sorting and column layout.",
-        "challenges": "Keeping the UI fluid with million-row files: the streaming parser avoids blocking the main thread, virtualized scrolling keeps the table responsive, and a single chronological undo/redo stack unifies cell edits and column reordering.",
-        "results": "Handles 2M+ rows with 0 KB sent over the network — zero-backend, privacy by default. Ships automatic delimiter and BOM detection, per-column statistics, type-aware combinable filters, inline editing with undo/redo, file comparison (diff) and export to CSV, JSON, Markdown, SQL and XLSX.",
         "techStack": [
           "Nuxt 4",
           "Vue 3",
@@ -362,6 +365,20 @@
     "title": "In progress",
     "subtitle": "Products actively in development — shipping continuously.",
     "statusNote": "In progress"
+  },
+  "projectDetail": {
+    "back": "Back to projects",
+    "galleryHeading": "Gallery",
+    "viewDetails": "View case study",
+    "viewDetailsAria": "Open the {title} case study",
+    "blocks": {
+      "description": "Overview",
+      "problem": "Problem",
+      "solution": "Solution",
+      "architecture": "Architecture",
+      "challenges": "Challenges",
+      "results": "Results"
+    }
   },
   "blog": {
     "supertitle": "Blog",
