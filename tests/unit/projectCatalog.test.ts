@@ -61,12 +61,16 @@ describe('case-study normalizer is empty-safe (RF-24)', () => {
     expect(() => normalizeCaseStudies(catalogRaw)).not.toThrow()
   })
 
-  it('keeps filled case-study prose for shipped projects', () => {
+  it('keeps card metadata for shipped projects (narrative lives in content collection)', () => {
     const csvView = normalizeCaseStudies(catalogRaw).find((p) => p.id === 'csv-view')
     expect(csvView).toBeDefined()
-    expect(csvView?.problem).toBeTruthy()
-    expect(csvView?.solution).toBeTruthy()
-    expect(csvView?.results).toBeTruthy()
+    expect(csvView?.title).toBeTruthy()
+    expect(csvView?.techStack?.length).toBeGreaterThan(0)
+    expect(csvView?.liveUrl).toBeTruthy()
+    // Narrative prose migrated to content/projects — absent from i18n catalog.
+    expect(csvView?.problem).toBeUndefined()
+    expect(csvView?.solution).toBeUndefined()
+    expect(csvView?.results).toBeUndefined()
   })
 
   it('maps empty prose blocks to undefined so renderers can omit them', () => {
