@@ -14,7 +14,7 @@ export default {
         background: '#0a0a0f',
         accent: '#39ff14',
         textPrimary: '#f0f0f0',
-        textMuted: '#6b7280',
+        textMuted: '#8b929e',
         foreground: '#f5f5f7',
         card: '#121218',
         border: '#1f1f28',

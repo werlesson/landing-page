@@ -5,9 +5,11 @@
 ## AS IS — Current state
 
 ### Style
+
 Nuxt 4 file-based, component-composition SPA/SSR: a single page (`app/pages/index.vue`) composes self-contained section components; no controllers, no services layer, no store observed.
 
 ### Directory layout
+
 ```
 app/                          # Nuxt srcDir
 ├── app.vue                   # root component
@@ -37,23 +39,26 @@ eslint.config.mjs             # @nuxt/eslint flat config + rule overrides
 ```
 
 ### Layer responsibilities
-| Layer | Owns | Does NOT own |
-| --- | --- | --- |
-| `app/pages/index.vue` | Route entry, section composition order, SEO meta, Schema.org | Section markup, animation logic |
-| `app/components/sections/*` | Presentation + client-side interactivity per section | Routing, content strings, global config |
-| `locales/*.json` | All UI copy, timeline data, stat targets, tags | Rendering, styling |
-| `nuxt.config.ts` | SSR toggle, module wiring, i18n, fonts, site URL | Component behavior |
-| `tests/unit/*` | Pure-logic + locale-parity verification | Runtime rendering |
+
+| Layer                       | Owns                                                         | Does NOT own                            |
+| --------------------------- | ------------------------------------------------------------ | --------------------------------------- |
+| `app/pages/index.vue`       | Route entry, section composition order, SEO meta, Schema.org | Section markup, animation logic         |
+| `app/components/sections/*` | Presentation + client-side interactivity per section         | Routing, content strings, global config |
+| `locales/*.json`            | All UI copy, timeline data, stat targets, tags               | Rendering, styling                      |
+| `nuxt.config.ts`            | SSR toggle, module wiring, i18n, fonts, site URL             | Component behavior                      |
+| `tests/unit/*`              | Pure-logic + locale-parity verification                      | Runtime rendering                       |
 
 ### External integration points
-| System | Client/config | Notes |
-| --- | --- | --- |
-| Google Fonts | `nuxt.config.ts` `app.head.link` | preconnect + Syne/DM Sans stylesheet |
-| Sitemap | `@nuxtjs/sitemap` module | uses `site.url = https://werlesson.dev` |
-| Schema.org | `nuxt-schema-org` + `definePerson` | `app/pages/index.vue` |
-| i18n | `@nuxtjs/i18n` | `langDir: ../locales`, `defaultLocale: pt`, `strategy: prefix_except_default` |
+
+| System       | Client/config                      | Notes                                                                         |
+| ------------ | ---------------------------------- | ----------------------------------------------------------------------------- |
+| Google Fonts | `nuxt.config.ts` `app.head.link`   | preconnect + Syne/DM Sans stylesheet                                          |
+| Sitemap      | `@nuxtjs/sitemap` module           | uses `site.url = https://werlesson.dev`                                       |
+| Schema.org   | `nuxt-schema-org` + `definePerson` | `app/pages/index.vue`                                                         |
+| i18n         | `@nuxtjs/i18n`                     | `langDir: ../locales`, `defaultLocale: pt`, `strategy: prefix_except_default` |
 
 ### Macro flow: SSR page render
+
 ```
 HTTP request
     |

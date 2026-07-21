@@ -2,6 +2,49 @@ import { describe, it, expect } from 'vitest'
 import en from '../../locales/en.json'
 import pt from '../../locales/pt.json'
 
+/**
+ * Locale parity gate for `locales/*.json` UI copy only.
+ * Nuxt Content blog article bodies (single-locale-per-article) are content, not
+ * UI copy, and are intentionally NOT covered here (RF-04 scope).
+ */
+type Json = string | number | boolean | null | Json[] | { [key: string]: Json }
+
+/**
+ * Recursively asserts that two locale values share the same structure:
+ * identical value types, identical object key sets, and equal array lengths
+ * (recursing into array elements so nested objects/arrays match too).
+ */
+function assertStructuralParity(a: Json, b: Json, path: string): void {
+  const typeOf = (value: Json) =>
+    Array.isArray(value) ? 'array' : value === null ? 'null' : typeof value
+
+  const ta = typeOf(a)
+  const tb = typeOf(b)
+  expect(ta, `type mismatch at ${path}`).toBe(tb)
+
+  if (Array.isArray(a) && Array.isArray(b)) {
+    expect(a.length, `array length mismatch at ${path}`).toBe(b.length)
+    for (let i = 0; i < a.length; i++) {
+      assertStructuralParity(a[i]!, b[i]!, `${path}[${i}]`)
+    }
+    return
+  }
+
+  if (ta === 'object') {
+    const ao = a as Record<string, Json>
+    const bo = b as Record<string, Json>
+    const aKeys = Object.keys(ao).sort()
+    const bKeys = Object.keys(bo).sort()
+    expect(aKeys, `key set mismatch at ${path}`).toEqual(bKeys)
+    for (const key of aKeys) {
+      assertStructuralParity(ao[key]!, bo[key]!, `${path}.${key}`)
+    }
+  }
+}
+
+const enRoot = en as unknown as Record<string, Json>
+const ptRoot = pt as unknown as Record<string, Json>
+
 describe('i18n locale parity', () => {
   it('PT has all top-level keys from EN', () => {
     for (const key of Object.keys(en)) {
@@ -14,19 +57,39 @@ describe('i18n locale parity', () => {
       expect(Object.keys(en)).toContain(key)
     }
   })
+
+  it('EN and PT are structurally identical (keys + equal-length arrays)', () => {
+    assertStructuralParity(enRoot, ptRoot, 'root')
+  })
 })
 
 describe('hero section', () => {
-  it('has all three typewriter roles in EN', () => {
-    expect(en.hero.role1).toBeTruthy()
-    expect(en.hero.role2).toBeTruthy()
-    expect(en.hero.role3).toBeTruthy()
+  it('has no legacy typewriter role keys', () => {
+    expect('role1' in en.hero).toBe(false)
+    expect('role2' in en.hero).toBe(false)
+    expect('role3' in en.hero).toBe(false)
+    expect('role1' in pt.hero).toBe(false)
+    expect('role2' in pt.hero).toBe(false)
+    expect('role3' in pt.hero).toBe(false)
   })
 
-  it('has all three typewriter roles in PT', () => {
-    expect(pt.hero.role1).toBeTruthy()
-    expect(pt.hero.role2).toBeTruthy()
-    expect(pt.hero.role3).toBeTruthy()
+  it('has a static positioning title in both locales', () => {
+    expect(en.hero.title).toBe('Senior Software Engineer')
+    expect(pt.hero.title).toBeTruthy()
+  })
+
+  it('has static subtitle and description in both locales', () => {
+    expect(en.hero.subtitle).toBeTruthy()
+    expect(en.hero.description).toBeTruthy()
+    expect(pt.hero.subtitle).toBeTruthy()
+    expect(pt.hero.description).toBeTruthy()
+  })
+
+  it('has a non-empty capabilities array with equal length in both locales', () => {
+    expect(Array.isArray(en.hero.capabilities)).toBe(true)
+    expect(Array.isArray(pt.hero.capabilities)).toBe(true)
+    expect(en.hero.capabilities.length).toBeGreaterThan(0)
+    expect(en.hero.capabilities.length).toBe(pt.hero.capabilities.length)
   })
 
   it('has CTA labels in both locales', () => {
@@ -36,22 +99,44 @@ describe('hero section', () => {
     expect(pt.hero.ctaProjects).toBeTruthy()
   })
 
-  it('stat targets are positive numbers in EN', () => {
-    expect(en.hero.statTargets.years).toBeGreaterThan(0)
-    expect(en.hero.statTargets.projects).toBeGreaterThan(0)
-    expect(en.hero.statTargets.commits).toBeGreaterThan(0)
+  it('exposes LinkedIn/GitHub/Email social labels + aria in both locales', () => {
+    for (const social of [en.hero.social, pt.hero.social]) {
+      expect(social.linkedin.label).toBeTruthy()
+      expect(social.linkedin.aria).toBeTruthy()
+      expect(social.github.label).toBeTruthy()
+      expect(social.github.aria).toBeTruthy()
+      expect(social.email.label).toBeTruthy()
+      expect(social.email.aria).toBeTruthy()
+    }
+  })
+
+  it('stat targets are positive numbers in both locales', () => {
+    for (const targets of [en.hero.statTargets, pt.hero.statTargets]) {
+      expect(targets.years).toBeGreaterThan(0)
+      expect(targets.projects).toBeGreaterThan(0)
+      expect(targets.commits).toBeGreaterThan(0)
+    }
+  })
+
+  it('carries the canonical 6+ years / 20+ projects metrics', () => {
+    expect(en.hero.statTargets.years).toBe(6)
+    expect(en.hero.statTargets.projects).toBe(20)
+    expect(pt.hero.statTargets.years).toBe(6)
+    expect(pt.hero.statTargets.projects).toBe(20)
   })
 })
 
-describe('about timeline', () => {
-  it('has at least 3 entries in EN', () => {
-    expect(Array.isArray(en.about.timeline)).toBe(true)
-    expect(en.about.timeline.length).toBeGreaterThanOrEqual(3)
+describe('about section', () => {
+  it('about stats reflect the canonical 6+ / 20+ metrics', () => {
+    expect(en.about.stats[0]?.value).toBe('6+')
+    expect(en.about.stats[1]?.value).toBe('20+')
+    expect(pt.about.stats[0]?.value).toBe('6+')
+    expect(pt.about.stats[1]?.value).toBe('20+')
   })
 
-  it('has at least 3 entries in PT', () => {
-    expect(Array.isArray(pt.about.timeline)).toBe(true)
-    expect(pt.about.timeline.length).toBeGreaterThanOrEqual(3)
+  it('has at least 3 timeline entries with equal length across locales', () => {
+    expect(en.about.timeline.length).toBeGreaterThanOrEqual(3)
+    expect(en.about.timeline.length).toBe(pt.about.timeline.length)
   })
 
   it('each timeline entry has year, title, description and tech', () => {
@@ -62,36 +147,102 @@ describe('about timeline', () => {
       expect(Array.isArray(entry.tech)).toBe(true)
     }
   })
+})
 
-  it('EN and PT timelines have the same number of entries', () => {
-    expect(en.about.timeline.length).toBe(pt.about.timeline.length)
+describe('new section namespaces', () => {
+  it('impact metrics are present and equal-length across locales', () => {
+    expect(Array.isArray(en.impact.metrics)).toBe(true)
+    expect(en.impact.metrics.length).toBeGreaterThan(0)
+    expect(en.impact.metrics.length).toBe(pt.impact.metrics.length)
+  })
+
+  it('whatIDo renders six cards, equal-length across locales', () => {
+    expect(en.whatIDo.cards.length).toBe(6)
+    expect(en.whatIDo.cards.length).toBe(pt.whatIDo.cards.length)
+    for (const card of en.whatIDo.cards) {
+      expect(card.title).toBeTruthy()
+      expect(card.description).toBeTruthy()
+    }
+  })
+
+  it('principles items are present and equal-length across locales', () => {
+    expect(en.principles.items.length).toBeGreaterThan(0)
+    expect(en.principles.items.length).toBe(pt.principles.items.length)
+  })
+
+  it('featuredProjects catalog is present and equal-length across locales', () => {
+    expect(Array.isArray(en.featuredProjects.projects)).toBe(true)
+    expect(en.featuredProjects.projects.length).toBeGreaterThan(0)
+    expect(en.featuredProjects.projects.length).toBe(pt.featuredProjects.projects.length)
+  })
+
+  it('each project carries an id and a shipped|building status', () => {
+    for (const project of en.featuredProjects.projects) {
+      expect(project.id).toBeTruthy()
+      expect(['shipped', 'building']).toContain(project.status)
+    }
+  })
+
+  it('experience entries are present and equal-length across locales', () => {
+    expect(Array.isArray(en.experience.entries)).toBe(true)
+    expect(en.experience.entries.length).toBe(pt.experience.entries.length)
+  })
+
+  it('currentlyBuilding namespace is present in both locales', () => {
+    expect(en.currentlyBuilding.title).toBeTruthy()
+    expect(pt.currentlyBuilding.title).toBeTruthy()
+  })
+
+  it('blog namespace is present in both locales', () => {
+    expect(en.blog.title).toBeTruthy()
+    expect(pt.blog.title).toBeTruthy()
+  })
+})
+
+describe('nav and stack', () => {
+  it('exposes the new nav labels in both locales', () => {
+    for (const nav of [en.nav, pt.nav]) {
+      expect(nav.impact).toBeTruthy()
+      expect(nav.whatIDo).toBeTruthy()
+      expect(nav.principles).toBeTruthy()
+      expect(nav.projects).toBeTruthy()
+      expect(nav.experience).toBeTruthy()
+      expect(nav.building).toBeTruthy()
+      expect(nav.blog).toBeTruthy()
+    }
+  })
+
+  it('stack groups include the additive Tools group in both locales', () => {
+    expect(en.stack.groups.tools).toBeTruthy()
+    expect(pt.stack.groups.tools).toBeTruthy()
+  })
+})
+
+describe('contact section', () => {
+  it('exposes the "work together" CTA in both locales', () => {
+    expect(en.contact.cta).toBeTruthy()
+    expect(pt.contact.cta).toBeTruthy()
+  })
+
+  it('uses the recruiter-facing gmail address in both locales', () => {
+    expect(en.contact.social.email.handle).toContain('werlessono')
+    expect(en.contact.social.email.handle).toContain('gmail.com')
+    expect(pt.contact.social.email.handle).toContain('werlessono')
+    expect(pt.contact.social.email.handle).toContain('gmail.com')
+  })
+
+  it('social handles are defined in both locales', () => {
+    for (const social of [en.contact.social, pt.contact.social]) {
+      expect(social.github.handle).toBeTruthy()
+      expect(social.linkedin.handle).toBeTruthy()
+      expect(social.email.handle).toBeTruthy()
+    }
   })
 })
 
 describe('project section', () => {
   it('tech tags are non-empty arrays in both locales', () => {
-    expect(Array.isArray(en.project.euNoPlay.tags)).toBe(true)
     expect(en.project.euNoPlay.tags.length).toBeGreaterThan(0)
-    expect(Array.isArray(pt.project.euNoPlay.tags)).toBe(true)
     expect(pt.project.euNoPlay.tags.length).toBeGreaterThan(0)
-  })
-
-  it('CTA label is defined in both locales', () => {
-    expect(en.project.euNoPlay.cta).toBeTruthy()
-    expect(pt.project.euNoPlay.cta).toBeTruthy()
-  })
-})
-
-describe('contact section', () => {
-  it('social handles are defined in EN', () => {
-    expect(en.contact.social.github.handle).toBeTruthy()
-    expect(en.contact.social.linkedin.handle).toBeTruthy()
-    expect(en.contact.social.email.handle).toBeTruthy()
-  })
-
-  it('social handles are defined in PT', () => {
-    expect(pt.contact.social.github.handle).toBeTruthy()
-    expect(pt.contact.social.linkedin.handle).toBeTruthy()
-    expect(pt.contact.social.email.handle).toBeTruthy()
   })
 })

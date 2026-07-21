@@ -14,8 +14,14 @@
   },
   "nav": {
     "about": "About",
+    "impact": "Impact",
+    "whatIDo": "What I Do",
+    "principles": "Principles",
+    "projects": "Projects",
+    "experience": "Experience",
     "stack": "Stack",
-    "project": "Project",
+    "building": "Building",
+    "blog": "Blog",
     "contact": "Contact",
     "primaryAria": "Primary navigation",
     "mobileAria": "Navigation — mobile menu",
@@ -29,22 +35,43 @@
     "namePrefix": "Werles",
     "nameGlow": "s",
     "nameSuffix": "on",
-    "role1": "Fullstack engineer — Vue + Laravel",
-    "role2": "Vue 3, Nuxt, TypeScript",
-    "role3": "IoT, product, shipping to prod",
-    "description": "I'm a fullstack engineer centered on Vue 3 and Laravel. I take work from discovery through production — DDD-style boundaries, Postgres or MySQL, Redis, and Docker-first deploys on Coolify or a VPS. When it fits the problem, I bridge web and hardware (IoT, Raspberry Pi, privacy-aware integrations); Eu no Play is one example. I work like a technical co-founder: product judgment, solid engineering, and ownership past the launch line.",
-    "ctaProjects": "See highlighted work",
+    "title": "Senior Software Engineer",
+    "subtitle": "Building scalable SaaS products with Vue, Nuxt and Laravel.",
+    "description": "I design, build and launch digital products — from architecture to production.",
+    "capabilities": [
+      "SaaS",
+      "Product Engineering",
+      "Frontend Architecture",
+      "Laravel",
+      "Performance",
+      "System Design"
+    ],
+    "ctaProjects": "View Projects",
     "ctaCv": "Download résumé",
-    "ctaProjectsAria": "Jump to the featured project section",
+    "ctaProjectsAria": "Jump to the featured projects section",
     "ctaCvAria": "Download résumé as PDF",
+    "social": {
+      "linkedin": {
+        "label": "LinkedIn",
+        "aria": "Open Werlesson's LinkedIn profile"
+      },
+      "github": {
+        "label": "GitHub",
+        "aria": "Open Werlesson's GitHub profile"
+      },
+      "email": {
+        "label": "Email",
+        "aria": "Email Werlesson"
+      }
+    },
     "stats": {
       "years": "Years building software",
       "projects": "Projects shipped",
       "commits": "Commits on GitHub"
     },
     "statTargets": {
-      "years": 8,
-      "projects": 24,
+      "years": 6,
+      "projects": 20,
       "commits": 2100
     },
     "floatTags": {
@@ -55,13 +82,13 @@
     }
   },
   "about": {
-    "badge": "Fullstack developer",
+    "badge": "Senior Software Engineer",
     "headlineBefore": "Hi, I'm",
     "headlineAccent": "Werlesson",
-    "bio": "I like turning ideas into live product. I grew up on the frontend, doubled down on Vue, and expanded into resilient APIs and Laravel with an architecture-first mindset. Sometimes the right solution sits between a browser and a device in the field — I'm comfortable there too. I care about scope, quality, and deployment as one narrative. I'm looking for international remote teams where clarity and ownership matter.",
+    "bio": "I've spent 6+ years turning business problems into software that ships and scales. I lead architecture decisions end to end — from Vue and Nuxt interfaces to Laravel APIs, data modeling and Docker-based deploys — and I optimize for outcomes, not output. I've delivered 20+ projects and taken SaaS products from first commit to production, owning quality, performance and delivery as one responsibility.",
     "stats": [
-      { "value": "8+", "label": "Years in development" },
-      { "value": "24+", "label": "Projects delivered" },
+      { "value": "6+", "label": "Years of experience" },
+      { "value": "20+", "label": "Projects delivered" },
       { "value": "1", "label": "SaaS in production" }
     ],
     "timelineTitleBefore": "My",
@@ -93,6 +120,231 @@
       }
     ]
   },
+  "impact": {
+    "supertitle": "Impact",
+    "title": "Measurable outcomes",
+    "subtitle": "The numbers behind the work — experience, delivery and the systems I've shipped.",
+    "metrics": [
+      { "value": "6+", "label": "Years of experience" },
+      { "value": "20+", "label": "Projects delivered" },
+      { "value": "5", "label": "SaaS products shipped" },
+      { "value": "End to end", "label": "From architecture to production" }
+    ]
+  },
+  "whatIDo": {
+    "supertitle": "What I Do",
+    "title": "Capabilities",
+    "subtitle": "Where I create the most value across the product lifecycle.",
+    "cards": [
+      {
+        "title": "SaaS Development",
+        "description": "Design and ship multi-tenant SaaS products, from billing and auth to scale."
+      },
+      {
+        "title": "Frontend Architecture",
+        "description": "Structure Vue and Nuxt applications that stay fast and maintainable as they grow."
+      },
+      {
+        "title": "Laravel APIs",
+        "description": "Build resilient, well-modeled backends with clear domain boundaries."
+      },
+      {
+        "title": "Performance & SEO",
+        "description": "Tune Core Web Vitals, SSR and metadata so products load fast and rank."
+      },
+      {
+        "title": "System Design",
+        "description": "Model data, services and infrastructure for reliability and growth."
+      },
+      {
+        "title": "Technical Leadership",
+        "description": "Drive architecture decisions and align engineering with business goals."
+      }
+    ]
+  },
+  "principles": {
+    "supertitle": "Principles",
+    "title": "How I engineer",
+    "subtitle": "The convictions that guide the decisions I make.",
+    "items": [
+      {
+        "title": "Architecture First",
+        "description": "Decisions are cheaper before the code exists."
+      },
+      {
+        "title": "Performance Matters",
+        "description": "Speed is a feature users feel on every page."
+      },
+      {
+        "title": "Developer Experience",
+        "description": "Good DX compounds into faster, safer delivery."
+      },
+      {
+        "title": "SEO by Default",
+        "description": "Discoverability is built in, not bolted on."
+      },
+      {
+        "title": "Scalable Systems",
+        "description": "Design for the load you'll have, not just the one you have."
+      },
+      {
+        "title": "Clean Code",
+        "description": "Readable code is the cheapest code to change."
+      },
+      {
+        "title": "Business-Driven Decisions",
+        "description": "Every technical choice serves an outcome."
+      }
+    ]
+  },
+  "featuredProjects": {
+    "supertitle": "Featured Projects",
+    "title": "Case studies",
+    "subtitle": "Products taken from first commit to production.",
+    "viewProject": "View Project",
+    "sourceCode": "Source Code",
+    "viewProjectAria": "Open the live project",
+    "sourceCodeAria": "Open the source code repository",
+    "statusLabels": {
+      "shipped": "Shipped",
+      "building": "Building"
+    },
+    "blocks": {
+      "problem": "Problem",
+      "solution": "Solution",
+      "architecture": "Architecture",
+      "techStack": "Tech Stack",
+      "challenges": "Challenges",
+      "results": "Results"
+    },
+    "projects": [
+      {
+        "id": "eu-no-play",
+        "status": "shipped",
+        "title": "Eu no Play",
+        "image": "/projects/eu-no-play.png",
+        "liveUrl": "https://www.eunoplay.com.br/",
+        "repoUrl": "",
+        "tags": ["SaaS", "Vue", "Hardware", "Video"],
+        "description": "A B2B SaaS platform for sports arenas: automatic highlight capture, white-label player delivery, and sponsorship inventory baked into every clip — built from scratch and live with real customers.",
+        "problem": "Arena owners want sticky player experiences and new sponsorship revenue, but highlight capture usually depends on a dedicated operator, manual editing, and slow delivery — so most venues never productize video at all.",
+        "solution": "A physical button plus dedicated camera kit records the last 25 seconds on demand, processes the clip with the arena's brand and partners, and pushes it to a white-label app on the player's phone in under a minute — without changing day-to-day court operations.",
+        "architecture": "Edge capture (Raspberry Pi + IP cameras) triggers a processing pipeline that applies arena/sponsor branding, then delivers clips through a multi-tenant white-label app. Backend APIs orchestrate tenants, media processing and delivery; the commercial site and product UX sit on a modern Vue-based stack.",
+        "techStack": [
+          "Vue 3",
+          "Laravel",
+          "REST APIs",
+          "Raspberry Pi",
+          "IP cameras",
+          "Docker",
+          "PostgreSQL"
+        ],
+        "challenges": "Coupling hardware reliability with software SLAs: low-latency capture on the court, consistent branding across tenants, and an install path that works without renovating the venue — while keeping the product operable by non-technical arena staff.",
+        "results": "In production with real arena customers. Players get branded clips in under a minute; venues gain a sponsorship surface on every video and a differentiated experience that supports retention without adding a full-time camera operator."
+      },
+      {
+        "id": "bolao-copa",
+        "status": "shipped",
+        "title": "Bolão na Copa",
+        "image": "/projects/bolao-copa.png",
+        "liveUrl": "https://bolaodacopa.werlesson.dev/",
+        "repoUrl": "",
+        "tags": ["Nuxt", "Auth", "Football"],
+        "description": "A web app for football prediction pools — join a bolão, score fixtures, and climb the ranking with frictionless Google sign-in.",
+        "problem": "Casual prediction pools still run on spreadsheets and WhatsApp threads: no shared ranking, painful onboarding, and no durable product experience for tournament seasons.",
+        "solution": "A focused web product where friends join a pool, submit match predictions, and follow standings — with Google auth so participation starts in seconds instead of account forms.",
+        "architecture": "SPA/SSR web client with social authentication, match/fixture data, prediction submission and ranking views. Auth and pool state live behind a small backend surface suited to seasonal tournament traffic.",
+        "techStack": ["Nuxt", "Vue 3", "TypeScript", "Google Auth", "Tailwind CSS"],
+        "challenges": "Keeping onboarding near-zero friction while modeling pools, fixtures and scoring correctly across a tournament calendar — and shipping a UI that feels premium without overbuilding for a seasonal product.",
+        "results": "A live product at bolaodacopa.werlesson.dev: Google sign-in, prediction flow and ranking UX ready for tournament use without spreadsheet chaos."
+      },
+      {
+        "id": "csv-view",
+        "status": "shipped",
+        "title": "CSV View",
+        "image": "/projects/csv-view.png",
+        "liveUrl": "https://www.csvview.werlesson.dev/",
+        "repoUrl": "https://github.com/werlesson/csvview",
+        "tags": ["Nuxt 4", "TypeScript", "Web Workers"],
+        "description": "A 100% client-side CSV explorer: open, filter, analyze and edit huge files right in the browser — no upload, no server, nothing to install. Your data never leaves your machine.",
+        "problem": "Exploring and manipulating large CSVs usually means installing software or uploading sensitive data to a third-party server — a privacy risk — and even then the UI freezes while processing millions of rows.",
+        "solution": "A fully in-browser architecture: streaming parsing via a Web Worker in 1 MB chunks, virtualized table rendering to scroll millions of rows without jank, and session persistence in IndexedDB to reopen a file exactly where you left off.",
+        "architecture": "The domain logic (parsing, statistics, filters, diff and export) lives isolated in app/services, with no Vue dependency and 100% testable in isolation. Layers are split into pages (routes), components (UI), composables (reactive state) and services (pure functions). IndexedDB stores the file content and session state — search, filters, sorting and column layout.",
+        "challenges": "Keeping the UI fluid with million-row files: the streaming parser avoids blocking the main thread, virtualized scrolling keeps the table responsive, and a single chronological undo/redo stack unifies cell edits and column reordering.",
+        "results": "Handles 2M+ rows with 0 KB sent over the network — zero-backend, privacy by default. Ships automatic delimiter and BOM detection, per-column statistics, type-aware combinable filters, inline editing with undo/redo, file comparison (diff) and export to CSV, JSON, Markdown, SQL and XLSX.",
+        "techStack": [
+          "Nuxt 4",
+          "Vue 3",
+          "TypeScript",
+          "Tailwind CSS",
+          "PapaParse",
+          "Web Workers",
+          "IndexedDB",
+          "TanStack Virtual",
+          "Vitest"
+        ]
+      }
+    ]
+  },
+  "experience": {
+    "supertitle": "Experience",
+    "title": "Professional timeline",
+    "subtitle": "Roles where I turned engineering into business impact.",
+    "labels": {
+      "responsibilities": "Responsibilities",
+      "technologies": "Technologies",
+      "impact": "Business impact"
+    },
+    "entries": [
+      {
+        "company": "Grupo DNR",
+        "role": "Full Stack Developer",
+        "period": "May 2022 – Present",
+        "responsibilities": [
+          "Build Vue 3 interfaces with Pinia, reusable components and REST API integration",
+          "Implement Laravel backend endpoints — auth, validation, access policies and API resources",
+          "Model and optimize MySQL and PostgreSQL queries",
+          "Ship async workloads with Laravel Queue for heavy processing",
+          "Integrate external services and APIs; contribute in agile refinement, sprints and code review"
+        ],
+        "technologies": ["Vue 3", "Pinia", "Laravel", "PHP", "MySQL", "PostgreSQL", "REST APIs"],
+        "businessImpact": "Grew from frontend into full-stack ownership on internal systems and B2B SaaS products — accelerating delivery across the stack for the group's product portfolio."
+      },
+      {
+        "company": "C3C Software",
+        "role": "Front-end Developer",
+        "period": "Jun 2021 – Apr 2022",
+        "responsibilities": [
+          "Develop on-demand Salesforce software for enterprise clients",
+          "Support enablement and consulting engagements alongside product delivery"
+        ],
+        "technologies": ["Salesforce", "JavaScript", "Front-end"],
+        "businessImpact": "Delivered front-end solutions that helped clients turn Salesforce customizations into measurable operational outcomes."
+      },
+      {
+        "company": "LuxOne",
+        "role": "Front-end Developer",
+        "period": "Oct 2020 – May 2021",
+        "responsibilities": [
+          "Build front-end solutions for business process management products",
+          "Ship UI that keeps complex workflows simple and effective for operators"
+        ],
+        "technologies": ["JavaScript", "Front-end", "UI"],
+        "businessImpact": "Helped productize process-management tools that increased operational effectiveness without adding UI complexity."
+      },
+      {
+        "company": "SINTI",
+        "role": "Software Developer",
+        "period": "Jan 2019 – Oct 2020",
+        "responsibilities": [
+          "Develop healthcare software connecting doctors and patients",
+          "Deliver features that simplify clinical communication and follow-up"
+        ],
+        "technologies": ["Software development", "Web", "Healthcare"],
+        "businessImpact": "Shipped systems that made doctor–patient interaction easier in a health-sector product context."
+      }
+    ]
+  },
   "stack": {
     "supertitle": "Technologies",
     "title": "How I build",
@@ -100,9 +352,26 @@
     "groups": {
       "frontend": "Frontend",
       "backend": "Backend",
-      "database": "Data",
-      "infra": "Infrastructure"
+      "database": "Database",
+      "infra": "Infrastructure",
+      "tools": "Tools"
     }
+  },
+  "currentlyBuilding": {
+    "supertitle": "Currently Building",
+    "title": "In progress",
+    "subtitle": "Products actively in development — shipping continuously.",
+    "statusNote": "In progress"
+  },
+  "blog": {
+    "supertitle": "Blog",
+    "title": "Writing",
+    "subtitle": "Notes on engineering, architecture and building products.",
+    "readMore": "Read article",
+    "viewAll": "View all posts",
+    "empty": "New articles are on the way.",
+    "publishedOn": "Published on",
+    "back": "Back to all posts"
   },
   "project": {
     "sectionTitle": "Featured build",
@@ -119,13 +388,7 @@
       "descriptionAfter": " of action and makes the clip ready to download immediately.",
       "highlightWireless": "Wireless trigger",
       "highlightArena": "Validated in a real venue",
-      "tags": [
-        "Raspberry Pi",
-        "Python",
-        "Hikvision",
-        "IoT",
-        "Vue 3"
-      ],
+      "tags": ["Raspberry Pi", "Python", "Hikvision", "IoT", "Vue 3"],
       "cta": "Learn more",
       "ctaAria": "Learn more about the Eu no Play project",
       "mockCameraModel": "Hikvision DS-2CD",
@@ -140,6 +403,7 @@
   },
   "contact": {
     "title": "Let's talk",
+    "cta": "Interested in working together?",
     "subtitle": "I'm open to international remote opportunities. If you need someone who connects product thinking with dependable engineering, send a note — I'll reply as soon as I can.",
     "directTitle": "Or reach me directly",
     "fields": {
@@ -149,6 +413,10 @@
     },
     "submit": "Send message",
     "success": "Message sent. I'll follow up shortly.",
+    "resume": {
+      "label": "Download résumé",
+      "aria": "Download résumé as PDF"
+    },
     "social": {
       "github": {
         "label": "GitHub",
@@ -162,7 +430,7 @@
       },
       "email": {
         "label": "Email",
-        "handle": "werlesson\\@email.com",
+        "handle": "werlessono\\@gmail.com",
         "aria": "Send email to Werlesson"
       }
     }

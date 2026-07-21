@@ -26,16 +26,10 @@
       <div
         ref="titleRef"
         class="mb-20 text-center transition-all duration-1000 ease-out"
-        :class="
-          titleVisible
-            ? 'translate-y-0 opacity-100'
-            : 'translate-y-12 opacity-0'
-        "
+        :class="titleVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'"
       >
         <div class="flex w-full flex-col items-center">
-          <p
-            class="mb-4 w-full text-xs font-medium uppercase tracking-[0.3em] text-accent/80"
-          >
+          <p class="mb-4 w-full text-xs font-medium uppercase tracking-[0.3em] text-accent/80">
             {{ $t('stack.supertitle') }}
           </p>
           <h2
@@ -54,16 +48,12 @@
           class="mx-auto mt-6 h-1 w-24 rounded-full bg-gradient-to-r from-transparent via-accent to-transparent"
           aria-hidden="true"
         />
-        <p
-          class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-textMuted md:text-xl"
-        >
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-textMuted md:text-xl">
           {{ $t('stack.subtitle') }}
         </p>
       </div>
 
-      <div
-        class="grid grid-cols-2 gap-8 md:gap-12 lg:grid-cols-4 lg:gap-16"
-      >
+      <div class="grid grid-cols-2 gap-8 md:grid-cols-3 md:gap-10 lg:grid-cols-5 lg:gap-10">
         <SectionsStackTechGroup
           v-for="(group, index) in stackGroups"
           :key="group.titleKey"
@@ -77,47 +67,54 @@
 </template>
 
 <script setup lang="ts">
-const stackGroups: { titleKey: string; items: { name: string; icon: string }[] }[] =
-  [
-    {
-      titleKey: 'stack.groups.frontend',
-      items: [
-        { name: 'Vue 3', icon: 'vuedotjs' },
-        { name: 'Nuxt 3', icon: 'nuxt' },
-        { name: 'TypeScript', icon: 'typescript' },
-        { name: 'TailwindCSS', icon: 'tailwindcss' },
-        { name: 'Vite', icon: 'vite' },
-        { name: 'Pinia', icon: 'pinia' },
-        { name: 'VueUse', icon: 'vueuse' },
-      ],
-    },
-    {
-      titleKey: 'stack.groups.backend',
-      items: [
-        { name: 'Laravel', icon: 'laravel' },
-        { name: 'PHP 8.3', icon: 'php' },
-        { name: 'Redis', icon: 'redis' },
-        { name: 'Docker', icon: 'docker' },
-      ],
-    },
-    {
-      titleKey: 'stack.groups.database',
-      items: [
-        { name: 'PostgreSQL', icon: 'postgresql' },
-        { name: 'MySQL', icon: 'mysql' },
-        { name: 'Supabase', icon: 'supabase' },
-      ],
-    },
-    {
-      titleKey: 'stack.groups.infra',
-      items: [
-        { name: 'Coolify', icon: 'coolify' },
-        { name: 'VPS', icon: 'linux' },
-        { name: 'Raspberry Pi', icon: 'raspberrypi' },
-        { name: 'Git', icon: 'git' },
-      ],
-    },
-  ]
+const stackGroups: { titleKey: string; items: { name: string; icon: string }[] }[] = [
+  {
+    titleKey: 'stack.groups.frontend',
+    items: [
+      { name: 'Vue 3', icon: 'vuedotjs' },
+      { name: 'Nuxt 3', icon: 'nuxt' },
+      { name: 'TypeScript', icon: 'typescript' },
+      { name: 'TailwindCSS', icon: 'tailwindcss' },
+      { name: 'Vite', icon: 'vite' },
+      { name: 'Pinia', icon: 'pinia' },
+      { name: 'VueUse', icon: 'vueuse' },
+    ],
+  },
+  {
+    titleKey: 'stack.groups.backend',
+    items: [
+      { name: 'Laravel', icon: 'laravel' },
+      { name: 'PHP 8.3', icon: 'php' },
+      { name: 'Redis', icon: 'redis' },
+      { name: 'Docker', icon: 'docker' },
+    ],
+  },
+  {
+    titleKey: 'stack.groups.database',
+    items: [
+      { name: 'PostgreSQL', icon: 'postgresql' },
+      { name: 'MySQL', icon: 'mysql' },
+      { name: 'Supabase', icon: 'supabase' },
+    ],
+  },
+  {
+    titleKey: 'stack.groups.infra',
+    items: [
+      { name: 'Coolify', icon: 'coolify' },
+      { name: 'VPS', icon: 'linux' },
+      { name: 'Raspberry Pi', icon: 'raspberrypi' },
+    ],
+  },
+  {
+    titleKey: 'stack.groups.tools',
+    items: [
+      { name: 'ESLint', icon: 'eslint' },
+      { name: 'Prettier', icon: 'prettier' },
+      { name: 'Vitest', icon: 'vitest' },
+      { name: 'Git', icon: 'git' },
+    ],
+  },
+]
 
 const gridBackgroundStyle = {
   backgroundImage: `
@@ -132,7 +129,8 @@ const titleVisible = ref(false)
 
 const { stop } = useIntersectionObserver(
   titleRef,
-  ([{ isIntersecting }]) => {
+  ([entry]) => {
+    const isIntersecting = entry?.isIntersecting
     if (isIntersecting) {
       titleVisible.value = true
       stop()

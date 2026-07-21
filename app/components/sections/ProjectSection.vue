@@ -14,13 +14,9 @@
     />
     <div
       class="w-full max-w-6xl transition-all duration-1000 ease-out"
-      :class="
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-      "
+      :class="isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'"
     >
-      <div
-        class="relative overflow-hidden rounded-2xl border border-[#2a2a3a] bg-[#12121a]"
-      >
+      <div class="relative overflow-hidden rounded-2xl border border-[#2a2a3a] bg-[#12121a]">
         <div class="pointer-events-none absolute inset-0 opacity-[0.03]">
           <div class="absolute inset-0" :style="cardGridStyle" />
         </div>
@@ -34,18 +30,12 @@
           aria-hidden="true"
         />
 
-        <div
-          class="relative grid grid-cols-1 gap-8 p-6 sm:p-8 lg:grid-cols-2 lg:gap-12 lg:p-12"
-        >
-          <div
-            class="order-2 flex flex-col justify-center space-y-6 lg:order-1"
-          >
+        <div class="relative grid grid-cols-1 gap-8 p-6 sm:p-8 lg:grid-cols-2 lg:gap-12 lg:p-12">
+          <div class="order-2 flex flex-col justify-center space-y-6 lg:order-1">
             <div
               class="transition-all duration-700 ease-out"
               :class="
-                isVisible
-                  ? 'translate-x-0 opacity-100 delay-100'
-                  : '-translate-x-4 opacity-0'
+                isVisible ? 'translate-x-0 opacity-100 delay-100' : '-translate-x-4 opacity-0'
               "
             >
               <div
@@ -55,9 +45,7 @@
                   <span
                     class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"
                   />
-                  <span
-                    class="relative inline-flex h-2 w-2 rounded-full bg-accent"
-                  />
+                  <span class="relative inline-flex h-2 w-2 rounded-full bg-accent" />
                 </span>
                 {{ $t('project.euNoPlay.badge') }}
               </div>
@@ -66,9 +54,7 @@
             <h2
               class="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl transition-all duration-700 ease-out"
               :class="
-                isVisible
-                  ? 'translate-x-0 opacity-100 delay-200'
-                  : '-translate-x-4 opacity-0'
+                isVisible ? 'translate-x-0 opacity-100 delay-200' : '-translate-x-4 opacity-0'
               "
             >
               {{ $t('project.euNoPlay.titlePrefix') }}
@@ -84,9 +70,7 @@
             <p
               class="max-w-xl text-base leading-relaxed text-[#8a8a9a] sm:text-lg transition-all duration-700 ease-out"
               :class="
-                isVisible
-                  ? 'translate-x-0 opacity-100 delay-300'
-                  : '-translate-x-4 opacity-0'
+                isVisible ? 'translate-x-0 opacity-100 delay-300' : '-translate-x-4 opacity-0'
               "
             >
               {{ $t('project.euNoPlay.descriptionBeforeRaspberry') }}
@@ -107,9 +91,7 @@
             <div
               class="flex flex-col gap-4 text-sm transition-all duration-700 ease-out sm:flex-row"
               :class="
-                isVisible
-                  ? 'translate-x-0 opacity-100 delay-[400ms]'
-                  : '-translate-x-4 opacity-0'
+                isVisible ? 'translate-x-0 opacity-100 delay-[400ms]' : '-translate-x-4 opacity-0'
               "
             >
               <div class="flex items-center gap-2 text-[#8a8a9a]">
@@ -155,9 +137,7 @@
             <div
               class="flex flex-wrap gap-2 pt-2 transition-all duration-700 ease-out"
               :class="
-                isVisible
-                  ? 'translate-x-0 opacity-100 delay-500'
-                  : '-translate-x-4 opacity-0'
+                isVisible ? 'translate-x-0 opacity-100 delay-500' : '-translate-x-4 opacity-0'
               "
             >
               <span
@@ -173,9 +153,7 @@
             <div
               class="pt-4 transition-all duration-700 ease-out"
               :class="
-                isVisible
-                  ? 'translate-x-0 opacity-100 delay-[600ms]'
-                  : '-translate-x-4 opacity-0'
+                isVisible ? 'translate-x-0 opacity-100 delay-[600ms]' : '-translate-x-4 opacity-0'
               "
             >
               <a
@@ -226,9 +204,7 @@
                 <div class="mb-6 flex items-center justify-between">
                   <div class="flex items-center gap-2">
                     <div class="h-2 w-2 animate-pulse rounded-full bg-accent" />
-                    <span
-                      class="text-xs font-mono uppercase tracking-wider text-accent/80"
-                    >
+                    <span class="text-xs font-mono uppercase tracking-wider text-accent/80">
                       {{ $t('project.euNoPlay.mockCameraModel') }}
                     </span>
                   </div>
@@ -247,10 +223,7 @@
                     :style="scanlineStyle"
                   />
 
-                  <div
-                    class="absolute inset-4 flex items-center justify-center"
-                    aria-hidden="true"
-                  >
+                  <div class="absolute inset-4 flex items-center justify-center" aria-hidden="true">
                     <div
                       class="flex h-full w-full items-center justify-center rounded-lg border-2 border-dashed border-accent/20"
                     >
@@ -261,23 +234,15 @@
                   <div class="absolute top-3 left-3 flex items-center gap-2">
                     <div
                       class="flex items-center gap-1.5 rounded border bg-background/80 px-2 py-1"
-                      :class="
-                        isRecording ? 'border-red-500' : 'border-[#2a2a3a]'
-                      "
+                      :class="isRecording ? 'border-red-500' : 'border-[#2a2a3a]'"
                     >
                       <div
                         class="h-2 w-2 rounded-full"
-                        :class="
-                          isRecording
-                            ? 'animate-pulse bg-red-500'
-                            : 'bg-accent'
-                        "
+                        :class="isRecording ? 'animate-pulse bg-red-500' : 'bg-accent'"
                       />
                       <span
                         class="text-xs font-mono"
-                        :class="
-                          isRecording ? 'text-red-500' : 'text-accent'
-                        "
+                        :class="isRecording ? 'text-red-500' : 'text-accent'"
                       >
                         {{
                           isRecording
@@ -291,9 +256,7 @@
                   <div
                     class="absolute top-3 right-3 rounded border border-[#2a2a3a] bg-background/80 px-2 py-1"
                   >
-                    <span class="text-xs font-mono text-[#8a8a9a]">{{
-                      clock
-                    }}</span>
+                    <span class="text-xs font-mono text-[#8a8a9a]">{{ clock }}</span>
                   </div>
 
                   <Transition
@@ -339,9 +302,7 @@
                         t('project.euNoPlay.bufferTick', { n: countdown })
                       }}</span>
                     </div>
-                    <div
-                      class="h-1.5 overflow-hidden rounded-full bg-background"
-                    >
+                    <div class="h-1.5 overflow-hidden rounded-full bg-background">
                       <div
                         class="h-full rounded-full bg-gradient-to-r from-accent/50 to-accent transition-all duration-1000 ease-linear"
                         :style="{ width: `${bufferPercent}%` }"
@@ -363,14 +324,10 @@
                     >
                       <span
                         class="absolute inset-2 rounded-full border-2 transition-colors duration-300"
-                        :class="
-                          isRecording ? 'border-red-300' : 'border-accent/50'
-                        "
+                        :class="isRecording ? 'border-red-300' : 'border-accent/50'"
                       />
                     </button>
-                    <span
-                      class="mt-2 text-[10px] uppercase tracking-wider text-[#8a8a9a]"
-                    >
+                    <span class="mt-2 text-[10px] uppercase tracking-wider text-[#8a8a9a]">
                       {{ $t('project.euNoPlay.captureLabel') }}
                     </span>
                   </div>
@@ -403,20 +360,12 @@
         />
       </div>
 
-      <div
-        class="mt-8 flex items-center justify-center gap-3 text-sm text-[#8a8a9a]"
-      >
-        <span
-          class="h-px w-12 bg-gradient-to-r from-transparent to-[#2a2a3a]"
-          aria-hidden="true"
-        />
+      <div class="mt-8 flex items-center justify-center gap-3 text-sm text-[#8a8a9a]">
+        <span class="h-px w-12 bg-gradient-to-r from-transparent to-[#2a2a3a]" aria-hidden="true" />
         <span class="text-xs font-medium uppercase tracking-[0.2em]">{{
           $t('project.sectionTitle')
         }}</span>
-        <span
-          class="h-px w-12 bg-gradient-to-l from-transparent to-[#2a2a3a]"
-          aria-hidden="true"
-        />
+        <span class="h-px w-12 bg-gradient-to-l from-transparent to-[#2a2a3a]" aria-hidden="true" />
       </div>
     </div>
   </section>
@@ -457,7 +406,8 @@ const isVisible = ref(false)
 
 useIntersectionObserver(
   sectionRef,
-  ([{ isIntersecting }]) => {
+  ([entry]) => {
+    const isIntersecting = entry?.isIntersecting
     if (isIntersecting) isVisible.value = true
   },
   { threshold: 0.1 },
@@ -468,9 +418,7 @@ const isRecording = ref(false)
 const showReplay = ref(false)
 const clock = ref('')
 
-const bufferPercent = computed(
-  () => ((25 - countdown.value) / 25) * 100,
-)
+const bufferPercent = computed(() => ((25 - countdown.value) / 25) * 100)
 
 let tickInterval: ReturnType<typeof setInterval> | null = null
 let captureTimeout: ReturnType<typeof setTimeout> | undefined
@@ -478,10 +426,11 @@ let replayTimeout: ReturnType<typeof setTimeout> | undefined
 
 function updateClock() {
   if (!import.meta.client) return
-  clock.value = new Date().toLocaleTimeString(
-    locale.value === 'pt' ? 'pt-BR' : 'en-US',
-    { hour: '2-digit', minute: '2-digit', second: '2-digit' },
-  )
+  clock.value = new Date().toLocaleTimeString(locale.value === 'pt' ? 'pt-BR' : 'en-US', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  })
 }
 
 function runCaptureSequence() {

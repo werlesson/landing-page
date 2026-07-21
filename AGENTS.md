@@ -4,34 +4,34 @@
 
 ## Sections
 
-| # | Section |
-|---|---|
-| 1 | [Build, Lint, Test and Coverage](#1-build-lint-test-and-coverage) |
-| 2 | [Code Style & Project Conventions](#2-code-style--project-conventions) |
-| 3 | [Agent Communication & Behavioral Guidelines](#3-agent-communication--behavioral-guidelines) |
-| 4 | [Setup, Troubleshooting and Tips](#4-setup-troubleshooting-and-tips) |
-| 5 | [References](#5-references) |
-| 6 | [Agent Documentation](#6-agent-documentation) |
+| #   | Section                                                                                      |
+| --- | -------------------------------------------------------------------------------------------- |
+| 1   | [Build, Lint, Test and Coverage](#1-build-lint-test-and-coverage)                            |
+| 2   | [Code Style & Project Conventions](#2-code-style--project-conventions)                       |
+| 3   | [Agent Communication & Behavioral Guidelines](#3-agent-communication--behavioral-guidelines) |
+| 4   | [Setup, Troubleshooting and Tips](#4-setup-troubleshooting-and-tips)                         |
+| 5   | [References](#5-references)                                                                  |
+| 6   | [Agent Documentation](#6-agent-documentation)                                                |
 
 ## 1. Build, Lint, Test and Coverage
 
 Package manager: yarn (yarn.lock). Run scripts via `yarn <script>`.
 
-| Command | Purpose |
-|---|---|
-| `nuxt dev` | Start dev server |
-| `nuxt build` | Production SSR build |
-| `nuxt generate` | Static site generation |
-| `nuxt preview` | Preview built output |
-| `nuxt prepare` | Generate `.nuxt` types (postinstall) |
-| `nuxt typecheck` | TypeScript type check |
-| `vitest run` | Run unit tests once |
-| `vitest` | Run tests in watch mode |
-| `vitest run --coverage` | Tests with coverage (v8 provider) |
-| `eslint .` | Lint all files |
-| `eslint . --fix` | Lint and auto-fix |
-| `prettier --write .` | Format all files |
-| `prettier --check .` | Verify formatting |
+| Command                 | Purpose                              |
+| ----------------------- | ------------------------------------ |
+| `nuxt dev`              | Start dev server                     |
+| `nuxt build`            | Production SSR build                 |
+| `nuxt generate`         | Static site generation               |
+| `nuxt preview`          | Preview built output                 |
+| `nuxt prepare`          | Generate `.nuxt` types (postinstall) |
+| `nuxt typecheck`        | TypeScript type check                |
+| `vitest run`            | Run unit tests once                  |
+| `vitest`                | Run tests in watch mode              |
+| `vitest run --coverage` | Tests with coverage (v8 provider)    |
+| `eslint .`              | Lint all files                       |
+| `eslint . --fix`        | Lint and auto-fix                    |
+| `prettier --write .`    | Format all files                     |
+| `prettier --check .`    | Verify formatting                    |
 
 ## 2. Code Style & Project Conventions
 
@@ -80,27 +80,27 @@ yarn preview
 
 ## 5. References
 
-| Doc | Purpose |
-|---|---|
-| `README.md` | Project overview, stack, features, prerequisites |
-| `CONTEXT.md` | Project context doc |
-| `nuxt.config.ts` | Nuxt/SSR configuration |
-| `tailwind.config.ts` | Tailwind configuration |
-| `vitest.config.ts` | Test runner + coverage configuration |
-| `eslint.config.mjs` | ESLint flat config |
-| `.prettierrc` | Prettier formatting rules |
+| Doc                  | Purpose                                          |
+| -------------------- | ------------------------------------------------ |
+| `README.md`          | Project overview, stack, features, prerequisites |
+| `CONTEXT.md`         | Project context doc                              |
+| `nuxt.config.ts`     | Nuxt/SSR configuration                           |
+| `tailwind.config.ts` | Tailwind configuration                           |
+| `vitest.config.ts`   | Test runner + coverage configuration             |
+| `eslint.config.mjs`  | ESLint flat config                               |
+| `.prettierrc`        | Prettier formatting rules                        |
 
 ## 6. Agent Documentation
 
-| File | Content |
-|---|---|
-| `docs/agents/architecture.md` | System architecture and module boundaries |
+| File                               | Content                                    |
+| ---------------------------------- | ------------------------------------------ |
+| `docs/agents/architecture.md`      | System architecture and module boundaries  |
 | `docs/agents/coding_guidelines.md` | Code style, conventions, lint/format rules |
-| `docs/agents/testing.md` | Vitest setup, test layout, coverage |
-| `docs/agents/build_and_ci.md` | Build, generate, and CI commands |
-| `docs/agents/data_model.md` | i18n locale catalogs and content model |
-| `docs/agents/security.md` | Security notes and constraints |
-| `docs/agents/glossary.md` | Domain terms and section glossary |
-| `docs/agents/onboarding.md` | Setup and first-run guide |
+| `docs/agents/testing.md`           | Vitest setup, test layout, coverage        |
+| `docs/agents/build_and_ci.md`      | Build, generate, and CI commands           |
+| `docs/agents/data_model.md`        | i18n locale catalogs and content model     |
+| `docs/agents/security.md`          | Security notes and constraints             |
+| `docs/agents/glossary.md`          | Domain terms and section glossary          |
+| `docs/agents/onboarding.md`        | Setup and first-run guide                  |
 
 _End of AGENTS.md_

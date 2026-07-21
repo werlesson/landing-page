@@ -5,24 +5,31 @@
 ## AS IS — Current state
 
 ### 1. Zero hardcoded UI text — all copy via i18n
+
 Every user-facing string resolves through `$t`/`useI18n` against `locales/{pt,en}.json`; components hold no literal copy. Verified in `ProjectSection.vue` (`$t('project.euNoPlay.*')`) and `ContactSection.vue` (`labelKey`/`handleKey`/`ariaKey` indirection). Parity enforced by `tests/unit/i18nKeys.test.ts` (asserts PT/EN top-level key equality + required nested keys).
 
 ### 2. Composition API with `<script setup lang="ts">`
+
 All SFCs use `<script setup lang="ts">` with typed refs/reactive state. Verified in `app/pages/index.vue`, `ProjectSection.vue` (`ref<HTMLElement | null>`, typed `TypewriterState`), `ContactSection.vue` (`type SocialLink`, `reactive`). Type checking via `nuxt typecheck` script.
 
 ### 3. Prettier formatting — no semicolons, single quotes
+
 Fixed style: `semi: false`, `singleQuote: true`, `tabWidth: 2`, `trailingComma: all`, `printWidth: 100`, `endOfLine: lf`. Enforced by `.prettierrc` + `format:check` (`prettier --check .`).
 
 ### 4. ESLint flat config with Vue rule overrides
+
 Enforced by `eslint.config.mjs` wrapping `@nuxt/eslint` generated config:
+
 - `vue/attributes-order: error`, `vue/v-bind-style: error`, `vue/v-on-style: error` (shorthand required)
 - `vue/multi-word-component-names: off` (allows `AppBrandLogo`)
 - `@typescript-eslint/no-explicit-any: warn` (non-blocking)
 
 ### 5. Pure logic extracted and unit-tested
+
 Interactive math is pulled into pure functions mirrored by tests: `bufferPercent(countdown, maxSeconds)` (`tests/unit/bufferPercent.test.ts` ↔ `ProjectSection.vue` computed), `tickTypewriter(state, roles)` state machine (`tests/unit/typewriter.test.ts` ↔ HeroSection typewriter). Run via `vitest run`.
 
 ### 6. Client-guarded browser APIs in SSR
+
 Browser-only work is gated behind `import.meta.client` and cleaned up on unmount. Verified in `ProjectSection.vue` (`updateClock` early-returns when not client; `onUnmounted` clears `setInterval`/`setTimeout` handles).
 
 ## Related documents
