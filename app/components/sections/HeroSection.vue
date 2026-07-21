@@ -105,7 +105,7 @@
             {{ $t('hero.subtitle') }}
           </p>
 
-          <p
+          <!--p
             :class="
               isVisible
                 ? 'hero-fade-in-up hero-stagger-4 max-w-lg text-base leading-relaxed text-textMuted sm:text-lg'
@@ -113,7 +113,7 @@
             "
           >
             {{ $t('hero.description') }}
-          </p>
+          </p-->
 
           <div
             :class="
