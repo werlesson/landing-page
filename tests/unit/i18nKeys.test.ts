@@ -114,24 +114,38 @@ describe('hero section', () => {
     for (const targets of [en.hero.statTargets, pt.hero.statTargets]) {
       expect(targets.years).toBeGreaterThan(0)
       expect(targets.projects).toBeGreaterThan(0)
-      expect(targets.commits).toBeGreaterThan(0)
+      expect(targets.saas).toBeGreaterThan(0)
     }
   })
 
-  it('carries the canonical 6+ years / 20+ projects metrics', () => {
+  it('carries the canonical 6+ years / 20+ projects / 1 SaaS metrics', () => {
     expect(en.hero.statTargets.years).toBe(6)
     expect(en.hero.statTargets.projects).toBe(20)
+    expect(en.hero.statTargets.saas).toBe(1)
     expect(pt.hero.statTargets.years).toBe(6)
     expect(pt.hero.statTargets.projects).toBe(20)
+    expect(pt.hero.statTargets.saas).toBe(1)
   })
 })
 
 describe('about section', () => {
-  it('about stats reflect the canonical 6+ / 20+ metrics', () => {
-    expect(en.about.stats[0]?.value).toBe('6+')
-    expect(en.about.stats[1]?.value).toBe('20+')
-    expect(pt.about.stats[0]?.value).toBe('6+')
-    expect(pt.about.stats[1]?.value).toBe('20+')
+  it('exposes a non-empty bio in both locales', () => {
+    expect(en.about.bio.trim().length).toBeGreaterThan(0)
+    expect(pt.about.bio.trim().length).toBeGreaterThan(0)
+  })
+
+  it('uses a section badge distinct from the hero job title', () => {
+    expect(en.about.badge).toBe('About')
+    expect(pt.about.badge).toBe('Sobre')
+    expect(en.about.badge).not.toBe(en.hero.title)
+    expect(pt.about.badge).not.toBe(pt.hero.title)
+  })
+
+  it('exposes compact About sub-block labels in both locales', () => {
+    expect(en.about.capabilitiesLabel).toBeTruthy()
+    expect(en.about.principlesLabel).toBeTruthy()
+    expect(pt.about.capabilitiesLabel).toBeTruthy()
+    expect(pt.about.principlesLabel).toBeTruthy()
   })
 
   it('has at least 3 timeline entries with equal length across locales', () => {
@@ -206,6 +220,7 @@ describe('nav and stack', () => {
       expect(nav.whatIDo).toBeTruthy()
       expect(nav.principles).toBeTruthy()
       expect(nav.projects).toBeTruthy()
+      expect(nav.career).toBeTruthy()
       expect(nav.experience).toBeTruthy()
       expect(nav.building).toBeTruthy()
       expect(nav.blog).toBeTruthy()
@@ -219,9 +234,19 @@ describe('nav and stack', () => {
 })
 
 describe('contact section', () => {
-  it('exposes the "work together" CTA in both locales', () => {
-    expect(en.contact.cta).toBeTruthy()
-    expect(pt.contact.cta).toBeTruthy()
+  it('exposes a conversational CTA in both locales', () => {
+    expect(en.contact.cta).toBe("Let's connect")
+    expect(pt.contact.cta).toBe('Vamos conversar?')
+  })
+
+  it('exposes location context in both locales', () => {
+    expect(en.contact.location).toContain('UTC-3')
+    expect(pt.contact.location).toContain('UTC-3')
+  })
+
+  it('uses a presentation tone in the subtitle — not active job-seeking phrasing', () => {
+    expect(pt.contact.subtitle).not.toMatch(/estou aberto/i)
+    expect(en.contact.subtitle).not.toMatch(/i'm open to/i)
   })
 
   it('uses the recruiter-facing gmail address in both locales', () => {

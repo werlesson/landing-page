@@ -2,13 +2,9 @@
   <div>
     <HeroSection />
     <AboutSection />
-    <ImpactSection />
-    <WhatIDoSection />
-    <PrinciplesSection />
     <FeaturedProjectsSection />
-    <ExperienceSection />
+    <CareerSection />
     <StackSection />
-    <CurrentlyBuildingSection />
     <BlogSection />
     <ContactSection />
   </div>
@@ -18,15 +14,11 @@
 import { computed, toValue } from 'vue'
 import AboutSection from '~/components/sections/AboutSection.vue'
 import BlogSection from '~/components/sections/BlogSection.vue'
+import CareerSection from '~/components/sections/CareerSection.vue'
 import ContactSection from '~/components/sections/ContactSection.vue'
-import CurrentlyBuildingSection from '~/components/sections/CurrentlyBuildingSection.vue'
-import ExperienceSection from '~/components/sections/ExperienceSection.vue'
 import FeaturedProjectsSection from '~/components/sections/FeaturedProjectsSection.vue'
 import HeroSection from '~/components/sections/HeroSection.vue'
-import ImpactSection from '~/components/sections/ImpactSection.vue'
-import PrinciplesSection from '~/components/sections/PrinciplesSection.vue'
 import StackSection from '~/components/sections/StackSection.vue'
-import WhatIDoSection from '~/components/sections/WhatIDoSection.vue'
 
 const { locale } = useI18n()
 const siteConfig = useSiteConfig()
@@ -41,8 +33,8 @@ const seoTitle = computed(() =>
 
 const seoDescription = computed(() =>
   locale.value === 'en'
-    ? 'Senior Software Engineer building scalable SaaS products with Vue, Nuxt and Laravel — from architecture to production. Open to remote opportunities.'
-    : 'Engenheiro de Software Sênior construindo produtos SaaS escaláveis com Vue, Nuxt e Laravel — da arquitetura à produção. Aberto a oportunidades remotas.',
+    ? 'Senior Software Engineer building scalable SaaS products with Vue, Nuxt and Laravel — from architecture to production.'
+    : 'Engenheiro de Software Sênior construindo produtos SaaS escaláveis com Vue, Nuxt e Laravel — da arquitetura à produção.',
 )
 
 const jobTitle = computed(() =>

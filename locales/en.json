@@ -19,6 +19,7 @@
     "principles": "Principles",
     "projects": "Projects",
     "experience": "Experience",
+    "career": "Career",
     "stack": "Stack",
     "building": "Building",
     "blog": "Blog",
@@ -31,7 +32,7 @@
   },
   "hero": {
     "availability": "Open to remote roles",
-    "location": "— Brazil · worldwide remote",
+    "location": "— Brazil · worldwide remote (UTC-3)",
     "namePrefix": "Werles",
     "nameGlow": "s",
     "nameSuffix": "on",
@@ -48,8 +49,10 @@
     ],
     "ctaProjects": "View Projects",
     "ctaCv": "Download résumé",
+    "ctaLinkedIn": "LinkedIn",
     "ctaProjectsAria": "Jump to the featured projects section",
     "ctaCvAria": "Download résumé as PDF",
+    "ctaLinkedInAria": "Open Werlesson's LinkedIn profile",
     "social": {
       "linkedin": {
         "label": "LinkedIn",
@@ -67,12 +70,12 @@
     "stats": {
       "years": "Years building software",
       "projects": "Projects shipped",
-      "commits": "Commits on GitHub"
+      "saas": "SaaS in production"
     },
     "statTargets": {
       "years": 6,
       "projects": 20,
-      "commits": 2100
+      "saas": 1
     },
     "floatTags": {
       "vue": "Vue",
@@ -82,41 +85,29 @@
     }
   },
   "about": {
-    "badge": "Senior Software Engineer",
+    "badge": "About",
     "headlineBefore": "Hi, I'm",
     "headlineAccent": "Werlesson",
-    "bio": "I've spent 6+ years turning business problems into software that ships and scales. I lead architecture decisions end to end — from Vue and Nuxt interfaces to Laravel APIs, data modeling and Docker-based deploys — and I optimize for outcomes, not output. I've delivered 20+ projects and taken SaaS products from first commit to production, owning quality, performance and delivery as one responsibility.",
-    "stats": [
-      {
-        "value": "6+",
-        "label": "Years of experience"
-      },
-      {
-        "value": "20+",
-        "label": "Projects delivered"
-      },
-      {
-        "value": "1",
-        "label": "SaaS in production"
-      }
-    ],
+    "bio": "I turn business problems into software that ships and scales. I lead architecture decisions end to end — from Vue and Nuxt interfaces to Laravel APIs, data modeling and Docker-based deploys — and I optimize for outcomes, not output. I take SaaS products from first commit to production, owning quality, performance and delivery as one responsibility.",
+    "capabilitiesLabel": "Where I focus",
+    "principlesLabel": "How I engineer",
     "timelineTitleBefore": "My",
     "timelineTitleAccent": "path so far",
     "timeline": [
       {
-        "year": "2019",
+        "year": "2018",
         "title": "Early work with Vue 2",
         "description": "Cut my teeth on the web with Vue 2 and a classic frontend stack — where I learned to care about clear UI, solid UX, and maintainable CSS.",
         "tech": ["Vue 2", "JavaScript", "CSS"]
       },
       {
-        "year": "2022",
+        "year": "2020",
         "title": "Leveling up on Vue 3 & Nuxt 3",
         "description": "Composition API, TypeScript, and Nuxt 3 on real deliveries — a step change in how I structure apps, collaborate, and ship with confidence.",
         "tech": ["Vue 3", "Nuxt 3", "TypeScript"]
       },
       {
-        "year": "2024",
+        "year": "2022",
         "title": "Backend depth with Laravel",
         "description": "Hardened APIs, business logic where it belongs, and end-to-end thinking — from interface to persistence, queues, and day-two operations.",
         "tech": ["Laravel", "PHP", "PostgreSQL"]
@@ -143,8 +134,8 @@
         "label": "Projects delivered"
       },
       {
-        "value": "5",
-        "label": "SaaS products shipped"
+        "value": "1",
+        "label": "SaaS in production"
       },
       {
         "value": "End to end",
@@ -289,6 +280,13 @@
       }
     ]
   },
+  "career": {
+    "supertitle": "Career",
+    "title": "Professional timeline",
+    "subtitle": "Roles where I turned engineering into business impact.",
+    "techEvolutionTitle": "Technical evolution",
+    "techEvolutionSubtitle": "Growth milestones over the years — from interface craft to products in production."
+  },
   "experience": {
     "supertitle": "Experience",
     "title": "Professional timeline",
@@ -301,17 +299,17 @@
     "entries": [
       {
         "company": "Grupo DNR",
-        "role": "Full Stack Developer",
+        "role": "Senior Software Engineer",
         "period": "May 2022 – Present",
         "responsibilities": [
+          "Drive architecture decisions and technical reference for B2B SaaS products and internal systems",
           "Build Vue 3 interfaces with Pinia, reusable components and REST API integration",
           "Implement Laravel backend endpoints — auth, validation, access policies and API resources",
-          "Model and optimize MySQL and PostgreSQL queries",
-          "Ship async workloads with Laravel Queue for heavy processing",
-          "Integrate external services and APIs; contribute in agile refinement, sprints and code review"
+          "Model and optimize MySQL and PostgreSQL queries; ship async workloads with Laravel Queue",
+          "Integrate external services; lead code review, refinement and delivery in agile cycles"
         ],
         "technologies": ["Vue 3", "Pinia", "Laravel", "PHP", "MySQL", "PostgreSQL", "REST APIs"],
-        "businessImpact": "Grew from frontend into full-stack ownership on internal systems and B2B SaaS products — accelerating delivery across the stack for the group's product portfolio."
+        "businessImpact": "Took full-stack ownership and technical reference on B2B SaaS products — accelerating end-to-end delivery across the group's portfolio."
       },
       {
         "company": "C3C Software",
@@ -420,8 +418,10 @@
   },
   "contact": {
     "title": "Let's talk",
-    "cta": "Interested in working together?",
-    "subtitle": "I'm open to international remote opportunities. If you need someone who connects product thinking with dependable engineering, send a note — I'll reply as soon as I can.",
+    "cta": "Let's connect",
+    "subtitle": "For product engineering chats, project ideas, or remote opportunities — reach out when it makes sense.",
+    "englishLevel": "English: fluent for daily technical communication",
+    "location": "Brazil · worldwide remote (UTC-3)",
     "directTitle": "Or reach me directly",
     "fields": {
       "name": "Name",
