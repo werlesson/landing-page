@@ -1,0 +1,119 @@
+{
+    "author": {
+      "name": "Werlesson Vieira",
+      "identities": [
+        "werlessono@gmail.com",
+        "werlesson.vieira@grupodnr.com.br",
+        "werlesson.vieira@cars2you.com.br"
+      ],
+      "matching": "case-insensitive author match on 'werlesson' (unifies all identities; no other contributor matches)"
+    },
+    "generated": "2026-07-21",
+    "method": "Metrics derived directly from git history (non-merge commits) and static analysis of repository structure and dependency manifests. Commit-type figures are keyword-based heuristics and overlap (one commit may count in several categories); they indicate emphasis, not exact counts.",
+    "career_span": {
+      "first_commit": "2022-04-18",
+      "last_commit": "2026-05-05",
+      "years": 4.1
+    },
+    "totals": {
+      "repositories_available": 5,
+      "repositories_contributed": 4,
+      "non_merge_commits": 891,
+      "unique_contribution_days": 406,
+      "lines_added": 108876,
+      "lines_removed": 62808,
+      "lines_modified_total": 171684,
+      "unique_files_touched": 540,
+      "unique_task_ids": 1
+    },
+    "commit_signals_keyword_based": {
+      "features": 696,
+      "fixes_hotfixes": 172,
+      "refactors": 71,
+      "security_auth_validation": 47,
+      "style_ui": 25,
+      "tests": 16,
+      "chores": 6,
+      "performance": 1,
+      "docs": 1
+    },
+    "repositories": [
+      {
+        "name": "front",
+        "remote": "bitbucket.org:cars2you/front.git",
+        "role": "Main ERP / dealer-operations SPA (internal)",
+        "language": "TypeScript / JavaScript",
+        "framework": "Nuxt 2 + Vue 2 (Vuex, vue-property-decorator)",
+        "first_commit": "2022-04-18",
+        "last_commit": "2026-03-30",
+        "commits": 710,
+        "unique_days": 294,
+        "lines_added": 81084,
+        "lines_removed": 50797,
+        "unique_files": 409,
+        "commits_by_year": {"2022": 330, "2023": 253, "2024": 96, "2025": 25, "2026": 6},
+        "top_modules": ["settings", "logistics", "commercial", "docs (despacho)", "financeiro", "courtyard (patio)", "search", "dispatch"],
+        "top_extensions": {"vue": 1715, "ts": 348, "js": 125}
+      },
+      {
+        "name": "thirdparty",
+        "remote": "bitbucket.org:cars2you/thirdparty.git",
+        "role": "Partner / third-party operations app (advisory, inspection, gatehouse)",
+        "language": "TypeScript / JavaScript",
+        "framework": "Nuxt 2 + Vue 2 + Vuetify (PWA, composition-api)",
+        "first_commit": "2022-04-19",
+        "last_commit": "2026-03-26",
+        "commits": 139,
+        "unique_days": 84,
+        "lines_added": 13703,
+        "lines_removed": 10200,
+        "unique_files": 77,
+        "commits_by_year": {"2022": 57, "2023": 60, "2024": 17, "2025": 2, "2026": 3},
+        "top_modules": ["conditional-report (laudo)", "advisory (assessoria)", "Forms components", "principal", "inspection", "partner", "doorman (portaria)"],
+        "top_extensions": {"vue": 252, "ts": 59, "js": 15}
+      },
+      {
+        "name": "api",
+        "remote": "bitbucket.org:cars2you/api.git",
+        "role": "Backend REST API (invoices, documents, integrations)",
+        "language": "PHP",
+        "framework": "Laravel 10 (PHP 8.2, JWT, Repository pattern)",
+        "first_commit": "2025-04-30",
+        "last_commit": "2026-05-05",
+        "commits": 31,
+        "unique_days": 21,
+        "lines_added": 3021,
+        "lines_removed": 1123,
+        "unique_files": 43,
+        "commits_by_year": {"2025": 25, "2026": 6},
+        "top_modules": ["Repositories", "Http/Controllers", "Models", "migrations", "Mail", "Imports/Exports (Excel)"],
+        "top_extensions": {"php": 73}
+      },
+      {
+        "name": "showroom",
+        "remote": "bitbucket.org:cars2you/showroom.git",
+        "role": "Public vehicle showroom (SSR + SEO + PWA)",
+        "language": "JavaScript",
+        "framework": "Nuxt 2 + Tailwind CSS (SSG/SSR)",
+        "first_commit": "2022-06-07",
+        "last_commit": "2024-02-01",
+        "commits": 11,
+        "unique_days": 7,
+        "lines_added": 11068,
+        "lines_removed": 688,
+        "unique_files": 11,
+        "commits_by_year": {"2022": 8, "2023": 2, "2024": 1},
+        "top_modules": ["index", "Attributes", "Carrousel"],
+        "top_extensions": {"vue": 15}
+      }
+    ],
+    "stack": {
+      "languages": ["TypeScript", "JavaScript", "PHP", "Vue SFC", "Blade"],
+      "frameworks": ["Nuxt 2", "Vue 2", "Vuex", "Vuetify", "Bootstrap-Vue 4", "PrimeVue", "Tailwind CSS", "Laravel 10"],
+      "libraries": ["ApexCharts", "ECharts", "Chart.js", "Leaflet", "vue2-google-maps", "CKEditor", "Quill", "FullCalendar", "vue-formulate", "sweetalert2", "lodash", "moment"],
+      "backend_stack": ["PHP 8.2", "tymon/jwt-auth (JWT)", "Repository pattern", "maatwebsite/excel", "barryvdh/laravel-dompdf", "laravel-pdfmerger", "endroid/qr-code", "intervention/image", "guzzle", "doctrine/dbal + migrations"],
+      "integrations_and_infra": ["AWS S3 (flysystem)", "OpenAI (openai-php/laravel)", "Sentry", "Redis", "Queues / Workers", "Google Maps", "Correios / ViaCEP (Brazilian address)", "Firebase", "OTP / 2FA", "Docker", "AWS CodeBuild (buildspec)", "docker-compose", "PWA"],
+      "databases_inferred": ["Relational DB via Laravel migrations + doctrine/dbal (MySQL likely — inferred)", "Redis (cache/queue)"]
+    }
+  }
+  

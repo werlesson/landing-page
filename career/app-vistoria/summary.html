@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Career Report — condition-report-app</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --panel: #1a222c;
+      --text: #e7ecf1;
+      --muted: #9aa7b5;
+      --accent: #3dd6c6;
+      --warn: #f0b429;
+      --line: #2a3542;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #1c3a3a 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    main { max-width: 960px; margin: 0 auto; padding: 40px 20px 80px; }
+    h1 { font-size: 1.8rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+    h2 { font-size: 1.15rem; margin: 36px 0 12px; color: var(--accent); }
+    .sub { color: var(--muted); margin-bottom: 28px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .card .n { font-size: 1.55rem; font-weight: 700; }
+    .card .l { color: var(--muted); font-size: 0.82rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+    th { color: var(--muted); font-weight: 600; }
+    .tag {
+      display: inline-block;
+      background: #243039;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 2px 10px;
+      margin: 2px 4px 2px 0;
+      font-size: 0.8rem;
+    }
+    .est { color: var(--warn); }
+    ul { padding-left: 1.2rem; }
+    li { margin: 6px 0; }
+    footer { margin-top: 48px; color: var(--muted); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Career Report — Condition Report App</h1>
+    <p class="sub">
+      Autor: <strong>werlessono@gmail.com</strong> · Escopo: este repositório apenas ·
+      Gerado em 2026-07-21 · Remote: cars2you/app-vistoria
+    </p>
+
+    <h2>Estatísticas gerais</h2>
+    <div class="grid">
+      <div class="card"><div class="n">57</div><div class="l">Commits</div></div>
+      <div class="card"><div class="n">93%</div><div class="l">Autoria do repo</div></div>
+      <div class="card"><div class="n">40</div><div class="l">Features</div></div>
+      <div class="card"><div class="n">4</div><div class="l">Bugfixes</div></div>
+      <div class="card"><div class="n">27</div><div class="l">Tarefas fase/ui</div></div>
+      <div class="card"><div class="n">225</div><div class="l">Arquivos (código)</div></div>
+      <div class="card"><div class="n">+32.5k</div><div class="l">Linhas adicionadas*</div></div>
+      <div class="card"><div class="n">12</div><div class="l">Dias únicos</div></div>
+    </div>
+    <p class="sub">*Exclui package-lock, coverage e assets de imagem. Raw: +73.458 / −8.778.</p>
+
+    <h2>Projeto</h2>
+    <div class="card">
+      <p><strong>condition-report-app</strong> — app mobile de vistoria veicular (Cars2You).</p>
+      <p>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Expo 54</span>
+        <span class="tag">React Native</span>
+        <span class="tag">Expo Router</span>
+        <span class="tag">NativeWind</span>
+        <span class="tag">SQLite</span>
+        <span class="tag">Jest</span>
+        <span class="tag">GitHub Actions</span>
+      </p>
+      <p class="sub" style="margin:0">Primeiro commit: 2025-12-30 · Último: 2026-07-02 · v1.2.0</p>
+    </div>
+
+    <h2>Commits por mês</h2>
+    <table>
+      <thead><tr><th>Mês</th><th>Commits</th></tr></thead>
+      <tbody>
+        <tr><td>2025-12</td><td>1</td></tr>
+        <tr><td>2026-01</td><td>2</td></tr>
+        <tr><td>2026-06</td><td>52</td></tr>
+        <tr><td>2026-07</td><td>2</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Classificação de commits</h2>
+    <table>
+      <thead><tr><th>Tipo</th><th>Qtd</th></tr></thead>
+      <tbody>
+        <tr><td>Features</td><td>40</td></tr>
+        <tr><td>Bugfixes</td><td>4</td></tr>
+        <tr><td>Hotfixes</td><td>0</td></tr>
+        <tr><td>Refactors</td><td>2</td></tr>
+        <tr><td>Chores</td><td>3</td></tr>
+        <tr><td>Docs</td><td>2</td></tr>
+        <tr><td>Tests</td><td>2</td></tr>
+        <tr><td>WIP / Merge</td><td>1 / 3</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Módulos com maior participação</h2>
+    <table>
+      <thead><tr><th>Pasta</th><th>Toques</th></tr></thead>
+      <tbody>
+        <tr><td>app/(tabs)</td><td>79</td></tr>
+        <tr><td>components/ui</td><td>54</td></tr>
+        <tr><td>components/vistoria</td><td>52</td></tr>
+        <tr><td>services/queue</td><td>29</td></tr>
+        <tr><td>app/(auth)</td><td>11</td></tr>
+        <tr><td>components/tire-diagram</td><td>10</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Impactos que posso comprovar</h2>
+    <ul>
+      <li>57 commits · 93.4% do histórico</li>
+      <li>40 features · 4 bugfixes · 27 work items (fase + ui)</li>
+      <li>4 PRs merged no Bitbucket</li>
+      <li>225 arquivos de código · +32.531 / −8.540 linhas</li>
+      <li>31 componentes de design system · 7 arquivos de teste · CI presente</li>
+      <li>Schema SQLite v4 · dual flow condition_report + default</li>
+    </ul>
+
+    <h2>Impactos estimados</h2>
+    <ul class="est">
+      <li>[Estimativa] Ownership técnico quase total do app de vistoria mobile</li>
+      <li>[Estimativa] ~15–25 entregas de produto distintas (não 40 commits feat)</li>
+      <li>[Estimativa] Modernização completa vs app legado Realm (narrativa CLAUDE.md)</li>
+      <li>[Estimativa] Maior confiabilidade offline em campo (sem telemetria neste relatório)</li>
+    </ul>
+
+    <h2>Timeline resumida</h2>
+    <ul>
+      <li><strong>2025-12</strong> — início do repositório Expo</li>
+      <li><strong>2026-01</strong> — multi-tipo veículo + serviços base</li>
+      <li><strong>2026-06</strong> — modernização offline-first + design system + PRs</li>
+      <li><strong>2026-07</strong> — VehicleInfoCard + release 1.2.0</li>
+    </ul>
+
+    <footer>
+      Arquivos: overview.md · projects.md · timeline.md · resume-bullets.md · metrics.json · metrics.csv · summary.html
+    </footer>
+  </main>
+</body>
+</html>

@@ -32,13 +32,19 @@
         </p>
       </div>
 
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <SectionsProjectCard
-          v-for="(study, i) in shipped"
-          :key="study.id"
-          :study="study"
-          :index="i"
-        />
+      <div class="space-y-6">
+        <!-- Lead project — full-width featured card (real customers, metrics). -->
+        <SectionsProjectCard v-if="lead" :study="lead" :index="0" featured />
+
+        <!-- Remaining shipped projects in a supporting grid. -->
+        <div v-if="rest.length" class="grid gap-6 sm:grid-cols-2">
+          <SectionsProjectCard
+            v-for="(study, i) in rest"
+            :key="study.id"
+            :study="study"
+            :index="i + 1"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -46,6 +52,11 @@
 
 <script setup lang="ts">
 const { shipped } = usePortfolioCatalog()
+
+// The first shipped project is the flagship — rendered as a differentiated,
+// full-width featured card; the rest fill a supporting two-column grid.
+const lead = computed(() => shipped.value[0])
+const rest = computed(() => shipped.value.slice(1))
 
 const sectionRef = ref<HTMLElement | null>(null)
 const isVisible = ref(false)

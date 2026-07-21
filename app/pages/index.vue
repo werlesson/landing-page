@@ -88,7 +88,7 @@ useHead({
 
 useSchemaOrg([
   definePerson({
-    name: 'Werlesson',
+    name: 'Werlesson Vieira',
     jobTitle: () => toValue(jobTitle),
     url: () => toValue(personSiteUrl),
     knowsAbout: [

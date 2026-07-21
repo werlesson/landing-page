@@ -1,0 +1,161 @@
+{
+  "generatedAt": "2026-07-21",
+  "scope": "single-repository",
+  "repository": {
+    "name": "condition-report-app",
+    "remote": "git@bitbucket.org:cars2you/app-vistoria.git",
+    "organization": "Cars2You / Dealers Club (Grupo DNR)",
+    "primaryLanguage": "TypeScript",
+    "frameworks": ["Expo SDK 54", "Expo Router 6", "React Native 0.81", "React 19", "NativeWind 4"],
+    "firstCommitAuthorEmail": "werlessono@gmail.com",
+    "firstCommitDate": "2025-12-30",
+    "firstCommitMessage": "Initial commit",
+    "lastCommitAuthorEmail": "werlessono@gmail.com",
+    "lastCommitDate": "2026-07-02",
+    "lastCommitMessage": "feat: update app version to 1.2.0 and enhance vehicle inspection flow"
+  },
+  "authorFilter": {
+    "primaryEmail": "werlessono@gmail.com",
+    "relatedEmailsNoted": [
+      {
+        "email": "werlesson.vieira@cars2you.com.br",
+        "commits": 4,
+        "note": "Bitbucket PR merge commits only; excluded from primary metrics unless stated"
+      }
+    ]
+  },
+  "metrics": {
+    "totalCommits": 57,
+    "totalCommitsAllAuthors": 61,
+    "authorshipSharePercent": 93.4,
+    "commitsByYear": { "2025": 1, "2026": 56 },
+    "commitsByMonth": {
+      "2025-12": 1,
+      "2026-01": 2,
+      "2026-06": 52,
+      "2026-07": 2
+    },
+    "uniqueContributionDays": 12,
+    "linesAddedRaw": 73458,
+    "linesDeletedRaw": 8778,
+    "linesModifiedRaw": 82236,
+    "linesAddedCode": 32531,
+    "linesDeletedCode": 8540,
+    "linesModifiedCode": 41071,
+    "uniqueFilesModifiedRaw": 398,
+    "uniqueFilesModifiedCode": 225,
+    "topFolders": [
+      { "path": "app/(tabs)", "touchCount": 79 },
+      { "path": "components/ui", "touchCount": 54 },
+      { "path": "components/vistoria", "touchCount": 52 },
+      { "path": "services/queue", "touchCount": 29 },
+      { "path": "app/(auth)", "touchCount": 11 },
+      { "path": "components/tire-diagram", "touchCount": 10 },
+      { "path": "services/cache", "touchCount": 5 }
+    ],
+    "topFiles": [
+      { "path": "package.json", "touchCount": 17 },
+      { "path": "app.json", "touchCount": 12 },
+      { "path": "app/(auth)/login.tsx", "touchCount": 11 },
+      { "path": "stores/vistoria.store.tsx", "touchCount": 11 },
+      { "path": "app/(tabs)/pendentes.tsx", "touchCount": 11 },
+      { "path": "app/(tabs)/index.tsx", "touchCount": 11 },
+      { "path": "components/vistoria/steps/step-1-veiculo.tsx", "touchCount": 10 },
+      { "path": "services/vistoria.service.ts", "touchCount": 8 },
+      { "path": "services/queue/syncWorker.ts", "touchCount": 7 },
+      { "path": "database/schema.ts", "touchCount": 6 }
+    ],
+    "extensions": [
+      { "ext": ".tsx", "touchCount": 308 },
+      { "ext": ".ts", "touchCount": 202 },
+      { "ext": ".png", "touchCount": 114 },
+      { "ext": ".json", "touchCount": 54 },
+      { "ext": ".md", "touchCount": 13 },
+      { "ext": ".js", "touchCount": 13 }
+    ]
+  },
+  "commitClassification": {
+    "features": 40,
+    "hotfixes": 0,
+    "bugfixes": 4,
+    "refactors": 2,
+    "chores": 3,
+    "docs": 2,
+    "tests": 2,
+    "performance": 0,
+    "security": 0,
+    "wip": 1,
+    "merge": 3,
+    "other": 0
+  },
+  "trackedWorkItems": {
+    "jiraStyleTickets": 0,
+    "phaseTags": ["fase-0", "fase-1", "fase-2", "fase-3", "fase-4", "fase-5", "fase-6", "fase-7", "fase-8"],
+    "uiTags": ["ui-1", "ui-2", "ui-3", "ui-4", "ui-5", "ui-6", "ui-7", "ui-8", "ui-9", "ui-10", "ui-11", "ui-12", "ui-13", "ui-14", "ui-15", "ui-16", "ui-17", "ui-18"],
+    "uniqueTrackedTasks": 27,
+    "mergedPullRequests": 4,
+    "note": "No QR-/TASK-/ABC- ticket pattern found. Counted fase-* and ui-* conventional tags as tracked work items."
+  },
+  "codeAnalysis": {
+    "businessDomains": [
+      "vehicle inspection (vistoria)",
+      "condition report",
+      "default inspection",
+      "offline sync queue",
+      "media capture/processing",
+      "authentication / biometric login",
+      "pending inspections management"
+    ],
+    "modules": [
+      "auth",
+      "vistoria flow",
+      "media",
+      "tires diagram",
+      "equipments",
+      "queue/sync",
+      "drafts",
+      "theme",
+      "design system (components/ui)",
+      "plate OCR"
+    ],
+    "integrations": [
+      "Cars2You backend via Cloudflare (axios)",
+      "Elastic Beanstalk direct upload API",
+      "CDN for remote media URLs",
+      "expo-local-authentication (biometrics)",
+      "ML Kit text recognition (plate OCR)"
+    ],
+    "authentication": true,
+    "authorization": "inferred: token-based session; 401 session-expired handling",
+    "payments": false,
+    "dashboards": "home stats + pendentes filters (inferred lightweight ops UI)",
+    "reports": "condition report / inspection submission payloads",
+    "apis": true,
+    "workers": true,
+    "queues": true,
+    "cache": true,
+    "docker": false,
+    "cicd": true,
+    "tests": true,
+    "ssr": false,
+    "seo": false,
+    "databases": ["expo-sqlite"],
+    "externalServices": [
+      "Cloudflare-proxied API",
+      "AWS Elastic Beanstalk upload host",
+      "CDN / S3 media",
+      "Bitbucket"
+    ]
+  },
+  "inventory": {
+    "uiDesignSystemComponents": 31,
+    "testFiles": 7,
+    "configModules": 8,
+    "sqliteSchemaVersion": 4,
+    "ciWorkflows": ["ci.yml"]
+  },
+  "notes": {
+    "lineCounts": "Raw includes assets/coverage/lockfile. Code metrics exclude package-lock.json, coverage/, assets/, and common image extensions.",
+    "soleAuthorInference": "You authored 57/61 commits (93.4%). Remaining 4 are PR merges under company email."
+  }
+}

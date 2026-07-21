@@ -48,14 +48,15 @@
         <div class="space-y-5 lg:col-span-7 lg:space-y-6">
           <div ref="nameBlockRef">
             <h1
-              class="hero-glitch-title font-display text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl"
+              class="hero-glitch-title font-display text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
               :class="{ 'is-glitching': glitchActive }"
               :data-text="fullName"
             >
-              <span class="relative z-[1] inline-flex flex-wrap text-foreground">
+              <span class="relative z-[1] inline-flex flex-nowrap whitespace-nowrap text-foreground">
                 <span>{{ $t('hero.namePrefix') }}</span>
                 <span class="neon-glow text-accent">{{ $t('hero.nameGlow') }}</span>
                 <span>{{ $t('hero.nameSuffix') }}</span>
+                <span class="ml-[0.28em]">{{ $t('hero.nameSurname') }}</span>
               </span>
             </h1>
             <p class="mt-3 font-display text-xl font-semibold text-accent sm:text-2xl lg:text-3xl">
@@ -281,7 +282,7 @@ const spotlightStyle = computed(() => ({
 }))
 
 const fullName = computed(
-  () => `${t('hero.namePrefix')}${t('hero.nameGlow')}${t('hero.nameSuffix')}`,
+  () => `${t('hero.namePrefix')}${t('hero.nameGlow')}${t('hero.nameSuffix')} ${t('hero.nameSurname')}`,
 )
 
 const statSuffixPlus = '+'

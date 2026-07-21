@@ -7,6 +7,12 @@
 /** A project renders in exactly one section based on its status (RF-19). */
 export type CaseStudyStatus = 'shipped' | 'building'
 
+/** A headline metric shown on the featured project card (value + short label). */
+export interface ProjectMetric {
+  value: string
+  label: string
+}
+
 /**
  * A single entry in the project catalog (RF-19, RF-23).
  * Featured Projects renders `status: 'shipped'` as full case studies; Currently
@@ -26,6 +32,12 @@ export interface CaseStudy {
   liveUrl: string
   /** Optional source-code URL; when present renders "Source Code" (RF-22). */
   repoUrl?: string
+  /** Optional note shown in place of the source-code link when the repo is private. */
+  privateRepoNote?: string
+  /** Optional one-line summary highlighted on the featured card. */
+  summary?: string
+  /** Optional headline metrics highlighted on the featured card. */
+  metrics?: ProjectMetric[]
   /** Tech-stack tags rendered as chips. */
   tags: string[]
   // Narrative blocks (RF-20) — prose deferred TBD, empty-safe (RF-24).

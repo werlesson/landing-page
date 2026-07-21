@@ -36,6 +36,7 @@
     "namePrefix": "Werles",
     "nameGlow": "s",
     "nameSuffix": "on",
+    "nameSurname": "Vieira",
     "title": "Engenheiro de Software Sênior",
     "subtitle": "Construindo produtos SaaS escaláveis com Vue, Nuxt e Laravel.",
     "description": "Eu desenho, construo e lanço produtos digitais — da arquitetura à produção.",
@@ -237,6 +238,7 @@
         "image": "/projects/eu-no-play.png",
         "liveUrl": "https://www.eunoplay.com.br/",
         "repoUrl": "",
+        "privateRepoNote": "Código privado — produto comercial",
         "tags": ["SaaS", "Vue", "Hardware", "Vídeo"],
         "techStack": [
           "Vue 3",
@@ -246,17 +248,14 @@
           "Câmeras IP",
           "Docker",
           "PostgreSQL"
+        ],
+        "summary": "SaaS de captura de lances em arenas esportivas: um botão físico e uma câmera dedicada entregam o replay com a marca da arena no app do jogador em menos de 1 minuto.",
+        "metrics": [
+          { "value": "3", "label": "arenas em produção" },
+          { "value": "987", "label": "usuários cadastrados" },
+          { "value": "50+", "label": "vídeos por dia" },
+          { "value": "17", "label": "marcas anunciantes" }
         ]
-      },
-      {
-        "id": "bolao-copa",
-        "status": "shipped",
-        "title": "Bolão na Copa",
-        "image": "/projects/bolao-copa.png",
-        "liveUrl": "https://bolaodacopa.werlesson.dev/",
-        "repoUrl": "",
-        "tags": ["Nuxt", "Auth", "Futebol"],
-        "techStack": ["Nuxt", "Vue 3", "TypeScript", "Google Auth", "Tailwind CSS"]
       },
       {
         "id": "csv-view",
@@ -277,6 +276,16 @@
           "TanStack Virtual",
           "Vitest"
         ]
+      },
+      {
+        "id": "bolao-copa",
+        "status": "shipped",
+        "title": "Bolão na Copa",
+        "image": "/projects/bolao-copa.png",
+        "liveUrl": "https://bolaodacopa.werlesson.dev/",
+        "repoUrl": "",
+        "tags": ["Nuxt", "Auth", "Futebol"],
+        "techStack": ["Nuxt", "Vue 3", "TypeScript", "Google Auth", "Tailwind CSS"]
       }
     ]
   },
@@ -303,13 +312,14 @@
         "period": "maio de 2022 – Presente",
         "responsibilities": [
           "Conduzir decisões de arquitetura e referência técnica em produtos SaaS B2B e sistemas internos",
+          "Conceber e entregar um app mobile de vistoria offline-first (React Native/Expo, SQLite) com design system próprio — do primeiro commit à release em produção",
           "Desenvolver interfaces Vue 3 com Pinia, componentes reutilizáveis e integração com APIs REST",
           "Implementar endpoints backend em Laravel — autenticação, validação, políticas de acesso e recursos de API",
           "Modelar e otimizar queries em MySQL e PostgreSQL; implementar filas assíncronas (Laravel Queue)",
           "Integrar serviços externos; liderar code review, refinamento e entregas em ciclos ágeis"
         ],
-        "technologies": ["Vue 3", "Pinia", "Laravel", "PHP", "MySQL", "PostgreSQL", "REST APIs"],
-        "businessImpact": "Assumi ownership full stack e referência técnica em produtos SaaS B2B — acelerando entregas de ponta a ponta no portfólio do grupo."
+        "technologies": ["Vue 3", "Pinia", "Laravel", "PHP", "MySQL", "PostgreSQL", "React Native", "Expo", "REST APIs"],
+        "businessImpact": "Ownership técnico full stack em produtos SaaS B2B do grupo — e, mais recentemente, concepção e entrega de um app de vistoria offline-first (React Native/Expo) que substituiu a ferramenta legada e deu mais agilidade aos vistoriadores em campo."
       },
       {
         "company": "C3C Software",
@@ -420,6 +430,7 @@
     "title": "Contato",
     "cta": "Vamos conversar?",
     "subtitle": "Para trocar ideias sobre engenharia de produto, projetos ou oportunidades remotas — escreva quando fizer sentido.",
+    "lookingFor": "Aberto a posições remotas de engenharia sênior/fullstack — do frontend ao backend, em produtos web de diferentes domínios.",
     "englishLevel": "Inglês: fluente para comunicação técnica diária",
     "location": "Brasil · remoto internacional (UTC-3)",
     "directTitle": "Ou fale direto",

@@ -1,0 +1,55 @@
+section,key,value,unit,notes
+repository,name,condition-report-app,,Bitbucket cars2you/app-vistoria
+repository,primary_language,TypeScript,,
+repository,framework,Expo SDK 54 + Expo Router + React Native,,
+repository,first_commit,2025-12-30,,author werlessono@gmail.com
+repository,last_commit,2026-07-02,,author werlessono@gmail.com
+metrics,total_commits,57,count,author werlessono@gmail.com
+metrics,commits_all_authors,61,count,
+metrics,authorship_share,93.4,percent,
+metrics,commits_2025,1,count,
+metrics,commits_2026,56,count,
+metrics,commits_2025_12,1,count,
+metrics,commits_2026_01,2,count,
+metrics,commits_2026_06,52,count,
+metrics,commits_2026_07,2,count,
+metrics,unique_contribution_days,12,days,
+metrics,lines_added_raw,73458,lines,includes assets/coverage/lock
+metrics,lines_deleted_raw,8778,lines,includes assets/coverage/lock
+metrics,lines_modified_raw,82236,lines,added+deleted raw
+metrics,lines_added_code,32531,lines,excludes lock/coverage/assets/images
+metrics,lines_deleted_code,8540,lines,excludes lock/coverage/assets/images
+metrics,lines_modified_code,41071,lines,added+deleted code
+metrics,unique_files_raw,398,files,
+metrics,unique_files_code,225,files,
+classification,features,40,commits,
+classification,hotfixes,0,commits,
+classification,bugfixes,4,commits,
+classification,refactors,2,commits,
+classification,chores,3,commits,
+classification,docs,2,commits,
+classification,tests,2,commits,
+classification,performance,0,commits,
+classification,security,0,commits,
+classification,wip,1,commits,
+classification,merge,3,commits,
+tracked_work,jira_style_tickets,0,count,no QR-/TASK-/ABC- pattern
+tracked_work,phase_tags,9,count,fase-0..fase-8
+tracked_work,ui_tags,18,count,ui-1..ui-18
+tracked_work,unique_tracked_tasks,27,count,fase + ui tags
+tracked_work,merged_pull_requests,4,count,company email merges
+inventory,ui_components,31,files,components/ui/*.tsx
+inventory,test_files,7,files,
+inventory,config_modules,8,files,
+inventory,sqlite_schema_version,4,version,
+folder,app/(tabs),79,touches,
+folder,components/ui,54,touches,
+folder,components/vistoria,52,touches,
+folder,services/queue,29,touches,
+folder,app/(auth),11,touches,
+folder,components/tire-diagram,10,touches,
+extension,.tsx,308,touches,
+extension,.ts,202,touches,
+extension,.png,114,touches,
+extension,.json,54,touches,
+extension,.md,13,touches,

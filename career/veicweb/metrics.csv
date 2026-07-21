@@ -1,0 +1,7 @@
+repo,language,framework,first_commit,last_commit,commits,unique_days,additions,deletions,churn,unique_files,unique_tasks,features,bugfixes,hotfixes,refactors
+veic-front,TypeScript / JavaScript,"Nuxt 2 + Vue 2 (SPA, target static) + Vuex",2022-04-18,2026-07-21,2247,590,129090,72518,201608,753,250,1715,317,33,39
+veic-api,PHP 8.2,Laravel 10 (Repository pattern),2024-02-29,2026-07-21,556,218,16574,4632,21206,218,118,320,114,54,26
+veic-thirdparty,TypeScript / JavaScript,Nuxt 2.15 + Vue 2,2022-04-19,2023-10-13,195,95,9722,8586,18308,59,4,150,32,2,0
+veic-showroom,JavaScript / Vue,Nuxt 2 + Vue 2,2022-06-07,2023-01-16,18,11,11029,687,11716,10,0,15,1,0,0
+veic-inspection,TypeScript / Vue 3,Nuxt 3 + Vue 3 + Pinia + Tailwind + PrimeVue (PWA),2024-07-02,2024-07-05,2,2,141,111,252,3,0,0,1,0,0
+TOTAL,,,,,3018,916,166556,86534,253090,1043,372,2200,465,89,65

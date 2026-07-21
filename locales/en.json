@@ -36,6 +36,7 @@
     "namePrefix": "Werles",
     "nameGlow": "s",
     "nameSuffix": "on",
+    "nameSurname": "Vieira",
     "title": "Senior Software Engineer",
     "subtitle": "Building scalable SaaS products with Vue, Nuxt and Laravel.",
     "description": "I design, build and launch digital products — from architecture to production.",
@@ -237,6 +238,7 @@
         "image": "/projects/eu-no-play.png",
         "liveUrl": "https://www.eunoplay.com.br/",
         "repoUrl": "",
+        "privateRepoNote": "Private source — commercial product",
         "tags": ["SaaS", "Vue", "Hardware", "Video"],
         "techStack": [
           "Vue 3",
@@ -246,17 +248,14 @@
           "IP cameras",
           "Docker",
           "PostgreSQL"
+        ],
+        "summary": "SaaS for capturing sports highlights in real venues: a physical button and a dedicated camera deliver a branded replay to the player's app in under a minute.",
+        "metrics": [
+          { "value": "3", "label": "venues live" },
+          { "value": "987", "label": "registered users" },
+          { "value": "50+", "label": "videos per day" },
+          { "value": "17", "label": "advertising brands" }
         ]
-      },
-      {
-        "id": "bolao-copa",
-        "status": "shipped",
-        "title": "Bolão na Copa",
-        "image": "/projects/bolao-copa.png",
-        "liveUrl": "https://bolaodacopa.werlesson.dev/",
-        "repoUrl": "",
-        "tags": ["Nuxt", "Auth", "Football"],
-        "techStack": ["Nuxt", "Vue 3", "TypeScript", "Google Auth", "Tailwind CSS"]
       },
       {
         "id": "csv-view",
@@ -277,6 +276,16 @@
           "TanStack Virtual",
           "Vitest"
         ]
+      },
+      {
+        "id": "bolao-copa",
+        "status": "shipped",
+        "title": "Bolão na Copa",
+        "image": "/projects/bolao-copa.png",
+        "liveUrl": "https://bolaodacopa.werlesson.dev/",
+        "repoUrl": "",
+        "tags": ["Nuxt", "Auth", "Football"],
+        "techStack": ["Nuxt", "Vue 3", "TypeScript", "Google Auth", "Tailwind CSS"]
       }
     ]
   },
@@ -303,13 +312,14 @@
         "period": "May 2022 – Present",
         "responsibilities": [
           "Drive architecture decisions and technical reference for B2B SaaS products and internal systems",
+          "Design and ship an offline-first mobile inspection app (React Native/Expo, SQLite) with its own design system — from first commit to production release",
           "Build Vue 3 interfaces with Pinia, reusable components and REST API integration",
           "Implement Laravel backend endpoints — auth, validation, access policies and API resources",
           "Model and optimize MySQL and PostgreSQL queries; ship async workloads with Laravel Queue",
           "Integrate external services; lead code review, refinement and delivery in agile cycles"
         ],
-        "technologies": ["Vue 3", "Pinia", "Laravel", "PHP", "MySQL", "PostgreSQL", "REST APIs"],
-        "businessImpact": "Took full-stack ownership and technical reference on B2B SaaS products — accelerating end-to-end delivery across the group's portfolio."
+        "technologies": ["Vue 3", "Pinia", "Laravel", "PHP", "MySQL", "PostgreSQL", "React Native", "Expo", "REST APIs"],
+        "businessImpact": "Full-stack technical ownership across the group's B2B SaaS products — and, more recently, designing and shipping an offline-first inspection app (React Native/Expo) that replaced the legacy tool and gave field inspectors more speed."
       },
       {
         "company": "C3C Software",
@@ -420,6 +430,7 @@
     "title": "Let's talk",
     "cta": "Let's connect",
     "subtitle": "For product engineering chats, project ideas, or remote opportunities — reach out when it makes sense.",
+    "lookingFor": "Open to remote senior/fullstack engineering roles — front to back, across web products in any domain.",
     "englishLevel": "English: fluent for daily technical communication",
     "location": "Brazil · worldwide remote (UTC-3)",
     "directTitle": "Or reach me directly",

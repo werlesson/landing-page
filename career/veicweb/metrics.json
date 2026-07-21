@@ -1,0 +1,989 @@
+{
+  "author": "Werlesson Vieira",
+  "identities": [
+    "werlessono@gmail.com",
+    "werlesson.vieira@cars2you.com.br",
+    "werlesson.vieira@grupodnr.com.br"
+  ],
+  "generated": "2026-07-21",
+  "method": "git log (todas as 3 identidades, regex author 'werlesson', case-insensitive) + análise estática de código e diretórios",
+  "consolidated": {
+    "commits": 3018,
+    "additions": 166556,
+    "deletions": 86534,
+    "churn": 253090,
+    "unique_files": 1043,
+    "unique_days": 916,
+    "unique_tasks": 372,
+    "categories": {
+      "bugfix": 465,
+      "chore": 24,
+      "feature": 2200,
+      "hotfix": 89,
+      "refactor": 65,
+      "style": 12,
+      "docs": 37,
+      "security": 1,
+      "perf": 9,
+      "test": 3
+    },
+    "by_year": {
+      "2022": 695,
+      "2023": 549,
+      "2024": 621,
+      "2025": 798,
+      "2026": 355
+    }
+  },
+  "repositories": {
+    "veic-front": {
+      "commits": 2247,
+      "first": "2022-04-18",
+      "last": "2026-07-21",
+      "unique_days": 590,
+      "by_year": {
+        "2022": 584,
+        "2023": 447,
+        "2024": 574,
+        "2025": 506,
+        "2026": 136
+      },
+      "by_month": {
+        "2022-04": 9,
+        "2022-05": 17,
+        "2022-06": 30,
+        "2022-07": 80,
+        "2022-08": 92,
+        "2022-09": 104,
+        "2022-10": 73,
+        "2022-11": 84,
+        "2022-12": 95,
+        "2023-01": 72,
+        "2023-02": 40,
+        "2023-03": 63,
+        "2023-04": 35,
+        "2023-05": 49,
+        "2023-06": 32,
+        "2023-07": 29,
+        "2023-08": 54,
+        "2023-09": 8,
+        "2023-10": 29,
+        "2023-11": 22,
+        "2023-12": 14,
+        "2024-01": 22,
+        "2024-02": 84,
+        "2024-03": 80,
+        "2024-04": 72,
+        "2024-05": 7,
+        "2024-06": 17,
+        "2024-07": 24,
+        "2024-08": 3,
+        "2024-09": 50,
+        "2024-10": 57,
+        "2024-11": 68,
+        "2024-12": 90,
+        "2025-01": 57,
+        "2025-02": 61,
+        "2025-03": 86,
+        "2025-04": 48,
+        "2025-05": 32,
+        "2025-06": 43,
+        "2025-07": 43,
+        "2025-08": 28,
+        "2025-09": 42,
+        "2025-10": 12,
+        "2025-11": 19,
+        "2025-12": 35,
+        "2026-01": 28,
+        "2026-02": 28,
+        "2026-03": 13,
+        "2026-04": 20,
+        "2026-05": 18,
+        "2026-06": 18,
+        "2026-07": 11
+      },
+      "additions": 129090,
+      "deletions": 72518,
+      "churn": 201608,
+      "unique_files": 753,
+      "top_files": [
+        [
+          "components/menu.js",
+          111
+        ],
+        [
+          "pages/docs/dispatch/index.vue",
+          63
+        ],
+        [
+          "services/DispatchService.ts",
+          39
+        ],
+        [
+          "pages/commercial/ready-for-sale/index.vue",
+          39
+        ],
+        [
+          "pages/mounting/auctions/_id.vue",
+          36
+        ],
+        [
+          "pages/financeiro/adverts-marked-paid/index.vue",
+          32
+        ],
+        [
+          "pages/advisory/assets/vehicles/_id.vue",
+          31
+        ],
+        [
+          "models/Vehicle.ts",
+          31
+        ],
+        [
+          "components/search/CardQuickSearch/index.vue",
+          31
+        ],
+        [
+          "pages/search/index.vue",
+          30
+        ],
+        [
+          "components/search/SearchRowVehicleComponent.vue",
+          29
+        ],
+        [
+          "pages/financeiro/adverts/index.vue",
+          29
+        ],
+        [
+          "components/DatatablePrimevue.vue",
+          28
+        ],
+        [
+          "pages/advisory/assets/vehicles/new.vue",
+          27
+        ],
+        [
+          "pages/docs/reports/index.vue",
+          27
+        ]
+      ],
+      "top_folders": [
+        [
+          "pages/settings",
+          526
+        ],
+        [
+          "components",
+          475
+        ],
+        [
+          "services",
+          318
+        ],
+        [
+          "pages/logistics",
+          260
+        ],
+        [
+          "pages/advisory",
+          236
+        ],
+        [
+          "pages/docs",
+          213
+        ],
+        [
+          "pages/commercial",
+          171
+        ],
+        [
+          "pages/courtyard",
+          164
+        ],
+        [
+          "components/search",
+          159
+        ],
+        [
+          "models",
+          133
+        ],
+        [
+          "pages/mounting",
+          101
+        ],
+        [
+          "pages/financeiro",
+          89
+        ],
+        [
+          "middleware",
+          61
+        ],
+        [
+          "components/dispatch",
+          38
+        ],
+        [
+          "components/courtyard",
+          37
+        ]
+      ],
+      "top_exts": [
+        [
+          "vue",
+          2917
+        ],
+        [
+          "ts",
+          532
+        ],
+        [
+          "js",
+          198
+        ],
+        [
+          "scss",
+          10
+        ],
+        [
+          "json",
+          9
+        ],
+        [
+          "lock",
+          2
+        ],
+        [
+          "example",
+          1
+        ],
+        [
+          "(none)",
+          1
+        ]
+      ],
+      "categories": {
+        "bugfix": 317,
+        "chore": 23,
+        "feature": 1715,
+        "hotfix": 33,
+        "refactor": 39,
+        "style": 12,
+        "docs": 36,
+        "security": 1,
+        "perf": 9,
+        "test": 1
+      },
+      "unique_tasks": 250,
+      "task_prefixes": [
+        [
+          "DES",
+          292
+        ],
+        [
+          "BC",
+          43
+        ],
+        [
+          "SV",
+          1
+        ]
+      ],
+      "messages_count": 2247,
+      "profile": {
+        "display": "veic-front (Backoffice / ERP — \"minible\")",
+        "language": "TypeScript / JavaScript",
+        "framework": "Nuxt 2 + Vue 2 (SPA, target static) + Vuex",
+        "role": "Frontend / Full-stack lead do painel",
+        "desc": "Painel administrativo (backoffice/ERP) do ecossistema automotivo — remarketing de veículos, seguros, leilões, logística, laudos e inspeções. Base no template Minible, fortemente customizado. 32 módulos de negócio, 579 componentes .vue, 159 serviços de domínio/integração.",
+        "tech": [
+          "Nuxt 2",
+          "Vue 2",
+          "TypeScript",
+          "Vuex",
+          "Bootstrap-Vue",
+          "ApexCharts",
+          "ECharts",
+          "Chart.js",
+          "Leaflet",
+          "Google Maps",
+          "vue-i18n",
+          "Laravel Echo/Pusher (realtime)",
+          "Quill editor",
+          "SheetJS/xlsx",
+          "SweetAlert2",
+          "Docker (node:20-alpine)",
+          "GitHub Actions (CI/CD)"
+        ],
+        "modules": [
+          "settings",
+          "logistics",
+          "advisory",
+          "docs",
+          "inspection",
+          "cr (condition report)",
+          "bradesco-insurance",
+          "auctioneer",
+          "payments",
+          "financeiro",
+          "reports",
+          "vehicle-pricing",
+          "inventory",
+          "commercial",
+          "ocr",
+          "sap",
+          "clustering",
+          "courtyard",
+          "dispatcher",
+          "used-goods",
+          "after-sales"
+        ]
+      }
+    },
+    "veic-api": {
+      "commits": 556,
+      "first": "2024-02-29",
+      "last": "2026-07-21",
+      "unique_days": 218,
+      "by_year": {
+        "2024": 45,
+        "2025": 292,
+        "2026": 219
+      },
+      "by_month": {
+        "2024-02": 1,
+        "2024-10": 4,
+        "2024-11": 18,
+        "2024-12": 22,
+        "2025-01": 42,
+        "2025-02": 16,
+        "2025-03": 21,
+        "2025-04": 26,
+        "2025-05": 22,
+        "2025-06": 25,
+        "2025-07": 29,
+        "2025-08": 27,
+        "2025-09": 24,
+        "2025-10": 7,
+        "2025-11": 16,
+        "2025-12": 37,
+        "2026-01": 44,
+        "2026-02": 20,
+        "2026-03": 27,
+        "2026-04": 34,
+        "2026-05": 23,
+        "2026-06": 52,
+        "2026-07": 19
+      },
+      "additions": 16574,
+      "deletions": 4632,
+      "churn": 21206,
+      "unique_files": 218,
+      "top_files": [
+        [
+          "routes/api/backoffice.php",
+          34
+        ],
+        [
+          "app/Repositories/AssetRepository.php",
+          31
+        ],
+        [
+          "app/Repositories/DispatchRepository.php",
+          25
+        ],
+        [
+          "app/Repositories/EventsVehiclesRepository.php",
+          22
+        ],
+        [
+          "app/Repositories/BlockingRepository.php",
+          21
+        ],
+        [
+          "app/Repositories/PendenciesRepository.php",
+          21
+        ],
+        [
+          "app/Models/Asset.php",
+          19
+        ],
+        [
+          "routes/api/auctioneer.php",
+          15
+        ],
+        [
+          "app/Repositories/ScrapRequestRepository.php",
+          14
+        ],
+        [
+          "app/Http/Controllers/AssetController.php",
+          13
+        ],
+        [
+          "app/Models/Pendencies.php",
+          11
+        ],
+        [
+          "routes/api.php",
+          11
+        ],
+        [
+          "app/Http/Controllers/EventsVehiclesController.php",
+          10
+        ],
+        [
+          "app/Jobs/ExportStaysCsvJob.php",
+          9
+        ],
+        [
+          "app/Http/Controllers/DispatchController.php",
+          9
+        ]
+      ],
+      "top_folders": [
+        [
+          "app/Repositories",
+          202
+        ],
+        [
+          "app/Http",
+          99
+        ],
+        [
+          "routes/api",
+          65
+        ],
+        [
+          "app/Jobs",
+          52
+        ],
+        [
+          "app/Models",
+          51
+        ],
+        [
+          "database/migrations",
+          30
+        ],
+        [
+          "app/Exports",
+          25
+        ],
+        [
+          "app/Observers",
+          21
+        ],
+        [
+          "app/Console",
+          19
+        ],
+        [
+          "app/Service",
+          12
+        ],
+        [
+          "routes",
+          11
+        ],
+        [
+          "resources/views",
+          10
+        ],
+        [
+          "app/Imports",
+          8
+        ],
+        [
+          "app/Traits",
+          7
+        ],
+        [
+          "(root)",
+          6
+        ]
+      ],
+      "top_exts": [
+        [
+          "php",
+          619
+        ],
+        [
+          "md",
+          9
+        ]
+      ],
+      "categories": {
+        "bugfix": 114,
+        "feature": 320,
+        "hotfix": 54,
+        "refactor": 26,
+        "docs": 1
+      },
+      "unique_tasks": 118,
+      "task_prefixes": [
+        [
+          "DES",
+          164
+        ]
+      ],
+      "messages_count": 556,
+      "profile": {
+        "display": "veic-api (Backend / API)",
+        "language": "PHP 8.2",
+        "framework": "Laravel 10 (Repository pattern)",
+        "role": "Backend / API engineer",
+        "desc": "API central do ecossistema: autenticação, regras de negócio, integrações e processamento assíncrono. 203 controllers, 204 repositories, 217 models, 469 migrations, 36 jobs. Integrações com Bradesco Seguros, SAP, Microsoft Graph/Azure SSO, OpenAI, SendGrid e AWS S3.",
+        "tech": [
+          "PHP 8.2",
+          "Laravel 10",
+          "JWT auth",
+          "Socialite + Azure SSO",
+          "Laravel Horizon (filas)",
+          "Redis",
+          "Laravel Reverb (websockets)",
+          "AWS S3",
+          "Sentry + Nightwatch (observability)",
+          "SendGrid",
+          "Microsoft Graph",
+          "OpenAI",
+          "Maatwebsite Excel",
+          "DomPDF/mPDF/FPDI (geração de PDF)",
+          "QR Code",
+          "Docker (cars2you/php:8.2-fpm-alpine)"
+        ],
+        "modules": [
+          "Repositories",
+          "Http/Controllers",
+          "routes/api",
+          "Jobs (workers)",
+          "Models",
+          "migrations",
+          "Exports/Imports",
+          "Observers",
+          "Notifications",
+          "Mail"
+        ]
+      }
+    },
+    "veic-thirdparty": {
+      "commits": 195,
+      "first": "2022-04-19",
+      "last": "2023-10-13",
+      "unique_days": 95,
+      "by_year": {
+        "2022": 96,
+        "2023": 99
+      },
+      "by_month": {
+        "2022-04": 4,
+        "2022-05": 2,
+        "2022-06": 20,
+        "2022-07": 26,
+        "2022-08": 6,
+        "2022-09": 13,
+        "2022-10": 10,
+        "2022-11": 5,
+        "2022-12": 10,
+        "2023-01": 9,
+        "2023-02": 11,
+        "2023-03": 15,
+        "2023-04": 20,
+        "2023-05": 7,
+        "2023-06": 16,
+        "2023-07": 5,
+        "2023-08": 6,
+        "2023-09": 5,
+        "2023-10": 5
+      },
+      "additions": 9722,
+      "deletions": 8586,
+      "churn": 18308,
+      "unique_files": 59,
+      "top_files": [
+        [
+          "pages/principal/index.vue",
+          20
+        ],
+        [
+          "pages/conditional-report/new.vue",
+          17
+        ],
+        [
+          "pages/partner/index.vue",
+          16
+        ],
+        [
+          "pages/index.vue",
+          15
+        ],
+        [
+          "pages/advisory/index.vue",
+          10
+        ],
+        [
+          "services/LoginService.ts",
+          10
+        ],
+        [
+          "pages/conditional-report/components/OtherPhotosStepperComponent.vue",
+          10
+        ],
+        [
+          "services/AdvisoryService.ts",
+          8
+        ],
+        [
+          "pages/conditional-report/_id.vue",
+          8
+        ],
+        [
+          "components/dispatchPending.vue",
+          7
+        ],
+        [
+          "pages/conditional-report/components/MainPhotosStepperComponent.vue",
+          7
+        ],
+        [
+          "pages/conditional-report/components/DataVehicleStepperComponent.vue",
+          7
+        ],
+        [
+          "components/Forms/FormRegisterRemoval.vue",
+          6
+        ],
+        [
+          "pages/conditional-report/index.vue",
+          6
+        ],
+        [
+          "middleware/authenticated.js",
+          6
+        ]
+      ],
+      "top_folders": [
+        [
+          "pages/conditional-report",
+          64
+        ],
+        [
+          "services",
+          42
+        ],
+        [
+          "pages/principal",
+          20
+        ],
+        [
+          "pages/inspection",
+          19
+        ],
+        [
+          "pages/advisory",
+          16
+        ],
+        [
+          "pages/partner",
+          16
+        ],
+        [
+          "pages",
+          15
+        ],
+        [
+          "components",
+          15
+        ],
+        [
+          "components/Forms",
+          14
+        ],
+        [
+          "(root)",
+          6
+        ],
+        [
+          "middleware",
+          6
+        ],
+        [
+          "pages/doorman",
+          6
+        ],
+        [
+          "models",
+          5
+        ],
+        [
+          "layouts",
+          4
+        ],
+        [
+          "components/Table",
+          3
+        ]
+      ],
+      "top_exts": [
+        [
+          "vue",
+          201
+        ],
+        [
+          "ts",
+          49
+        ],
+        [
+          "js",
+          12
+        ],
+        [
+          "json",
+          1
+        ],
+        [
+          "lock",
+          1
+        ]
+      ],
+      "categories": {
+        "feature": 150,
+        "bugfix": 32,
+        "test": 2,
+        "hotfix": 2
+      },
+      "unique_tasks": 4,
+      "task_prefixes": [
+        [
+          "BC",
+          6
+        ]
+      ],
+      "messages_count": 195,
+      "profile": {
+        "display": "veic-thirdparty (Portal de Parceiros)",
+        "language": "TypeScript / JavaScript",
+        "framework": "Nuxt 2.15 + Vue 2",
+        "role": "Frontend developer",
+        "desc": "Portal para parceiros externos (terceiros) — laudo/condition report, inspeção, despacho, portaria (doorman) e empresas de serviço. Interface separada do backoffice para acesso controlado de parceiros.",
+        "tech": [
+          "Nuxt 2",
+          "Vue 2",
+          "TypeScript",
+          "Vuex",
+          "Docker"
+        ],
+        "modules": [
+          "conditional-report",
+          "inspection",
+          "dispatch",
+          "doorman",
+          "partner",
+          "advisory",
+          "services-companies",
+          "report-third-party"
+        ]
+      }
+    },
+    "veic-showroom": {
+      "commits": 18,
+      "first": "2022-06-07",
+      "last": "2023-01-16",
+      "unique_days": 11,
+      "by_year": {
+        "2022": 15,
+        "2023": 3
+      },
+      "by_month": {
+        "2022-06": 4,
+        "2022-07": 4,
+        "2022-08": 4,
+        "2022-09": 3,
+        "2023-01": 3
+      },
+      "additions": 11029,
+      "deletions": 687,
+      "churn": 11716,
+      "unique_files": 10,
+      "top_files": [
+        [
+          "pages/_.vue",
+          5
+        ],
+        [
+          "pages/index.vue",
+          4
+        ],
+        [
+          "nuxt.config.js",
+          2
+        ],
+        [
+          "components/Attributes.vue",
+          2
+        ],
+        [
+          "static/next.svg",
+          1
+        ],
+        [
+          "static/prev.svg",
+          1
+        ],
+        [
+          "yarn.lock",
+          1
+        ],
+        [
+          "pages/NotFound.vue",
+          1
+        ],
+        [
+          "components/AttributeItem.vue",
+          1
+        ],
+        [
+          "components/Carrousel.vue",
+          1
+        ]
+      ],
+      "top_folders": [
+        [
+          "pages",
+          10
+        ],
+        [
+          "components",
+          4
+        ],
+        [
+          "(root)",
+          3
+        ],
+        [
+          "static",
+          2
+        ]
+      ],
+      "top_exts": [
+        [
+          "vue",
+          14
+        ],
+        [
+          "js",
+          2
+        ],
+        [
+          "svg",
+          2
+        ],
+        [
+          "lock",
+          1
+        ]
+      ],
+      "categories": {
+        "feature": 15,
+        "bugfix": 1
+      },
+      "unique_tasks": 0,
+      "task_prefixes": [],
+      "messages_count": 18,
+      "profile": {
+        "display": "veic-showroom (Vitrine)",
+        "language": "JavaScript / Vue",
+        "framework": "Nuxt 2 + Vue 2",
+        "role": "Frontend developer",
+        "desc": "Vitrine/showroom de veículos (front público). Participação pontual de bootstrap e páginas iniciais.",
+        "tech": [
+          "Nuxt 2",
+          "Vue 2",
+          "Docker"
+        ],
+        "modules": [
+          "pages",
+          "components"
+        ]
+      }
+    },
+    "veic-inspection": {
+      "commits": 2,
+      "first": "2024-07-02",
+      "last": "2024-07-05",
+      "unique_days": 2,
+      "by_year": {
+        "2024": 2
+      },
+      "by_month": {
+        "2024-07": 2
+      },
+      "additions": 141,
+      "deletions": 111,
+      "churn": 252,
+      "unique_files": 3,
+      "top_files": [
+        [
+          "components/FormsComponents/FormComponent.vue",
+          1
+        ],
+        [
+          "components/Steppers.vue",
+          1
+        ],
+        [
+          "pages/inspection/index.vue",
+          1
+        ]
+      ],
+      "top_folders": [
+        [
+          "components/FormsComponents",
+          1
+        ],
+        [
+          "components",
+          1
+        ],
+        [
+          "pages/inspection",
+          1
+        ]
+      ],
+      "top_exts": [
+        [
+          "vue",
+          3
+        ]
+      ],
+      "categories": {
+        "bugfix": 1,
+        "chore": 1
+      },
+      "unique_tasks": 0,
+      "task_prefixes": [],
+      "messages_count": 2,
+      "profile": {
+        "display": "veic-inspection (App de Inspeção — moderno)",
+        "language": "TypeScript / Vue 3",
+        "framework": "Nuxt 3 + Vue 3 + Pinia + Tailwind + PrimeVue (PWA)",
+        "role": "Contribuição pontual",
+        "desc": "Aplicativo de inspeção de nova geração (Nuxt 3/Vue 3, PWA offline). Contribuição pontual (correções).",
+        "tech": [
+          "Nuxt 3",
+          "Vue 3",
+          "Pinia",
+          "TailwindCSS",
+          "PrimeVue",
+          "PWA (vite-pwa)"
+        ],
+        "modules": [
+          "inspection",
+          "components"
+        ]
+      }
+    }
+  }
+}

@@ -47,7 +47,13 @@
           <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-textMuted md:text-xl">
             {{ $t('contact.subtitle') }}
           </p>
-          <p class="mx-auto mt-3 max-w-2xl text-sm text-textMuted/80">
+          <p
+            class="mx-auto mt-5 inline-flex max-w-2xl items-center gap-2 rounded-full border border-accent/25 bg-accent/[0.06] px-4 py-1.5 text-sm font-medium text-accent"
+          >
+            <span class="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+            {{ $t('contact.lookingFor') }}
+          </p>
+          <p class="mx-auto mt-4 max-w-2xl text-sm text-textMuted/80">
             {{ $t('contact.englishLevel') }}
           </p>
           <p class="mx-auto mt-2 max-w-2xl text-sm text-textMuted/80">

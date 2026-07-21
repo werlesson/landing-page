@@ -1,0 +1,6 @@
+repo,role,language,framework,first_commit,last_commit,commits,unique_days,lines_added,lines_removed,unique_files
+front,Main ERP / dealer-operations SPA,TypeScript/JavaScript,Nuxt 2 + Vue 2,2022-04-18,2026-03-30,710,294,81084,50797,409
+thirdparty,Partner / third-party operations app,TypeScript/JavaScript,Nuxt 2 + Vue 2 + Vuetify,2022-04-19,2026-03-26,139,84,13703,10200,77
+api,Backend REST API,PHP,Laravel 10,2025-04-30,2026-05-05,31,21,3021,1123,43
+showroom,Public vehicle showroom (SSR/SEO),JavaScript,Nuxt 2 + Tailwind,2022-06-07,2024-02-01,11,7,11068,688,11
+TOTAL,4 repositories,,,2022-04-18,2026-05-05,891,406,108876,62808,540

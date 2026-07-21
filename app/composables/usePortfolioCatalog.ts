@@ -1,4 +1,4 @@
-import type { CaseStudy, CaseStudyStatus } from '~/types/portfolio'
+import type { CaseStudy, CaseStudyStatus, ProjectMetric } from '~/types/portfolio'
 
 // Shared read/partition surface over the single project catalog (RF-19, RF-23).
 // Featured Projects renders `status: 'shipped'`; Currently Building renders
@@ -23,6 +23,17 @@ function asList(raw: unknown): unknown[] {
 
 function asStringArray(value: unknown): string[] {
   return asList(value).filter((v): v is string => typeof v === 'string')
+}
+
+/** Coerce a raw list into typed `{ value, label }` metrics; empty entries dropped. */
+function normalizeProjectMetrics(raw: unknown): ProjectMetric[] | undefined {
+  const list = asList(raw)
+    .map((entry) => {
+      const o = entry && typeof entry === 'object' ? (entry as Record<string, unknown>) : {}
+      return { value: asString(o.value), label: asString(o.label) }
+    })
+    .filter((m) => m.value || m.label)
+  return list.length ? list : undefined
 }
 
 /**
@@ -56,6 +67,9 @@ export function normalizeCaseStudies(raw: unknown): CaseStudy[] {
       image: asString(o.image),
       liveUrl: asString(o.liveUrl),
       repoUrl: asString(o.repoUrl) || undefined,
+      privateRepoNote: asString(o.privateRepoNote) || undefined,
+      summary: asString(o.summary) || undefined,
+      metrics: normalizeProjectMetrics(o.metrics),
       tags: asStringArray(o.tags),
       description: asString(o.description) || undefined,
       problem: asString(o.problem) || undefined,
@@ -102,6 +116,23 @@ function resolveMessageList(t: (key: string) => string, baseKey: string, max = 2
 }
 
 /**
+ * Resolve an array of `{ value, label }` metric objects from the message tree.
+ * Length is probed from the raw locale node (nested objects in i18n arrays are
+ * not readable as plain props), then each field resolved by dotted key.
+ */
+function resolveProjectMetrics(
+  t: (key: string) => string,
+  base: string,
+  metricsRaw: unknown,
+): ProjectMetric[] {
+  const len = asList(metricsRaw).length
+  return Array.from({ length: len }, (_, j) => ({
+    value: resolveMessage(t, `${base}.metrics.${j}.value`),
+    label: resolveMessage(t, `${base}.metrics.${j}.label`),
+  }))
+}
+
+/**
  * Reactive catalog partitions sourced from the active-locale message tree
  * (`featuredProjects.projects`). Recomputes on locale change.
  *
@@ -129,6 +160,9 @@ export function usePortfolioCatalog() {
         image: resolveMessage(t, `${base}.image`),
         liveUrl: resolveMessage(t, `${base}.liveUrl`),
         repoUrl: resolveMessage(t, `${base}.repoUrl`),
+        privateRepoNote: resolveMessage(t, `${base}.privateRepoNote`),
+        summary: resolveMessage(t, `${base}.summary`),
+        metrics: resolveProjectMetrics(t, base, (list[i] as Record<string, unknown>)?.metrics),
         tags: resolveMessageList(t, `${base}.tags`),
         description: resolveMessage(t, `${base}.description`),
         problem: resolveMessage(t, `${base}.problem`),

@@ -5,7 +5,7 @@
       aria-hidden="true"
     />
 
-    <div class="relative z-10 mx-auto max-w-5xl">
+    <div class="relative z-10 mx-auto max-w-6xl">
       <div class="mb-16 max-w-2xl">
         <div class="mb-6 flex items-center gap-3">
           <div class="h-px w-12 bg-gradient-to-r from-accent to-transparent" aria-hidden="true" />

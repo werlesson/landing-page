@@ -3,10 +3,10 @@
   <div class="h-full [perspective:1100px]">
     <article
       ref="cardRef"
-      class="relative flex h-full flex-col overflow-hidden rounded-2xl border bg-white/[0.02] transition-[border-color,box-shadow] duration-300 will-change-transform"
+      class="group relative flex h-full flex-col overflow-hidden rounded-2xl border bg-white/[0.02] transition-[border-color,box-shadow] duration-300 will-change-transform"
       :class="
-        isLead
-          ? 'border-accent/45 shadow-[0_0_0_1px_rgba(57,255,20,0.08)] hover:border-accent/70'
+        featured
+          ? 'border-accent/45 shadow-[0_0_0_1px_rgba(57,255,20,0.08)] hover:border-accent/70 lg:flex-row'
           : 'border-border/60 hover:border-accent/50'
       "
       @pointermove="onPointerMove"
@@ -15,7 +15,12 @@
       <!-- Thumbnail — empty-safe, omitted when no image path (RF-01) -->
       <div
         v-if="study.image"
-        class="relative aspect-video w-full overflow-hidden border-b border-border/60 bg-background"
+        class="relative w-full overflow-hidden bg-background"
+        :class="
+          featured
+            ? 'aspect-video border-b border-border/60 lg:aspect-auto lg:w-[46%] lg:shrink-0 lg:border-b-0 lg:border-r'
+            : 'aspect-video border-b border-border/60'
+        "
       >
         <img
           ref="imageRef"
@@ -25,13 +30,20 @@
           decoding="async"
           class="h-full w-full object-cover will-change-transform"
         />
+        <!-- Flagship ribbon (featured only) -->
+        <span
+          v-if="featured"
+          class="absolute top-4 left-4 rounded-full border border-accent/40 bg-background/80 px-3 py-1 text-xs font-medium uppercase tracking-wider text-accent backdrop-blur-sm"
+        >
+          {{ $t('project.sectionTitle') }}
+        </span>
       </div>
 
-      <div class="flex flex-1 flex-col p-6 md:p-7">
+      <div class="flex flex-1 flex-col p-6 md:p-7" :class="featured ? 'lg:p-8' : ''">
         <div class="flex flex-wrap items-center gap-3">
           <h3
             class="font-display font-bold text-foreground"
-            :class="isLead ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'"
+            :class="featured ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'"
           >
             {{ study.title }}
           </h3>
@@ -42,8 +54,31 @@
           </span>
         </div>
 
+        <!-- Featured summary (featured only) -->
+        <p
+          v-if="featured && study.summary"
+          class="mt-4 max-w-2xl text-base leading-relaxed text-textMuted"
+        >
+          {{ study.summary }}
+        </p>
+
+        <!-- Headline metrics (featured only) -->
+        <dl
+          v-if="featured && study.metrics && study.metrics.length"
+          class="mt-6 grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4"
+        >
+          <div v-for="(metric, i) in study.metrics" :key="`${study.id}-metric-${i}`">
+            <dt class="font-display text-2xl font-bold tabular-nums text-accent md:text-3xl">
+              {{ metric.value }}
+            </dt>
+            <dd class="mt-1 text-xs uppercase tracking-wider text-textMuted">
+              {{ metric.label }}
+            </dd>
+          </div>
+        </dl>
+
         <!-- Tech-stack badges — one per entry (RF-05); no container when empty -->
-        <div v-if="study.techStack && study.techStack.length" class="mt-4 flex flex-wrap gap-2">
+        <div v-if="study.techStack && study.techStack.length" class="mt-6 flex flex-wrap gap-2">
           <span
             v-for="(tech, i) in study.techStack"
             :key="`${study.id}-tech-${i}`"
@@ -74,13 +109,13 @@ import type { CaseStudy } from '~/types/portfolio'
 const props = withDefaults(
   defineProps<{
     study: CaseStudy
-    /** Position in the shipped grid — drives entrance stagger and lead emphasis. */
+    /** Position in the shipped grid — drives entrance stagger. */
     index?: number
+    /** Render the differentiated, full-width featured layout (flagship project). */
+    featured?: boolean
   }>(),
-  { index: 0 },
+  { index: 0, featured: false },
 )
-
-const isLead = computed(() => props.index === 0)
 
 // Locale-aware deep-link to the SSR detail route (RF-02, CT-01). slug === id.
 const localePath = useLocalePath()

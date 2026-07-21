@@ -1,6 +1,6 @@
 <template>
   <main class="relative w-full overflow-hidden bg-background px-6 py-32 md:px-12 lg:px-24">
-    <article v-if="article" class="relative z-10 mx-auto max-w-3xl">
+    <article v-if="article" class="relative z-10 mx-auto max-w-6xl">
       <NuxtLink
         :to="blogIndexPath"
         class="inline-flex items-center gap-2 text-sm font-medium text-accent transition-opacity duration-300 hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
