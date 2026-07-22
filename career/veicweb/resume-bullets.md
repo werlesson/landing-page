@@ -1,7 +1,7 @@
 # Currículo — Bullets, Impactos e Módulos
 
 **Werlesson Vieira** — Full-stack Software Engineer (Vue/Nuxt + Laravel)
-Ecossistema automotivo / remarketing & seguros · abr/2022 – jul/2026 (~4,3 anos)
+Ecossistema automotivo / remarketing & seguros · abr/2022 – jul/2026 (~4 anos)
 
 ---
 
@@ -49,7 +49,7 @@ Ecossistema automotivo / remarketing & seguros · abr/2022 – jul/2026 (~4,3 an
 ## Impactos que posso comprovar
 *(100% derivado automaticamente do Git e do código-fonte)*
 
-- 3.018 commits em produção ao longo de ~4,3 anos (abr/2022 – jul/2026).
+- 3.018 commits em produção ao longo de ~4 anos (abr/2022 – jul/2026).
 - 916 dias únicos de contribuição.
 - 372 tarefas únicas entregues (IDs rastreáveis `DES-`, `BC-`, `SV-`).
 - 5 repositórios de produção com contribuição.

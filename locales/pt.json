@@ -311,15 +311,15 @@
         "role": "Engenheiro de Software Sênior",
         "period": "maio de 2022 – Presente",
         "responsibilities": [
-          "Conduzir decisões de arquitetura e referência técnica em produtos SaaS B2B e sistemas internos",
+          "Tomar decisões de arquitetura e contribuir com a evolução técnica de produtos SaaS B2B e sistemas internos",
           "Conceber e entregar um app mobile de vistoria offline-first (React Native/Expo, SQLite) com design system próprio — do primeiro commit à release em produção",
-          "Desenvolver interfaces Vue 3 com Pinia, componentes reutilizáveis e integração com APIs REST",
+          "Desenvolver interfaces Vue, componentes reutilizáveis e integração com APIs REST",
           "Implementar endpoints backend em Laravel — autenticação, validação, políticas de acesso e recursos de API",
-          "Modelar e otimizar queries em MySQL e PostgreSQL; implementar filas assíncronas (Laravel Queue)",
-          "Integrar serviços externos; liderar code review, refinamento e entregas em ciclos ágeis"
+          "Modelar e otimizar queries em MySQL sobre um modelo de dados de larga escala; implementar filas assíncronas (Laravel Queue)",
+          "Integrar serviços externos — seguradoras, ERP corporativo, SSO enterprise"
         ],
-        "technologies": ["Vue 3", "Pinia", "Laravel", "PHP", "MySQL", "PostgreSQL", "React Native", "Expo", "REST APIs"],
-        "businessImpact": "Ownership técnico full stack em produtos SaaS B2B do grupo — e, mais recentemente, concepção e entrega de um app de vistoria offline-first (React Native/Expo) que substituiu a ferramenta legada e deu mais agilidade aos vistoriadores em campo."
+        "technologies": ["TypeScript", "Vue", "Nuxt", "Laravel", "PHP", "MySQL", "React Native", "Expo", "REST APIs", "Docker"],
+        "businessImpact": "~4 anos atuando no ecossistema de produtos automotivos do grupo, em produtos web e mobile — do frontend ao backend, com centenas de entregas ao longo do período. Criei o app de vistoria mobile do zero: principal autor do código e de todas as decisões de produto e arquitetura, aproveitando o backend já existente. Foi o que trouxe a vistoria — antes possível só na web — para o celular, dando mais agilidade aos vistoriadores em campo."
       },
       {
         "company": "C3C Software",
@@ -329,7 +329,7 @@
           "Desenvolver softwares Salesforce sob demanda para clientes enterprise",
           "Apoiar capacitação e consultoria junto à entrega de produto"
         ],
-        "technologies": ["Salesforce", "JavaScript", "Front-end"],
+        "technologies": ["Salesforce", "JavaScript", "React", "Next", "Node", "Apex", "LWC", "ApexCharts"],
         "businessImpact": "Entreguei soluções front-end que ajudaram clientes a transformar customizações Salesforce em resultados operacionais mensuráveis."
       },
       {
@@ -340,7 +340,7 @@
           "Construir soluções front-end para produtos de gestão de processos empresariais",
           "Entregar UI que mantém fluxos complexos simples e eficazes para operadores"
         ],
-        "technologies": ["JavaScript", "Front-end", "UI"],
+        "technologies": ["JavaScript", "Vue", "Nuxt", "Front-end", "Sass", "UI"],
         "businessImpact": "Ajudei a productizar ferramentas de gestão de processos que aumentaram a eficácia operacional sem adicionar complexidade de interface."
       },
       {
@@ -351,7 +351,7 @@
           "Desenvolver sistema voltado à saúde conectando médico e paciente",
           "Entregar funcionalidades que simplificam comunicação e acompanhamento clínico"
         ],
-        "technologies": ["Desenvolvimento de software", "Web", "Saúde"],
+        "technologies": ["Saúde", "JavaScript", "Vue", "Nuxt", "Front-end", "Sass", "UI"],
         "businessImpact": "Entreguei sistemas que facilitaram a relação médico–paciente em um produto do setor da saúde."
       }
     ]

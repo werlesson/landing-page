@@ -311,15 +311,15 @@
         "role": "Senior Software Engineer",
         "period": "May 2022 – Present",
         "responsibilities": [
-          "Drive architecture decisions and technical reference for B2B SaaS products and internal systems",
+          "Make architecture decisions and contribute to the technical evolution of B2B SaaS products and internal systems",
           "Design and ship an offline-first mobile inspection app (React Native/Expo, SQLite) with its own design system — from first commit to production release",
-          "Build Vue 3 interfaces with Pinia, reusable components and REST API integration",
+          "Build Vue interfaces, reusable components and REST API integration",
           "Implement Laravel backend endpoints — auth, validation, access policies and API resources",
-          "Model and optimize MySQL and PostgreSQL queries; ship async workloads with Laravel Queue",
-          "Integrate external services; lead code review, refinement and delivery in agile cycles"
+          "Model and optimize MySQL queries over a large-scale data model; ship async workloads with Laravel Queue",
+          "Integrate external services — insurance carriers, enterprise ERP, enterprise SSO"
         ],
-        "technologies": ["Vue 3", "Pinia", "Laravel", "PHP", "MySQL", "PostgreSQL", "React Native", "Expo", "REST APIs"],
-        "businessImpact": "Full-stack technical ownership across the group's B2B SaaS products — and, more recently, designing and shipping an offline-first inspection app (React Native/Expo) that replaced the legacy tool and gave field inspectors more speed."
+        "technologies": ["TypeScript", "Vue", "Nuxt", "Laravel", "PHP", "MySQL", "React Native", "Expo", "REST APIs", "Docker"],
+        "businessImpact": "~4 years working across the group's automotive product ecosystem, on web and mobile products — front to back, with hundreds of deliveries over the period. Built the mobile inspection app from scratch: main author of the code and of every product and architecture decision, reusing the existing backend. That brought inspections — previously possible only on the web — to mobile, giving field inspectors more speed."
       },
       {
         "company": "C3C Software",
@@ -329,7 +329,7 @@
           "Develop on-demand Salesforce software for enterprise clients",
           "Support enablement and consulting engagements alongside product delivery"
         ],
-        "technologies": ["Salesforce", "JavaScript", "Front-end"],
+        "technologies": ["Salesforce", "JavaScript", "React", "Next", "Node", "Apex", "LWC", "ApexCharts"],
         "businessImpact": "Delivered front-end solutions that helped clients turn Salesforce customizations into measurable operational outcomes."
       },
       {
@@ -340,7 +340,7 @@
           "Build front-end solutions for business process management products",
           "Ship UI that keeps complex workflows simple and effective for operators"
         ],
-        "technologies": ["JavaScript", "Front-end", "UI"],
+        "technologies": ["JavaScript", "Vue", "Nuxt", "Front-end", "Sass", "UI"],
         "businessImpact": "Helped productize process-management tools that increased operational effectiveness without adding UI complexity."
       },
       {
@@ -351,7 +351,7 @@
           "Develop healthcare software connecting doctors and patients",
           "Deliver features that simplify clinical communication and follow-up"
         ],
-        "technologies": ["Software development", "Web", "Healthcare"],
+        "technologies": ["Healthcare", "JavaScript", "Vue", "Nuxt", "Front-end", "Sass", "UI"],
         "businessImpact": "Shipped systems that made doctor–patient interaction easier in a health-sector product context."
       }
     ]

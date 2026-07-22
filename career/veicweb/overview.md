@@ -16,7 +16,7 @@
 | Repositórios com contribuição minha | **5** |
 | Total de commits (todas as identidades) | **3.018** |
 | Dias únicos de contribuição | **916** |
-| Período de atuação | **abr/2022 → jul/2026** (~4,3 anos) |
+| Período de atuação | **abr/2022 → jul/2026** (~4 anos) |
 | Tarefas únicas entregues (IDs `DES-`, `BC-`, `SV-`) | **372** |
 | Linhas adicionadas | **166.556** |
 | Linhas removidas | **86.534** |

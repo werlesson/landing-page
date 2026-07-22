@@ -32,4 +32,4 @@ Reconstruída a partir das datas reais de commit (primeiro/último por repo) e d
 ---
 
 ### Resumo do arco de carreira
-**Frontend developer (Vue/Nuxt 2, 2022)** → **consolidação frontend (2023)** → **full-stack com backend Laravel (2024–2025)** → **full-stack com peso em backend/integrações (2026)**. ~4,3 anos de atuação contínua no mesmo ecossistema de produto (automotivo/seguros).
+**Frontend developer (Vue/Nuxt 2, 2022)** → **consolidação frontend (2023)** → **full-stack com backend Laravel (2024–2025)** → **full-stack com peso em backend/integrações (2026)**. ~4 anos de atuação contínua no mesmo ecossistema de produto (automotivo/seguros).
